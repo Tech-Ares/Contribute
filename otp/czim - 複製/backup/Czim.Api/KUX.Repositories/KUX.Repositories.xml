@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KUX.Repositories</name>
+    </assembly>
+    <members>
+        <member name="T:KUX.Repositories.CzimSection.CzimBaseSettingRepository">
+            <summary>
+            基础设置仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimBaseSettingRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="freeSql">orm</param>
+            <param name="_dapperContext">orm</param>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimChatCustomerRepository">
+            <summary>
+            客服仓储
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimChatGroupRepository">
+            <summary>
+            群组仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatGroupRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="freeSql">orm</param>
+            <param name="_dapperContext">orm</param>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimChatPresetRepository">
+            <summary>
+            预设聊天消息
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatPresetRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freesql</param>
+            <param name="_dapperContext">dapper</param>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimChatRepository">
+            <summary>
+            聊天仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="_dapperContext">dapper</param>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.GetChatTargetAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取所有目标信息
+            </summary>
+            <param name="userId"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.ContactsListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取所有的联系人信息
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.FriendListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取所有好友信息
+            </summary>
+            <param name="ownId">会员id</param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.FindChatRoomAbbreAsync(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取可加入的聊天室信息
+            </summary>
+            <param name="memberId">当前会员id</param>
+            <param name="crname">聊天室名称</param>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.GetFirstChatInfoAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            获取第一条聊天记录
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="targetIds">目标id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.SingleRecordAsync(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            获取所有的单聊记录
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <param name="receiveId">聊天目标</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.ChatRoomRecordAsync(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取所有的群聊记录
+            </summary>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <param name="receiveId">聊天目标</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRepository.GetChatGroupListAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取客服相关所有群组信息
+            </summary>
+            <param name="userId">用户id</param>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimChatRoomRepository">
+            <summary>
+            聊天室仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRoomRepository.FindChatRoomAbbreAsync(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取可加入的聊天室信息
+            </summary>
+            <param name="memberId">当前会员id</param>
+            <param name="crname">聊天室名称</param>
+            <param name="page">当前页面</param>
+            <param name="size">页面大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimChatRoomRepository.GetAllMemberAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取聊天室所有成员（包含管理员）
+            </summary>
+            <param name="chatroomId">聊天室id</param>
+            <param name="page">当前页面大小</param>
+            <param name="size">当前页面</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimEaseImSettingRepository">
+            <summary>
+            环信配置仓储仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimEaseImSettingRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="_dapperContext">dapper</param>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimLiveInfoReposity">
+            <summary>
+            直播仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimLiveInfoReposity.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造函数 
+            </summary>
+            <param name="freeSql">orm</param>
+            <param name="_dapperContext">orm</param>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimMemberRepository">
+            <summary>
+            会员仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimMemberRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper上下文</param>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimMemberRepository.GetNumberSeedAsync(KUX.Models.CzimSection.CzimZnumberSeed)">
+            <summary>
+            从种子表中获取会员编码
+            </summary>
+            <param name="bzs">会员种子表信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimMemberRepository.GetMemberById(System.String)">
+            <summary>
+            获取会员信息
+            </summary>
+            <param name="mid">会员id</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.CzimSection.CzimSysRepository">
+            <summary>
+            系统设置仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.CzimSection.CzimSysRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="_dapperContext">dapper</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysDictionaryRepository">
+            <summary>
+            数据字典仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysDictionaryRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper 上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysFunctionRepository">
+            <summary>
+            系统方法仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysFunctionRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper 上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysMenuRepository">
+            <summary>
+            菜单仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysMenuRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysOperationLogRepository">
+            <summary>
+            操作日志 仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysOperationLogRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper 上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysOrganizationRepository">
+            <summary>
+            组织仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysOrganizationRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysPostRepository">
+            <summary>
+            系统岗位表
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysPostRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql"></param>
+            <param name="dapperContext"></param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysRoleRepository">
+            <summary>
+            角色仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysRoleRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysUserPostRepository">
+            <summary>
+            用户岗位仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysUserPostRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freesql</param>
+            <param name="dapperContext">dapper 上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysUserRepository">
+            <summary>
+            用户仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysUserRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql">freeSql</param>
+            <param name="dapperContext">dapper 上下文</param>
+        </member>
+        <member name="T:KUX.Repositories.Framework.SysUserRoleRepository">
+            <summary>
+            系统用户角色仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Framework.SysUserRoleRepository.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext)">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql"></param>
+            <param name="dapperContext"></param>
+        </member>
+    </members>
+</doc>

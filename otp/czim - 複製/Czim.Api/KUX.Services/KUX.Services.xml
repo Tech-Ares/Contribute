@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KUX.Services</name>
+    </assembly>
+    <members>
+        <member name="T:KUX.Services.EaseImServices.EaseImService">
+            <summary>
+            环信聊天服务
+            </summary>
+        </member>
+        <member name="F:KUX.Services.EaseImServices.EaseImService.httpClientFactory">
+            <summary>
+            http 接口工厂
+            </summary>
+        </member>
+        <member name="F:KUX.Services.EaseImServices.EaseImService.httpUrl">
+            <summary>
+            请求地址
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.EaseImService.redisEaseTokenKey">
+            <summary>
+            redis key
+            </summary>
+        </member>
+        <member name="F:KUX.Services.EaseImServices.EaseImService.repository">
+            <summary>
+            环信配置文件仓储
+            </summary>
+        </member>
+        <member name="F:KUX.Services.EaseImServices.EaseImService.redisService">
+            <summary>
+            缓存服务
+            </summary>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.#ctor(System.Net.Http.IHttpClientFactory,KUX.Repositories.CzimSection.CzimEaseImSettingRepository,KUX.Infrastructure.Redis.IRedisService)">
+            <summary>
+            构造
+            </summary>
+            <param name="_httpClientFactory">http 工厂</param>
+            <param name="_repository">环信配置文件仓储</param>
+            <param name="_redisService">缓存</param>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.GetTokenAsync">
+            <summary>
+            获取当前环信token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.EaseImService.EaseToken">
+            <summary>
+            环信token
+            </summary>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.EaseGetTokenAsync">
+            <summary>
+            创建token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.CreateUsersAsync(System.String,System.String)">
+            <summary>
+            创建用户
+            </summary>
+            <param name="username">用户账户</param>
+            <param name="nickname">用户昵称</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.UpdUserNameAsync(System.String,System.String)">
+            <summary>
+            修改用户推送昵称
+            </summary>
+            <param name="username">用户id</param>
+            <param name="nickname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.UpdUserMetaAsync(System.String,System.String,System.String)">
+            <summary>
+            修改用户属性
+            </summary>
+            <param name="username">用户id</param>
+            <param name="nickname">用户昵称</param>
+            <param name="avatar">用户头像</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.DeactivateUserAsync(System.String)">
+            <summary>
+            用户禁用，立即下线
+            </summary>
+            <param name="username">用户id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.DeleteUsersAsync(System.String)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatCustomerAllBan(System.String,System.Int64)">
+            <summary>
+            聊天室设置用户全局禁言
+            </summary>
+            <param name="username">用户id(web端userid)</param>
+            <param name="chatRoomMuteTime">聊天室消息禁言时间</param>
+            <returns>true为成功，false为失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatGroupAllBan(System.String,System.Int64)">
+            <summary>
+            聊天室设置用户全局禁言
+            </summary>
+            <param name="username">用户id(web端userid)</param>
+            <param name="chatRoomMuteTime">聊天室消息禁言时间</param>
+            <returns>true为成功，false为失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.CreateChatRoomAsync(System.String,System.String,System.String,System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            创建聊天室
+            </summary>
+            <param name="name">聊天室名称</param>
+            <param name="description">聊天室描述</param>
+            <param name="owner">所有者</param>
+            <param name="maxusers">最大人数</param>
+            <param name="members">聊天室人数</param>
+            <returns>返回聊天室id</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomAddUser(System.String,System.String)">
+            <summary>
+            添加聊天室成员
+            </summary>
+            <param name="username">用户id(本系统的用户id/memberid)</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomBatchAddUsersAsync(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            聊天室批量添加成员
+            </summary>
+            <param name="usernames">用户id(本系统的用户id/memberid)</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomDeleteUser(System.String,System.String)">
+            <summary>
+            删除聊天室成员
+            </summary>
+            <param name="username">用户im账户</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomAddAdmin(System.String,System.String)">
+            <summary>
+            添加聊天室管理员
+            </summary>
+            <param name="username">用户im账户</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomDeleteAdmin(System.String,System.String)">
+            <summary>
+            移除聊天室管理员
+            </summary>
+            <param name="username">用户im账户</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomMuteUser(System.Collections.Generic.List{System.String},System.String,System.Int64)">
+            <summary>
+            聊天室禁言用户
+            </summary>
+            <param name="usernames">用户im账户列表 </param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <param name="duration">禁言时间（毫秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomNoMuteUser(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            聊天室解除禁言用户
+            </summary>
+            <param name="usernames">用户im账户列表</param>
+            <param name="chatroomid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomBan(System.String)">
+            <summary>
+            聊天室全局禁言
+            </summary>
+            <param name="chatroomid">聊天室id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatRoomRemoveBan(System.String)">
+            <summary>
+            聊天室全局解禁
+            </summary>
+            <param name="chatroomid">聊天室id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatGroupBan(System.String)">
+            <summary>
+            群组全局禁言
+            </summary>
+            <param name="chatgroupid">群组id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatGroupRemoveBan(System.String)">
+            <summary>
+            群组全局解禁
+            </summary>
+            <param name="chatgroupid">群组id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.CreateChatGroupAsync(KUX.Services.EaseImServices.Models.ImGroupCreateDto)">
+            <summary>
+            创建群组
+            </summary>
+            <param name="dto">创建群组的对象</param>
+            <returns>返回环信群组id</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupAddUserAsync(System.String,System.String)">
+            <summary>
+            群组单个增加成员
+            </summary>
+            <param name="chatgroupid">群组id(环信)</param>
+            <param name="username">用户id(自己的)</param>
+            <returns>成功/失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupAddManagerAsync(System.String,System.String)">
+            <summary>
+            添加群管理员
+            </summary>
+            <param name="chatgroupid"></param>
+            <param name="username"></param>
+            <returns>返回群组成员id</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupDeleteManagerAsync(System.String,System.String)">
+            <summary>
+            移除群管理员
+            </summary>
+            <param name="chatgroupid"></param>
+            <param name="username"></param>
+            <returns>成功/失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupDeleteUserAsync(System.String,System.String)">
+            <summary>
+            移除单个群组成员
+            </summary>
+            <param name="chatgroupid"></param>
+            <param name="username"></param>
+            <returns>成功/失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupDeleteUserListAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            批量移除群组成员
+            </summary>
+            <param name="chatgroupid"></param>
+            <param name="usernames"></param>
+            <returns>返回群组成员id</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupAddUserListAsync(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            群组批量增加成员
+            </summary>
+            <param name="chatgroupid">群组id（环信id）</param>
+            <param name="users">用户id</param>
+            <returns>禁言成功的会员id</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupDeleteUserMuteAsync(System.String,System.String)">
+            <summary>
+            移除禁言
+            </summary>
+            <param name="chatgroupid">群组id</param>
+            <param name="user">用户id</param>
+            <returns>移除禁言成功/失败</returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatgroupUpdAnnouncementAsync(System.String,System.String)">
+            <summary>
+            修改群公告
+            </summary>
+            <param name="chatgroupid">群组id</param>
+            <param name="announcement">公告内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatGroupMuteUser(System.Collections.Generic.List{System.String},System.String,System.Int64)">
+            <summary>
+            群组禁言用户
+            </summary>
+            <param name="usernames">用户im账户列表 </param>
+            <param name="chatgroupid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <param name="duration">禁言时间（毫秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.ChatGroupNoMuteUser(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            群组解除禁言用户
+            </summary>
+            <param name="usernames">用户im账户列表</param>
+            <param name="chatgroupid">聊天室id 聊天室唯一标识符，由环信服务器生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.SendMessageAsync(System.String,System.Collections.Generic.List{System.String},System.String,System.String,System.String)">
+            <summary>
+            后台服务发送消息
+            </summary>
+            <param name = "targetType">目标类型</param>
+            <param name="target">目标id（列表）</param>
+            <param name="msg">消息内容</param>
+            <param name="type">消息类型；txt:文本消息，img：图片消息，loc：位置消息，audio：语音消息，video：视频消息，file：文件消息</param>
+            <param name="from">发送人，默认admin</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Services.EaseImServices.EaseImService.MessagesRecallAsync(System.String,System.String,System.String)">
+            <summary>
+            消息回撤
+            </summary>
+            <param name="msg_id">消息id</param>
+            <param name="to">撤回消息的接收方</param>
+            <param name="chat_type">单聊为'chat',群组为'groupchat'，聊天室为 'chatroom'</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ChatCustomer">
+            <summary>
+            用户全局禁言对象
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ChatGroupDelManagerVo">
+            <summary>
+            移除群管理员返回值对象
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ChatRoomAdmin">
+            <summary>
+            聊天室管理员
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomAdmin.result">
+            <summary>
+            操作结果；success：添加成功
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomAdmin.newadmin">
+            <summary>
+            添加为聊天室管理员的用户 ID
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomBatchAddUser.newmembers">
+            <summary>
+            新成员
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ChatRoomMute">
+            <summary>
+            聊天室禁言
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomMute.result">
+            <summary>
+            操作结果；true：添加成功；false：添加失败
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomMute.expire">
+            <summary>
+            	禁言到期的时间戳（从1970年1月1日开始的毫秒数。如果禁言时间传的值为“-1”，
+            那么该时间戳为固定的4638873600000，请参考mute_duration参数的说明）
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomMute.user">
+            <summary>
+            被禁言用户的 ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ChatRoomUser">
+            <summary>
+            聊天室添加成员模型
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomUser.result">
+            <summary>
+            添加结果，true表示添加成功，false表示添加失败
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomUser.action">
+            <summary>
+            执行的操作，add_member表示向聊天室添加成员
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomUser.id">
+            <summary>
+            聊天室 ID，聊天室唯一标识符，由环信服务器生成。
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ChatRoomUser.user">
+            <summary>
+            添加到聊天室的用户
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.CreateChatRooms">
+            <summary>
+            创建聊天室
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.CreateChatRooms.name">
+            <summary>
+             聊天室名称，此属性为必须的
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.CreateChatRooms.description">
+            <summary>
+            聊天室描述，此属性为必须的
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.CreateChatRooms.maxusers">
+            <summary>
+            聊天室成员最大数（包括聊天室创建者），值为数值类型，此属性为可选的
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.CreateChatRooms.owner">
+            <summary>
+            聊天室的管理员，此属性为必须的
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.CreateChatRooms.members">
+            <summary>
+            聊天室成员，此属性为可选的，但是如果加了此项，数组元素至少一个
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseReponseModel">
+            <summary>
+            基础接口
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.action">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.application">
+            <summary>
+            app的uuid
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.path">
+            <summary>
+            请求路由
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.uri">
+            <summary>
+            请求完整url
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.timestamp">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.duration">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.organization">
+            <summary>
+            组织名
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseReponseModel.applicationName">
+            <summary>
+            app名
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseBaseModel`2">
+            <summary>
+            环信接口返回基类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="T2"></typeparam>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseBaseModel`2.entities">
+            <summary>
+            返回实体
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseBaseModel`2.data">
+            <summary>
+            返回数据模型
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseCreateChatRoomModel`2">
+            <summary>
+            环信接口返回基类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="T2"></typeparam>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseCreateChatRoomModel`2.entities">
+            <summary>
+            返回实体
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseCreateChatRoomModel`2.data">
+            <summary>
+            返回数据模型
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseDataModel">
+            <summary>
+            data数据模型
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseImToken">
+            <summary>
+            环信token模型
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseImToken.application">
+            <summary>
+            当前id的uuid
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseImToken.access_token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseImToken.expires_in">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseUserMeta">
+            <summary>
+            用户属性
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUserMeta.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUserMeta.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.EaseUsers">
+            <summary>
+            创建user结果
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.uuid">
+            <summary>
+            用户的UUID，标识字段
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.type">
+            <summary>
+            “user”用户类型
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.username">
+            <summary>
+             用户名，也就是环信 ID
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.nickname">
+            <summary>
+            昵称（可选），在 iOS Apns 推送时会使用的昵称（仅在推送通知栏内显示的昵称），
+            并不是用户个人信息的昵称，环信是不保存用户昵称，
+            头像等个人信息的，需要自己服务器保存并与给自己用户注册的IM用户名绑定
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.activated">
+            <summary>
+            用户是否已激活，“true”已激活，“false“封禁，封禁需要通过解禁接口进行解禁，才能正常登录
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.created">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.EaseUsers.modified">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.GroupAddUserVo">
+            <summary>
+            添加/删除群成员 返回对象
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.GroupAnnouncement">
+            <summary>
+            修改群公告
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.GroupDeleteUserListVo">
+            <summary>
+            群组批量删除用户返回对象
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ImGroupCreateDto">
+            <summary>
+            创建群组对象
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.GroupName">
+            <summary>
+            群组名称
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.desc">
+            <summary>
+            群组描述
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.IsOpen">
+            <summary>
+            是否是公开群
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.MaxUsers">
+            <summary>
+            群组成员最大数(包括群主)
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.AllowInvites">
+            <summary>
+            是否允许群成员邀请别人加入此群
+            true：允许群成员邀请人加入此群，
+            false：只有群主或者管理员才可以往群里加人。注：如果是公开群（public为true），则不允许群成员邀请别人加入此群
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.MembersOnly">
+            <summary>
+            用户申请入群是否需要群主或者群管理员审批，默认是false。
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.Owner">
+            <summary>
+            群组的群主
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateDto.Members">
+            <summary>
+            群组成员，此属性为可选的，但是如果加了此项，数组元素至少一个，
+            不能超过100个（注：群主user1不需要写入到members里面）
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.ImGroupCreateVo">
+            <summary>
+            群组创建返回的对象
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.ImGroupCreateVo.groupid">
+            <summary>
+            环信群组id
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.MessageSend">
+            <summary>
+            消息发送模型 
+            </summary>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.MessagesRecall">
+            <summary>
+            消息撤回响应值
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecall.msgs">
+            <summary>
+            所有消息列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:KUX.Services.EaseImServices.Models.MessagesRecallInfo">
+            <summary>
+            消息撤回内容
+            </summary>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecallInfo.msg_id">
+            <summary>
+            消息id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecallInfo.recalled">
+            <summary>
+            返回结果，成功是yes
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecallInfo.from">
+            <summary>
+            消息撤回方
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecallInfo.to">
+            <summary>
+            撤回消息方
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:KUX.Services.EaseImServices.Models.MessagesRecallInfo.chattype">
+            <summary>
+            消息类型， chat或者groupchat
+            </summary>
+            <value></value>
+        </member>
+    </members>
+</doc>

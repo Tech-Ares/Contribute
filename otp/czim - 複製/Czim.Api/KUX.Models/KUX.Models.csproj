@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>KUX.Models.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="KuxApp\**" />
+    <EmbeddedResource Remove="KuxApp\**" />
+    <None Remove="KuxApp\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="KUX.Models.xml" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="KUX.Models.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "automation"
+version = "0.1.0"
+description = ""
+authors = ["genos <wind740910@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.26.0"
+paramiko = "^2.8.0"
+Django = "^3.2.9"
+selenium = "^4.0.0"
+python-jenkins = "^1.7.0"
+PyQt5 = "^5.15.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

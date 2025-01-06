@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Czim.AppApi</name>
+    </assembly>
+    <members>
+        <member name="T:Czim.AdminApi.Configure.AppConfigure">
+            <summary>
+            应用程序配置
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.AppConfigure.Build(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,System.IServiceProvider,KUX.Infrastructure.MessageQueue.IMessageQueueProvider)">
+            <summary>
+            配置构建
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="serviceProvider"></param>
+            <param name="messageQueueProvider"></param>
+        </member>
+        <member name="T:Czim.AdminApi.Configure.AppConfigureServices">
+            <summary>
+            项目启动配置
+            </summary>
+        </member>
+        <member name="F:Czim.AdminApi.Configure.AppConfigureServices._versionList">
+            <summary>
+            获取swagger版本标记
+            </summary>
+        </member>
+        <member name="F:Czim.AdminApi.Configure.AppConfigureServices.prefixString">
+            <summary>
+            文件前缀
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.AppConfigureServices.GetVersionList">
+            <summary>
+            获取 Swagger 版本集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.AppConfigureServices.Build(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:Czim.AdminApi.Configure.LifetimeEventsHostedService">
+            <summary>
+            生命周期监听
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.#ctor(Microsoft.Extensions.Logging.ILogger{Czim.AdminApi.Configure.LifetimeEventsHostedService},Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            构造
+            </summary>
+            <param name="logger">日志</param>
+            <param name="appLifetime">生命周期</param>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            服务启动
+            </summary>
+            <param name="cancellationToken">取消token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            停止服务
+            </summary>
+            <param name="cancellationToken">取消token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.OnStarted">
+            <summary>
+            服务启动
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.OnStopping">
+            <summary>
+            服务停止中
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Configure.LifetimeEventsHostedService.OnStopped">
+            <summary>
+            服务停止之后
+            </summary>
+        </member>
+        <member name="T:Czim.AdminApi.Controllers.HomeController">
+            <summary>
+            异常页面
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Controllers.HomeController.Error">
+            <summary>
+            错误页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Czim.AdminApi.Controllers.JumpClientController">
+            <summary>
+            跳转客户端
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Controllers.JumpClientController.Index">
+            <summary>
+            默认路由
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Czim.AdminApi.Filters.ApiAuthorizationActionFilter">
+            <summary>
+            app 管理 控制
+            </summary>
+        </member>
+        <member name="F:Czim.AdminApi.Filters.ApiAuthorizationActionFilter.authorMemberService">
+            <summary>
+            会员授权服务
+            </summary>
+        </member>
+        <member name="M:Czim.AdminApi.Filters.ApiAuthorizationActionFilter.#ctor(KUX.Services.App.Accounts.AuthorMemberService)">
+            <summary>
+            构造
+            </summary>
+            <param name="_authorMemberService">会员服务</param>
+        </member>
+        <member name="M:Czim.AdminApi.Filters.ApiAuthorizationActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Action 执行前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Czim.AdminApi.Filters.ApiAuthorizationActionFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Action 执行后
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Czim.AppApi.Controllers.AccountController">
+            <summary>
+            app帐号登录
+            注册相关
+            </summary>
+        </member>
+        <member name="F:Czim.AppApi.Controllers.AccountController.tokenType">
+            <summary>
+            token 类型
+            </summary>
+        </member>
+        <member name="M:Czim.AppApi.Controllers.AccountController.#ctor(KUX.Services.App.CzimApp.CzimMemberService,KUX.Services.App.Accounts.AuthorMemberService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">会员服务</param>
+            <param name="_authorMemberService">会员授权服务</param>
+        </member>
+        <member name="M:Czim.AppApi.Controllers.AccountController.LoginAsync(KUX.Models.CzimApp.Request.AppLogin.AppLoginDto)">
+            <summary>
+            登录帐户并获取 token
+            </summary>
+            <param name="acd">登录相关信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Czim.AppApi.Controllers.AccountController.LoginTimeInfoAsync(KUX.Models.CzimApp.Request.AppLogin.LoginTimeDto)">
+            <summary>
+            用户登录记录
+            </summary>
+            <param name="ltd">登录相关信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Czim.AppApi.Controllers.AccountController.RegisterAsync(KUX.Models.CzimApp.Request.AppLogin.MemberRegisterDto)">
+            <summary>
+            用户注册(非手机号注册)
+            </summary>
+            <param name="registerAccountDto">会员信息</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

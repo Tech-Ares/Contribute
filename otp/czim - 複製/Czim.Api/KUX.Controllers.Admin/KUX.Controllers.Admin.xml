@@ -1,0 +1,553 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KUX.Controllers.Admin</name>
+    </assembly>
+    <members>
+        <member name="T:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1">
+            <summary>
+            后台默认路由
+            </summary>
+            <typeparam name="TDefaultService">默认服务</typeparam>
+        </member>
+        <member name="F:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.DefaultService">
+            <summary>
+            默认服务
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.accountService">
+            <summary>
+            系统账户服务
+            </summary>
+        </member>
+        <member name="P:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.accountInfo">
+            <summary>
+            账户信息
+            </summary>
+        </member>
+        <member name="P:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.IsAdmin">
+            <summary>
+            是否超管
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController`1.#ctor(`0,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="T:KUX.Controllers.Admin.ControllersAdmin.AdminBaseController">
+            <summary>
+            不需要授权的控制器
+            </summary>
+        </member>
+        <member name="T:KUX.Controllers.Admin.CzmiSection.CzimMemberController">
+            <summary>
+            会员中心
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.#ctor(KUX.Services.Admin.Framework.CzimMemberService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.FindListAsync(KUX.Models.KuxAdmin.Request.CzimMember.MemberSearchDto)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.FindLoginRecordList(KUX.Models.KuxAdmin.Request.CzimMemberLogin.MemberLoginSearchDto)">
+            <summary>
+            登录日志
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.MemberJoinGroupFindList(KUX.Models.KuxAdmin.Request.CzimMember.MemberJoinGroupSearchDto)">
+            <summary>
+            会员加群记录
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.MemberfriendFindList(KUX.Models.KuxAdmin.Request.ChatFriend.ChatFriendDto)">
+            <summary>
+            会员好友记录
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.CzmiSection.CzimMemberController.FindMember(KUX.Models.KuxAdmin.Request.CzimMember.MemberSearchDto)">
+            <summary>
+            会员详情
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.PersonalCenterController">
+            <summary>
+            个人中心
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Admin.Framework.PersonalCenterController._sysUserRepository">
+            <summary>
+            用户仓储
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.PersonalCenterController.#ctor(KUX.Services.Admin.Framework.SysUserService,KUX.Services.Admin.Accounts.IAccountService,KUX.Repositories.Framework.SysUserRepository)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="accountService">账户服务</param>
+            <param name="sysUserRepository">用户仓储</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.PersonalCenterController.ChangePasswordAsync(KUX.Models.DTO.ChangePasswordFormDto)">
+            <summary>
+            更新密码
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.PersonalCenterController.SaveFormAsync(KUX.Models.Entities.Framework.SysUser)">
+            <summary>
+            更改用户信息
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysDictionaryController">
+            <summary>
+            数据字典控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.#ctor(KUX.Services.Admin.Framework.SysDictionaryService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.FindListAsync(System.Int32,System.Int32,KUX.Models.Entities.Framework.SysDictionary)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.SaveFormAsync(KUX.Models.Entities.Framework.SysDictionary)">
+            <summary>
+            保存
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.ExportExcelAsync(KUX.Models.Entities.Framework.SysDictionary)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysDictionaryController.GetDictionaryTreeAsync">
+            <summary>
+            获取字典树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysFunctionController">
+            <summary>
+            功能控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.#ctor(KUX.Services.Admin.Framework.SysFunctionService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService"></param>
+            <param name="_accountService"></param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.FindListAsync(System.Int32,System.Int32,KUX.Models.Entities.Framework.SysFunction)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.SaveFormAsync(KUX.Models.Entities.Framework.SysFunction)">
+            <summary>
+            保存
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysFunctionController.ExportExcelAsync(KUX.Models.Entities.Framework.SysFunction)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysMenuController">
+            <summary>
+            菜单控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.#ctor(KUX.Services.Admin.Framework.SysMenuService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.MenuListAsync">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.SaveMenuAsync(KUX.Models.Request.SysMenu.SaveMenuDto)">
+            <summary>
+            保存菜单
+            </summary>
+            <param name="form">菜单信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.ExportExcelAsync(KUX.Models.Entities.Framework.SysMenu)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.FindSysMenuTreeAsync">
+            <summary>
+            获取菜单列表 以及 页面按钮权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysMenuController.FindMenuFunctionTreeAsync">
+            <summary>
+            获取菜单功能树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysOperationLogController">
+            <summary>
+            操作日志控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOperationLogController.#ctor(KUX.Services.Admin.Framework.SysOperationLogService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService"></param>
+            <param name="_accountService"></param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOperationLogController.FindListAsync(System.Int32,System.Int32,KUX.Models.Entities.Framework.SysOperationLog)">
+            <summary>
+            获取表单数据
+            </summary>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOperationLogController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysOrganizationController">
+            <summary>
+            组织机构控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOrganizationController.#ctor(KUX.Services.Admin.Framework.SysOrganizationService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService"></param>
+            <param name="_accountService"></param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOrganizationController.FindListAsync(KUX.Models.Entities.Framework.SysOrganization)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOrganizationController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOrganizationController.FindFormAsync(System.String,System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysOrganizationController.SaveFormAsync(KUX.Models.Entities.Framework.SysOrganization)">
+            <summary>
+            保存
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysPostController">
+            <summary>
+            岗位控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.#ctor(KUX.Services.Admin.Framework.SysPostService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService"></param>
+            <param name="_accountService"></param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.FindListAsync(System.Int32,System.Int32,KUX.Models.Entities.Framework.SysPost)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="size"></param>
+            <param name="page"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.SaveFormAsync(KUX.Models.Entities.Framework.SysPost)">
+            <summary>
+            保存
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysPostController.ExportExcelAsync(KUX.Models.Entities.Framework.SysPost)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysRoleController">
+            <summary>
+            角色控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.#ctor(KUX.Services.Admin.Framework.SysRoleService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.FindListAsync(KUX.Models.KuxAdmin.Request.SysRole.RoleSearchDto)">
+            <summary>
+            获取列表
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id">角色id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.SaveFormAsync(KUX.Models.Entities.Framework.SysRole)">
+            <summary>
+            保存
+            </summary>
+            <param name="form">角色对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleController.ExportExcelAsync(KUX.Models.KuxAdmin.Request.SysRole.RoleSearchDto)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysRoleMenuFunctionController">
+            <summary>
+            角色菜单功能控制器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleMenuFunctionController.#ctor(KUX.Services.Admin.Framework.SysRoleMenuFunctionService,KUX.Services.Admin.Framework.SysRoleService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="sysRoleService">角色服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleMenuFunctionController.SaveFormAsync(KUX.Models.KuxAdmin.Request.Framework.SysRoleMenuFunction.SysRoleMenuFunctionDto)">
+            <summary>
+            保存
+            </summary>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysRoleMenuFunctionController.FindRoleMenuFunctionTreeAsync(System.String)">
+            <summary>
+            获取菜单功能树
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Admin.Framework.SysUserController">
+            <summary>
+            系统用户管理
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Admin.Framework.SysUserController._sysMenuService">
+            <summary>
+            系统菜单服务
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Admin.Framework.SysUserController._sysOrganizationService">
+            <summary>
+            系统组织服务
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.#ctor(KUX.Services.Admin.Framework.SysUserService,KUX.Services.Admin.Framework.SysMenuService,KUX.Services.Admin.Framework.SysOrganizationService,KUX.Services.Admin.Accounts.IAccountService)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+            <param name="sysMenuService">系统菜单服务</param>
+            <param name="sysOrganizationService">系统组织部门服务</param>
+            <param name="_accountService">账户服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.FindListAsync(KUX.Models.KuxAdmin.Request.SysUser.UserSearchDto)">
+            <summary>
+            获取列表（一秒缓存）
+            </summary>
+            <param name="search">查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.DeleteListAsync(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据id数组删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.FindFormAsync(System.String)">
+            <summary>
+            查询表单数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.SaveFormAsync(KUX.Models.DTO.SysUserFormDto)">
+            <summary>
+            保存
+            </summary>
+            <param name="form">账户信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.ExportExcelAsync(KUX.Models.KuxAdmin.Request.SysUser.UserSearchDto)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.MenuAsync">
+            <summary>
+            获取当前账户菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.GetUserInfoAsync">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Controllers.Admin.Framework.SysUserController.GetSysDepartmentTreeAsync">
+            <summary>
+            获取部门树
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

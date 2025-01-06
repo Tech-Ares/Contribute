@@ -1,0 +1,90 @@
+﻿using KUX.Models.Enums;
+using System;
+
+namespace KUX.Models.CzimAdmin.Reponse.ChatRoom;
+
+/// <summary>
+/// 客服相关的聊天室
+/// </summary>
+public class CustomerChatRoomVo
+{
+    /// <summary>
+    /// 当前聊天室id
+    /// </summary>
+    public string ChatRoomId { get; set; }
+
+    /// <summary>
+    /// 聊天室id
+    /// </summary>
+    public string TargetId { get; set; }
+
+    /// <summary>
+    /// 是否可用
+    /// </summary>
+    public bool IsActive { get; set; }
+
+    /// <summary>
+    /// 聊天室等级
+    /// </summary>
+    public int Level { get; set; }
+
+    /// <summary>
+    /// 管理员id
+    /// </summary>
+    public string ManagerId { get; set; }
+
+    /// <summary>
+    /// 管理员名称
+    /// </summary>
+    public string ManagerName { get; set; }
+
+    /// <summary>
+    /// 人数上限
+    /// </summary>
+    public int UserNum { get; set; }
+
+    /// <summary>
+    /// 创建时间
+    /// </summary>
+    public DateTime CrtDate { get; set; }
+
+    /// <summary>
+    /// 聊天室名
+    /// </summary>
+    public string ChatRoomName { get; set; }
+
+    /// <summary>
+    /// 封面图
+    /// </summary>
+    public string ChatRoomImg { get; set; }
+
+    /// <summary>
+    /// 公告
+    /// </summary>
+    public string ChatRoomNotice { get; set; }
+
+    /// <summary>
+    /// 是否开放
+    /// </summary>
+    public bool IsOpenUp { get; set; }
+
+    /// <summary>
+    /// 当前在线人数
+    /// </summary>
+    public int OnLineNum { get; set; }
+
+    /// <summary>
+    /// 是否全员禁言
+    /// </summary>
+    public bool IsProhibit { get; set; }
+
+    /// <summary>
+    /// 环信聊天室id
+    /// </summary>
+    public string EaseChatRoomId { get; set; }
+
+    /// <summary>
+    /// 获取所有消息类型
+    /// </summary>
+    public int CzType { get; set; }
+}

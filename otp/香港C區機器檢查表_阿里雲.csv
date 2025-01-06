@@ -1,0 +1,21 @@
+实例ID,名称,操作系统,状态,所在可用区,公网IP,内网IP,弹性IP,
+i-j6c49ru1twjj7w5no6ta,易盛-ES_中阳级联网关03,CentOS  7.9 64 bit,Running,cn-hongkong-c,47.243.81.182,172.31.2.113,,ping有通，可訪問
+i-j6cci77g4mwovxpbmfd4,易盛-ES-香港-主系統前置,CentOS  7.8 64 bit,Running,cn-hongkong-c,,172.31.2.112,47.57.234.150,ping無響應，無法訪問
+i-j6c46sxkb44nkqpx7t4u,易盛-ES-香港-機構通前置,CentOS  7.8 64 bit,Running,cn-hongkong-c,,172.31.2.111,8.212.21.215,ping無響應，無法訪問
+i-j6c55u1570vjy7ubvyrc,易盛-ES_9.0_中阳级联网关02,CentOS  7.9 64 bit,Running,cn-hongkong-c,47.243.147.210,172.31.2.110,,ping無響應，無法訪問
+i-j6c8os1r0jkomtx1vj8d,易盛-ES_9.0_中阳级联网关,CentOS  7.9 64 bit,Running,cn-hongkong-c,47.243.93.142,172.31.2.109,,ping有通，可訪問
+i-j6c3yrqewi4av7t3fb54,线路API-PB_专线02_in,CentOS  7.8 64 bit,Running,cn-hongkong-c,,172.26.25.40,,ping有通，可訪問
+i-j6ccdorlec2ebeqkdwfy,线路API-CME测试到VPN_out,CentOS  6.9 64 bit,Running,cn-hongkong-c,,10.249.94.67,,ping有通，無法訪問
+i-j6c55czz7lmmuj25s0aa,易盛-ES_9.0_server01,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.75.153.135,172.31.2.104,,ping有通，可訪問
+i-j6c9ftqv2b7ymf3um2g9,易盛-ES_9.0_db01,CentOS  6.9 64 bit,Starting,cn-hongkong-c,47.90.121.213,172.31.2.103,,ping無響應，無法訪問
+i-j6c8zi7ua632zquiyy5l,易盛-ES_9.0-win01,Windows Server  2012  R2 Data Center Edition 64bit Chinese Edition,Stopped,cn-hongkong-c,47.75.130.107,172.31.2.102,,ping無響應，無法訪問
+i-j6ceb4we2al8qzs56hmz,线路API-ES易胜专线公网-上手,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.75.7.59,172.22.19.242,,ping內網有通 無法訪問
+i-j6c8c13rno7cevhgxteq,线路API-ES易盛专线内网-上手,CentOS  6.9 64 bit,Running,cn-hongkong-c,,172.22.19.241,,ping內網有通 無法訪問
+i-j6cdrs2bq9m4rgq2zqvo,自用-CME专线出口服务器,CentOS  6.9 64 bit,Running,cn-hongkong-c,,172.25.137.25,,ping無響應，無法訪問
+i-j6ci6qattgrn6qu9cpr7,自用-配置文件服务器002,CentOS  6.9 64 bit,Running,cn-hongkong-c,,172.31.2.100,,ping無響應，無法訪問
+i-j6ci6qattgrn6qu9cpr6,自用-配置文件服务器001,CentOS  6.9 64 bit,Running,cn-hongkong-c,,172.31.2.99,,ping無響應，無法訪問
+i-j6cccfiw1j2yt2r9grum,易盛-ES_EFM9.0_win01,Windows Server  2012  R2 Data Center Edition 64bit Chinese Edition,Running,cn-hongkong-c,47.244.60.88,172.31.2.97,,ping無響應，無法訪問
+i-j6c4vks3kjsy9tadh6sa,易盛-ES_EFM9.0_front02,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.90.96.191,172.31.2.96,,ping內網有通 無法訪問
+i-j6c3yut5e5xe3ecxew66,易盛-ES_EFM9.0_front01,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.52.60.29,172.31.2.95,,ping內網有通 無法訪問
+i-j6cg5ahliibu17nxheyj,易盛-ES_EFM9.0_db01,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.244.59.85,172.31.2.94,,ping內網有通 無法訪問
+i-j6cab33s6bgfdah2jd2u,易盛-ES_EFM_9.0-jy01,CentOS  6.9 64 bit,Running,cn-hongkong-c,47.75.210.162,172.31.2.93,,ping內網有通 無法訪問

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KUX.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:KUX.Infrastructure.Controllers.ApiBaseController`1">
+            <summary>
+            api接口默认控制器
+            </summary>
+            <typeparam name="TDefaultService"></typeparam>
+        </member>
+        <member name="F:KUX.Infrastructure.Controllers.ApiBaseController`1.DefaultService">
+            <summary>
+            默认服务
+            </summary>
+        </member>
+        <member name="M:KUX.Infrastructure.Controllers.ApiBaseController`1.#ctor(`0)">
+            <summary>
+            构造
+            </summary>
+            <param name="defaultService">默认服务</param>
+        </member>
+        <member name="T:KUX.Infrastructure.Controllers.ApiBaseController">
+            <summary>
+            控制器服务
+            </summary>
+        </member>
+        <member name="T:KUX.Controllers.Filters.ApiCheckModelAttribute">
+            <summary>
+            对接口模型验证
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiCheckModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            每次请求Action之前发生，，在行为方法执行前执行
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KUX.Controllers.Filters.ApiExceptionFilter">
+            <summary>
+            异常过滤器
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Filters.ApiExceptionFilter._logger">
+            <summary>
+            日志文件
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiExceptionFilter.#ctor(Microsoft.Extensions.Logging.ILogger{KUX.Controllers.Filters.ApiExceptionFilter})">
+            <summary>
+            构造
+            </summary>
+            <param name="logger">本地log服务</param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            异常信息
+            </summary>
+            <param name="context">异常上下文</param>
+        </member>
+        <member name="T:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute">
+            <summary>
+            接口资源加载过滤 拦截资源做缓存
+            防无限调用
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute._memoryCache">
+            <summary>
+            内存缓存
+            </summary>
+        </member>
+        <member name="F:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute._cacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute.#ctor(System.Double)">
+            <summary>
+            构造
+            </summary>
+            <param name="cacheTime">默认缓存时间（秒）</param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute.OnResourceExecuting(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext)">
+            <summary>
+            资源加载之前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute.OnResourceExecuted(Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext)">
+            <summary>
+            资源加载之后
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResourceCacheFilterAttribute.GetCacheKey(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取每个唯一请求的缓存 key
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Controllers.Filters.ApiResultFilterAttribute">
+            <summary>
+            Api 结果返回包装器
+            </summary>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResultFilterAttribute.#ctor(System.Boolean)">
+            <summary>
+            构造
+            </summary>
+            <param name="ignore"></param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResultFilterAttribute.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            结果 返回前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:KUX.Controllers.Filters.ApiResultFilterAttribute.OnResultExecuted(Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext)">
+            <summary>
+            返回结果后
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:KUX.Controllers.PublicController">
+            <summary>
+            公共接口控制器
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,643 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KUX.Repositories.Core</name>
+    </assembly>
+    <members>
+        <member name="T:KUX.Repositories.Core.BaseModels.ApiViewModel">
+            <summary>
+            api 接口返回数据
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.ApiViewModel.Count">
+            <summary>
+            总数
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.Core.BaseModels.ApiViewCountModel`1">
+            <summary>
+            泛型列表数据
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.ApiViewCountModel`1.DataList">
+            <summary>
+            所有数据
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.Core.BaseModels.PageViewExtModel`1">
+            <summary>
+            分页扩展
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewExtModel`1.DataList">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.Core.BaseModels.PageViewModel">
+            <summary>
+            分页数据模型
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.Columns">
+            <summary>
+            列信息
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.Rows">
+            <summary>
+            转换后数据
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.Total">
+            <summary>
+            总数
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.PageSize">
+            <summary>
+            一页显示多少条
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.PageViewModel.Page">
+            <summary>
+            页码
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.Core.BaseModels.TableViewColumn">
+            <summary>
+            列头信息
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.BaseModels.TableViewColumn.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="title">标题</param>
+        </member>
+        <member name="M:KUX.Repositories.Core.BaseModels.TableViewColumn.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            构造
+            </summary>
+            <param name="fieldName">字段名</param>
+            <param name="title">标题</param>
+            <param name="width">宽度</param>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.TableViewColumn.FieldName">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.TableViewColumn.Title">
+            <summary>
+            标题名称
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.TableViewColumn.Show">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:KUX.Repositories.Core.BaseModels.TableViewColumn.Width">
+            <summary>
+            列宽度
+            </summary>
+        </member>
+        <member name="T:KUX.Repositories.Core.DapperUtil.DapperContext">
+            <summary>
+            Dapper sql上下文
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.DapperUtil.DapperContext._db">
+            <summary>
+            数据库连接对象
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.#ctor(System.Data.IDbConnection)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="P:KUX.Repositories.Core.DapperUtil.DapperContext.Context">
+            <summary>
+            连接上下文
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.TransContext">
+            <summary>
+            获取事务连接对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.Execute(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.ExecuteAsync(System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="transaction">transaction</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.ExecuteScalar(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL that selects a single value
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>The first cell selected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.MysqlExecuteIdentity(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL, returning the new inserted identity
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.Query``1(System.String,System.Object,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="buffered">Buffered</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryAsync``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.MysqlQueryFirst``1(System.String,System.Object,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a single-row query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="buffered"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryFirstOrDefaultAsync``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a single-row query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryMultiple``2(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            </summary>
+            <typeparam name="TFirst">First Result</typeparam>
+            <typeparam name="TSecond">Second Resutl</typeparam>
+            <param name="sql">Sql Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryMultipleAsync``2(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            </summary>
+            <typeparam name="TFirst">First Result</typeparam>
+            <typeparam name="TSecond">Second Resutl</typeparam>
+            <param name="sql">Sql Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryMultiple``3(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryMultipleAsync``3(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            for async
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryMultipleAsync``4(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            Async
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <typeparam name="TFour"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperContext.QueryPaged``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TDbOBject"></typeparam>
+             <param name="sql"></param>
+             <param name="param"></param>
+             <param name="commandTimeout"></param>
+             <param name="commandType"></param>
+             <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.Core.DapperUtil.DapperServiceCollectionExtensions">
+            <summary>
+            Dapper 扩展类
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.DapperServiceCollectionExtensions.AddDapper(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String)">
+            <summary>
+            添加 Dapper 扩展
+            </summary>
+            <param name="services"></param>
+            <param name="connectionString">连接字符串</param>
+            <param name="sqlProvider"> <see cref="T:KUX.Repositories.Core.SqlProvider"/> 数据库类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.Core.DapperUtil.IDapperContext">
+            <summary>
+            Dapper 连接上下文
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.TransContext">
+            <summary>
+            连接对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.Execute(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.ExecuteAsync(System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="transaction">事务</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>Number of rows affected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.ExecuteScalar(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL that selects a single value
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns>The first cell selected</returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.MysqlExecuteIdentity(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute parameterized SQL, returning the new inserted identity
+            </summary>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.Query``1(System.String,System.Object,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="buffered">Buffered</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryAsync``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql">SQL Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.MysqlQueryFirst``1(System.String,System.Object,System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a single-row query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="buffered"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryFirstOrDefaultAsync``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Executes a single-row query, returning the data typed as per T
+            </summary>
+            <typeparam name="T">Data typed as per T</typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryMultiple``2(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            </summary>
+            <typeparam name="TFirst">First Result</typeparam>
+            <typeparam name="TSecond">Second Resutl</typeparam>
+            <param name="sql">Sql Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryMultipleAsync``2(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            Async
+            </summary>
+            <typeparam name="TFirst">First Result</typeparam>
+            <typeparam name="TSecond">Second Resutl</typeparam>
+            <param name="sql">Sql Statement</param>
+            <param name="param">Parameters</param>
+            <param name="commandTimeout">Command Timeout</param>
+            <param name="commandType">Command Type</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryMultiple``3(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryMultipleAsync``3(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            Async
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryMultipleAsync``4(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Execute a command that returns two result sets, and access each in tuple
+            Async
+            </summary>
+            <typeparam name="TFirst"></typeparam>
+            <typeparam name="TSecond"></typeparam>
+            <typeparam name="TThird"></typeparam>
+            <typeparam name="TFour"></typeparam>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <param name="commandTimeout"></param>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.DapperUtil.IDapperContext.QueryPaged``1(System.String,System.Object,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+             <summary>
+            
+             </summary>
+             <typeparam name="TDbOBject"></typeparam>
+             <param name="sql"></param>
+             <param name="param"></param>
+             <param name="commandTimeout"></param>
+             <param name="commandType"></param>
+             <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.Core.FreeSqlUtil.FreeSqlBaseRepository`1">
+            <summary>
+            FreeSql 默认仓储
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="T:KUX.Repositories.Core.FreeSqlUtil.AppBaseRepository`2">
+            <summary>
+            App服务默认仓储
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="T:KUX.Repositories.Core.FreeSqlUtil.FreeSqlCoreModule">
+            <summary>d
+            FreeSql 模块配置
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.FreeSqlUtil.FreeSqlCoreModule.RegisterFreeSql(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,KUX.Infrastructure.DefaultDatabaseType,System.String)">
+            <summary>
+            注册 仓储层
+            </summary>
+            <param name="services"></param>
+            <param name="connectionString"></param>
+            <param name="defaultDatabaseType"></param>
+            <param name="assemblyFilter"></param>
+        </member>
+        <member name="M:KUX.Repositories.Core.FreeSqlUtil.FreeSqlCoreModule.CreateFreeSql(System.String,KUX.Infrastructure.DefaultDatabaseType)">
+            <summary>
+            创建 free sql 对象
+            </summary>
+            <param name="connectionString">连接字符串</param>
+            <param name="defaultDatabaseType">数据库类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:KUX.Repositories.Core.ServiceRepository`1">
+            <summary>
+            仓储服务基类
+            实现自身注入
+            </summary>
+            <typeparam name="TModel"></typeparam>
+        </member>
+        <member name="F:KUX.Repositories.Core.ServiceRepository`1.DapperContext">
+            <summary>
+            dapper上下文
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.ServiceRepository`1.#ctor(IFreeSql,KUX.Repositories.Core.DapperUtil.IDapperContext,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.String,System.String})">
+            <summary>
+            构造
+            </summary>
+            <param name="freeSql"></param>
+            <param name="_dapperContext"></param>
+            <param name="filter"></param>
+            <param name="asTable"></param>
+        </member>
+        <member name="M:KUX.Repositories.Core.ServiceRepository`1.AsAppDataModelAsync``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            App前端列表模型
+            </summary>
+            <typeparam name="T">泛型数据</typeparam>
+            <param name="data">数据内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.ServiceRepository`1.AsPageViewModelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Int64,System.Collections.Generic.List{KUX.Repositories.Core.BaseModels.TableViewColumn})">
+            <summary>
+            转换为分页视图模型
+            </summary>
+            <param name="data"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="total"></param>
+            <param name="columnHeads">表头</param>
+            <typeparam name="TData"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.ServiceRepository`1.AsPagingListViewModelAsync``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Int64,System.Collections.Generic.List{KUX.Repositories.Core.BaseModels.TableViewColumn})">
+            <summary>
+            分页视图扩展，增加DataList泛型List返回
+            </summary>
+            <typeparam name="TData"></typeparam>
+            <param name="data"></param>
+            <param name="page"></param>
+            <param name="size"></param>
+            <param name="total"></param>
+            <param name="columnHeads">列头</param>
+            <returns></returns>
+        </member>
+        <member name="M:KUX.Repositories.Core.ServiceRepository`1.CreateColumnHeads(KUX.Repositories.Core.BaseModels.PageViewModel,System.Collections.Generic.List{System.String},System.Collections.Generic.List{KUX.Repositories.Core.BaseModels.TableViewColumn})">
+            <summary>
+            创建列头
+            </summary>
+            <param name="pagingViewModel"></param>
+            <param name="fieldNames"></param>
+            <param name="columnHeads"></param>
+        </member>
+        <member name="T:KUX.Repositories.Core.SqlProvider">
+            <summary>
+            Sql 类型
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.SqlServer">
+            <summary>
+            SqlServer 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.Sqlite">
+            <summary>
+            Sqlite 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.MySql">
+            <summary>
+            MySql 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.Npgsql">
+            <summary>
+            PostgreSQL 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.Oracle">
+            <summary>
+            Oracle 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.Firebird">
+            <summary>
+            Firebird 提供器程序集
+            </summary>
+        </member>
+        <member name="F:KUX.Repositories.Core.SqlProvider.SqlProviderDbConnectionTypeCollection">
+            <summary>
+            数据库提供器连接对象类型集合
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.SqlProvider.#cctor">
+            <summary>
+            静态构造函数
+            </summary>
+        </member>
+        <member name="M:KUX.Repositories.Core.SqlProvider.GetDbConnectionType(System.String)">
+            <summary>
+            获取数据库连接对象类型
+            </summary>
+            <param name="sqlProvider"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
