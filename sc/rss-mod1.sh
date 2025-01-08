@@ -2,7 +2,6 @@
 
 [root@bf-dev-152 sre]# cat rss-mod.sh
 #!/bin/bash
-# ray
 # 2020-8-20 init version: query info for rd modules
 
 array_rd_modules=(

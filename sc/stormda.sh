@@ -1,7 +1,7 @@
 ## stormda.sh
 [root@bf-dev-152 sre]# cat stormda.sh
 #!/bin/bash
-# 2020-8-11 ray
+
 # init version: cp dadaanalyze to storm-nimbus start/list or kill topo
 # 0.1  version: add var for gcp path & env (var_da, var_env
 
