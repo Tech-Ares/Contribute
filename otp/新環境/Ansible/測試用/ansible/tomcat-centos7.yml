@@ -1,0 +1,108 @@
+---
+- hosts: tomcat
+  remote_user: root
+
+  tasks:
+    - name: mkdir /src
+      file:
+        path: /src
+        state: directory
+
+    - name: mkdir /home/env_conf
+      file:
+        path: /home/env_conf
+        state: directory
+
+    - name: mkdir /home/publishJenkins
+      file:
+        path: /home/publishJenkins
+        state: directory
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansible/tomcat/script
+        dest: /src/
+
+    - name: copy source to /src
+      copy:
+        src: /home/ansible/tomcat/source
+        dest: /src/
+
+    - name: install x11
+      shell: 
+        cmd: "sh /src/script/x11.sh"
+
+#    - name: install Java
+#      shell:
+#        cmd: "sh /src/script/jdk_install.sh"
+
+    - name: Add user tomcat
+      shell:
+        cmd: "useradd -r tomcat --shell /bin/false"
+
+    - name: copy tomcat-admin-888.tar.gz to /home
+      copy:
+        src: /home/ansible/tomcat/home/tomcat-admin-8888.tar.gz
+        dest: /home/
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/tomcat-admin-8888.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: copy tomcat-client-8088.tar.gz to /home
+      copy:
+        src: /home/ansible/tomcat/home/tomcat-client-8088.tar.gz
+        dest: /home/
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/tomcat-client-8088.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: copy tomcat admin and client start.sh to /etc/init.d/
+      copy:
+        src: /home/ansible/tomcat/home/init.d/
+        dest: /etc/init.d/
+
+    - name: copy server
+      copy:
+        src: /home/ansible/tomcat/system/
+        dest: /usr/lib/systemd/system/
+
+    - name: systemd reload
+      systemd:
+        daemon_reload: yes
+
+    - name: chown tomcat-admin
+      command:
+        cmd: chown -R tomcat:tomcat /home/tomcat-admin-8888
+
+    - name: chown tomcat-client
+      command:
+        cmd: chown -R tomcat:tomcat /home/tomcat-client-8088
+
+#    - name: install change-ip
+#      shell:
+#        cmd: "sh /src/script/chang-ip.sh"
+
+    - name: install change-zabbix-port.sh
+      shell:
+        cmd: "sh /src/script/change-zabbix-port.sh"
+
+    - name: Enable tomcat-admin
+      systemd:
+        name: tomcat-admin
+        state: started
+        enabled: yes
+
+    - name: Enable tomcat-client
+      systemd:
+        name: tomcat-client
+        state: started
+        enabled: yes
+
+    - name: Rebooting......
+      reboot:

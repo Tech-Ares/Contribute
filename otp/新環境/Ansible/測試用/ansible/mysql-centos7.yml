@@ -1,0 +1,172 @@
+---
+- hosts: newdb
+  remote_user: root
+
+  tasks:
+
+    - name: Set a hostname
+      hostname:
+        name: DB-129
+
+    - name: mkdir /src
+      file:
+        path: /src
+        state: directory
+
+    - name: copy repo to /etc/yum.repos.d/
+      copy:
+        src: /home/ansbile/mysql/repo/
+        dest: /etc/yum.repos.d/
+
+    - name: mkdir /home/version3.0
+      file:
+        path: /home/version3.0
+        state: directory
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansbile/java/script/
+        dest: /src/
+
+    - name: install epel-release
+      yum:
+        name:
+          - epel-release
+        state: latest
+        update_cache: yes
+
+    - name: copy file to /home/version3.0
+      copy:
+        src: /home/ansbile/ice/version3.0
+        dest: /home/version3.0
+
+    - name: Add group iceuser
+      ansible.builtin.group:
+        name: iceuser
+
+    - name: Add the user ICE
+      user:
+        name: iceuser
+        groups: iceuser
+        password: "{{ 'icepass' | password_hash('sha512') }}"
+
+    - name: chown iceuser for /home/version3.0
+      shell:
+        cmd: "chown -R iceuser:iceuser /home/version3.0"
+
+    - name: disable firewalld
+      systemd:
+        name: firewalld
+        enabled: no
+
+    - name: install rpm
+      yum:
+        name:
+          - vim
+          - wget
+          - net-tools
+          - openssl
+          - openssh-clients
+          - psmisc
+          - ntp
+          - lrzsz
+          - kernel-devel
+          - kernel-headers
+          - kernel
+          - zip
+          - unzip
+          - man
+          - time
+          - glibc-devel
+          - glibc-headers
+          - xorg-x11-font-utils
+          - xorg-x11-fonts-Type1
+          - xorg-x11-server-Xorg
+          - xorg-x11-xauth
+          - xorg-x11-apps
+          - bzip2-devel
+          - openssl-devel
+          - zlib
+          - zlib-devel
+          - make
+          - gmp-devel
+          - mpfr-devel
+          - libmpc-devel
+          - bzip2
+          - libdb-utils
+        state: present
+
+    - name: wget ice repo
+      shell:
+        cmd: "wget -P /etc/yum.repos.d/ https://zeroc.com/download/Ice/3.6/el6/zeroc-ice3.6.repo"
+
+    - name: Install the 'Development tools' package group
+      yum:
+        name: "@Development tools"
+        state: present
+
+    - name: yum install mcpp-devel
+      yum:
+        name:
+          - mcpp-devel
+        state: present
+        update_cache: yes
+
+    - name: Yum update the system
+      yum:
+        name: "*"
+        state: latest
+
+    - name: install filebeat
+      shell:
+        cmd: "rpm -ivh /src/filebeat-oss-7.8.1-x86_64.rpm"
+
+    - name: Rebooting......
+      reboot:
+
+    - name: Use NTP
+      shell:
+        cmd: ntpdate time.stdtime.gov.tw
+
+    - name: setting NTP crontab
+      cron:
+        name: "NTP crontab"
+        minute: "10"
+        hour: "5"
+        job: "root (/usr/sbin/ntpdate time.stdtime.gov.tw && /sbin/hwclock -w) &> /dev/null"
+
+    - name: copy script to /etc/systemd/system/
+      copy:
+        src: /home/ansbile/java/systemd/
+        dest: /etc/systemd/system/
+
+    - name: install gcc
+      shell:
+        cmd: "sh /src/install_gcc630.sh"
+
+    - name: copy libstdc++ to /usr/lib64
+      copy:
+        src: /home/ansbile/java/script/libstdc++.so.6
+        dest: /usr/lib64/
+
+    - name: copy jdk-8u281-linux-x64.tar.gz to /src
+      copy:
+        src: /home/ansbile/tomcat/jdk-8u281-linux-x64.tar.gz
+        dest: /src/jdk-8u281-linux-x64.tar.gz
+
+    - name: install jdk 281
+      shell:
+        cmd: "sh /src/jdk_install.sh"
+
+    - name: install ice
+      shell:
+        cmd: "sh /src/install_ice.sh"
+
+    - name: copy rc.local
+      copy:
+        src: /home/ansbile/java/script/rc.local
+        dest: /etc/rc.local
+
+    - name: chmod +x /etc/rc.d/rc.local
+      shell:
+        cmd: "chmod +x /etc/rc.d/rc.local"

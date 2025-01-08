@@ -1,0 +1,72 @@
+---
+- hosts: new
+  remote_user: root
+
+  tasks:
+#    - name: set hostname /etc/sysconfig/network
+#      replace:
+#        path: /etc/sysconfig/network
+#        regexp: '^HOSTNAME=localhost.localdomain'
+#        replace: 'HOSTNAME=tomcat02'
+
+#    - name: set hostname /etc/hosts
+#      shell:
+#        cmd: "sed -i 's/localhost.localdomain/tomcat02/g'"
+
+#    - name: set selinux disabled
+#      replace:
+#        path: /etc/selinux/config
+#        regexp: '^SELINUX=enforcing'
+#        replace: 'SELINUX=disabled'
+
+    - name: copy nginx repo file
+      copy:
+        src: /home/ansible/nginx/nginx.repo
+        dest: /etc/yum.repos.d/nginx.repo
+
+    - name: install nginx
+      yum:
+        name: nginx
+        state: latest
+
+    - name: copy nginx config file
+      copy:
+        src: /home/ansible/nginx/nginx.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: copy nginx config directory
+      copy:
+        src: /home/ansible/nginx/conf.d/
+        dest: /etc/nginx/conf.d/
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansible/nginx/
+        dest: /src/
+
+    - name: touch Nginx access log
+      copy:
+        src: /home/ansible/nginx/log/
+        dest: /var/log/nginx/log/
+        owner: nginx
+
+    - name: touch Nginx access log
+      file:
+        path: /var/www/html/log/
+        state: directory
+        owner: nginx
+        group: nginx
+
+#    - name: chang ip
+#      shell:
+#        cmd: "sh /src/chang-ip.sh"
+
+    - name: chown -R /etc/nginx
+      shell:
+        cmd: "chown -R nginx:nginx /etc/nginx"
+
+    - name: start nginx
+      systemd:
+        name: nginx
+        state: started
+        enabled: yes
