@@ -9,10 +9,9 @@ The implementation system architecture uses spring cloud as the microservice sys
 
 **Project goals**:
 
-Standardize Git development workflow (GitLab CI) and combine Jenkins Pipeline with workflow to build CI/CD
+- Standardize Git development workflow (GitLab CI) and combine Jenkins Pipeline with workflow to build CI/CD
+- Automatically deploy required services (mongo, mysql, jdk, nginx...) with Ansible
+- Modular FTP combines the development process with CI/CD and introduces DEVOPS spiritual applications.
 
-Automatically deploy required services (mongo, mysql, jdk, nginx...) with Ansible
-
-Modular FTP combines the development process with CI/CD and introduces DEVOPS spiritual applications.
 
 **Achievements**: Product environment operations
