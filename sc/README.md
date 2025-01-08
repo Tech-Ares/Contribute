@@ -1,9 +1,18 @@
-**Name**: MediaWiki build
+**Name**: DEV, QAT, UAT, PROD new environment construction
 
 **link**:
 
-**Responsibilities**: Collaborator
+**Responsibilities**: Collaborate with other teams
 
-**Challenge**: ITOC originally used cfns, but due to the cost of operation and management, it looked for a free alternative. The data migration project was huge (manual migration)
+**Challenge**: From zero to something
+The implementation system architecture uses spring cloud as the microservice system, nginx as the reverse proxy, fastdfs as the high-performance distributed file system, Redis as the in-memory key-value database, kafka as the message queue, grafana as the system monitoring, and use Storm does data statistics, uses Mysql & Mongodb as the data persistence layer, uses telegram for alarms, uses docker service containerization, Nacos serves as the service registration center and configuration center, and Sentine-dashboard does health management and monitoring. And construct the communication and data exchange model between systems in the line transfer mode.
 
-**Achievements**: Operational use
+**Project goals**:
+
+Standardize Git development workflow (GitLab CI) and combine Jenkins Pipeline with workflow to build CI/CD
+
+Automatically deploy required services (mongo, mysql, jdk, nginx...) with Ansible
+
+Modular FTP combines the development process with CI/CD and introduces DEVOPS spiritual applications.
+
+**Achievements**: Product environment operations
