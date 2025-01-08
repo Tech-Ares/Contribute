@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2 - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="http://md.aceqilin.com/favicon.png">
+    <link rel="apple-touch-icon" href="http://md.aceqilin.com/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/octicons.min.css" integrity="sha256-4eCms8tUm+iL29tUvmRhNRnz/7lNI4oTtQzqa/uM2dI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.night .markdown-body h1 .octicon-link,.night .markdown-body h2 .octicon-link,.night .markdown-body h3 .octicon-link,.night .markdown-body h4 .octicon-link,.night .markdown-body h5 .octicon-link,.night .markdown-body h6 .octicon-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172"><a class="anchor hidden-xs" href="#DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172" title="DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172"><span class="octicon octicon-link"></span></a>DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2</h1><p></p><div class="toc"><ul><li><a href="#DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172" title="DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2">DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2</a><ul><li><a href="#前言" title="前言">前言</a><ul><li><a href="#文件常規" title="文件常規">文件常規</a></li></ul></li><li><a href="#注意事項" title="注意事項">注意事項</a></li><li><a href="#請求簽章" title="請求簽章">請求簽章</a></li><li><a href="#Game-API-訊息代碼說明" title="Game API-訊息代碼說明">Game API-訊息代碼說明</a><ul><li><a href="#回傳代碼說明" title="回傳代碼說明">回傳代碼說明</a></li></ul></li><li><a href="#Game-API-可支援語系" title="Game API-可支援語系">Game API-可支援語系</a></li><li><a href="#Game-API-可支援幣別" title="Game API-可支援幣別">Game API-可支援幣別</a></li><li><a href="#Game-API-時間格式" title="Game API-時間格式">Game API-時間格式</a></li><li><a href="#Wallet-API-錢包操作" title="Wallet API-錢包操作">Wallet API-錢包操作</a><ul><li><a href="#Wallet-API-訊息代碼說明" title="Wallet API 訊息代碼說明">Wallet API 訊息代碼說明</a></li><li><a href="#Wallet-API-取餘額" title="Wallet API-取餘額">Wallet API-取餘額</a></li><li><a href="#Wallet-API-下注請求" title="Wallet API-下注請求">Wallet API-下注請求</a></li><li><a href="#Wallet-API-派彩請求" title="Wallet API-派彩請求">Wallet API-派彩請求</a></li><li><a href="#Wallet-API-取消請求" title="Wallet API-取消請求">Wallet API-取消請求</a></li></ul></li><li><a href="#進入遊戲" title="進入遊戲">進入遊戲</a></li><li><a href="#Game-API-使用者" title="Game API-使用者">Game API-使用者</a><ul><li><a href="#建立使用者" title="建立使用者">建立使用者</a></li><li><a href="#使用者登出" title="使用者登出">使用者登出</a></li><li><a href="#GAME-API-使用者登入遊戲" title="GAME API-使用者登入遊戲">GAME API-使用者登入遊戲</a></li></ul></li><li><a href="#Game-API-下注紀錄" title="Game API-下注紀錄">Game API-下注紀錄</a><ul><li><a href="#定義結構參考-Structure" title="定義結構參考 Structure">定義結構參考 Structure</a></li><li><a href="#取得玩家下注紀錄" title="取得玩家下注紀錄">取得玩家下注紀錄</a></li><li><a href="#取得玩家詳細下注紀錄頁面連結" title="取得玩家詳細下注紀錄頁面連結">取得玩家詳細下注紀錄頁面連結</a></li></ul></li></ul></li><li><a href="#修訂版本" title="修訂版本">修訂版本</a></li></ul></div><p></p><h2 id="前言"><a class="anchor hidden-xs" href="#前言" title="前言"><span class="octicon octicon-link"></span></a>前言</h2><h3 id="文件常規"><a class="anchor hidden-xs" href="#文件常規" title="文件常規"><span class="octicon octicon-link"></span></a>文件常規</h3><p>本指南使用了幾種常規，以強調特定文字與詞組，並著重於特定的資訊。</p><h4 id="註解和警告"><a class="anchor hidden-xs" href="#註解和警告" title="註解和警告"><span class="octicon octicon-link"></span></a>註解和警告</h4><p>我們將使用三種視覺上的形式，來強調可能會被遺漏掉的資訊。</p><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>注意:</strong></em></p>
+<blockquote>
+<p>註解代表某些作業上的提示、捷徑或是其它完成方式。忽略註解並不會帶來太大的負面影響，不過您可能會忽略掉某些能夠較輕鬆完成工作的方式。</p>
+</blockquote>
+</div><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重點:</strong></em></p>
+<blockquote>
+<p>重點方塊會將容易遺漏掉的項目詳細列出。倘若您忽略掉重點方塊，雖然不會造成資料遺失，不過卻會造成工作上的不便與其它影響。</p>
+</blockquote>
+</div><div class="alert alert-danger">
+<p><i class="fa fa-exclamation-triangle fa-fw"></i><em><strong>警告:</strong></em></p>
+<blockquote>
+<p>任何警告都不該被忽略掉，忽略警告則很有可能會造成介接失敗。</p>
+</blockquote>
+</div><h2 id="注意事項"><a class="anchor hidden-xs" href="#注意事項" title="注意事項"><span class="octicon octicon-link"></span></a>注意事項</h2><ol>
+<li>代理商編號、Game API位址、Game API公開金鑰資訊，請洽Dragoon Soft窗口索取。</li>
+<li>實行介接前，請先提供貴司欲連線之IP。（回填於MIF文件內）</li>
+<li>介接傳遞內容均為 JSON 格式，編碼為 UTF-8。</li>
+</ol><h2 id="請求簽章"><a class="anchor hidden-xs" href="#請求簽章" title="請求簽章"><span class="octicon octicon-link"></span></a>請求簽章</h2><h4 id="API資料簽章方式"><a class="anchor hidden-xs" href="#API資料簽章方式" title="API資料簽章方式"><span class="octicon octicon-link"></span></a>API資料簽章方式</h4><ul>
+<li>所有Game API請求都必須由運營商簽名。</li>
+<li>所有Wallet API請求都必須由DS簽名。</li>
+<li>所有Wallet API請求都必須由運營商實作與驗證。</li>
+</ul><h4 id="加密方式與流程"><a class="anchor hidden-xs" href="#加密方式與流程" title="加密方式與流程"><span class="octicon octicon-link"></span></a>加密方式與流程</h4><ul>
+<li>雙方都會使用 RSA-SHA256 進行簽章校驗。</li>
+<li>在介接之前，運營商生成RSA私鑰/公鑰，並將公鑰交由DS。(RSA KEY長度建議為1024、2048)</li>
+<li>DS生成RSA私鑰/公鑰，並將其公鑰發送給運營商。</li>
+<li>所有請求的HTTP Body將使用相應的私鑰與RSA-SHA256簽名並編碼為BASE64。</li>
+<li>Body JSON排序不得更變</li>
+<li>簽名 X-Ds-Signature 需放在請求標頭(Header)中。</li>
+<li>運營商需要使用DS提供的公鑰驗證所有Wallet API請求。</li>
+<li>DS使用運營商提供的公鑰驗證所有API請求。</li>
+<li>對於請求Body使用<code>私有金鑰</code> 作為密鑰進行<code>RSA-SHA256</code> 簽章並進行 Base64 編碼, 將結果作為請求標頭<code>X-Ds-Signature</code> 值。</li>
+</ul><h4 id="私钥生成方法"><a class="anchor hidden-xs" href="#私钥生成方法" title="私钥生成方法"><span class="octicon octicon-link"></span></a>私钥生成方法</h4><pre><code>$ openssl genrsa -out private.pem 2048
+</code></pre><h4 id="公钥生成方法"><a class="anchor hidden-xs" href="#公钥生成方法" title="公钥生成方法"><span class="octicon octicon-link"></span></a>公钥生成方法</h4><pre><code>$ openssl rsa -in private.pem -pubout &gt; public.pub
+</code></pre><p><strong>範例</strong></p><pre><code class="x hljs"><span class="hljs-keyword">POST</span> <span class="hljs-string">/v1/member/create</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">X-Ds-Signature</span>: byMYoU1abC/86EVvEbwNtumfgZnlbGaAwbeJ3qu668RCZRnkFv8B3fCRAzM9rDnDdjommrhK0B3BVmbpdCv6UzyY1avfxE2lbihvrF/LMkY4oKOyL8IJuGBbSLgzpI+hKYzcb+qD/En9ZAH0V4gNXh6RqI/XIgfWhB55zF9pBs4=
+
+<span class="json">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">"1ceda4754e7e413592a6450fb224165f"</span>
+}
+</span></code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>傳遞內容須檢查是否為JSON格式。</p>
+</blockquote>
+</div><div class="alert alert-danger">
+<p><i class="fa fa-exclamation-triangle fa-fw"></i><em><strong>警告:</strong></em></p>
+<blockquote>
+<p><code>X-Ds-Signature</code> 簽章錯誤會導致查詢失敗。</p>
+</blockquote>
+</div><h2 id="Game-API-訊息代碼說明"><a class="anchor hidden-xs" href="#Game-API-訊息代碼說明" title="Game-API-訊息代碼說明"><span class="octicon octicon-link"></span></a>Game API-訊息代碼說明</h2><h3 id="回傳代碼說明"><a class="anchor hidden-xs" href="#回傳代碼說明" title="回傳代碼說明"><span class="octicon octicon-link"></span></a>回傳代碼說明</h3><table>
+<thead>
+<tr>
+<th>code</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>未知錯誤</td>
+</tr>
+<tr>
+<td>1</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>2</td>
+<td>重複</td>
+</tr>
+<tr>
+<td>3</td>
+<td>必填欄位</td>
+</tr>
+<tr>
+<td>4</td>
+<td>登入失敗</td>
+</tr>
+<tr>
+<td>5</td>
+<td>API存取失敗</td>
+</tr>
+<tr>
+<td>6</td>
+<td>找不到資訊</td>
+</tr>
+<tr>
+<td>7</td>
+<td>請求超時</td>
+</tr>
+<tr>
+<td>8</td>
+<td>驗證碼錯誤</td>
+</tr>
+<tr>
+<td>9</td>
+<td>用戶鎖定</td>
+</tr>
+<tr>
+<td>10</td>
+<td>找不到玩家</td>
+</tr>
+<tr>
+<td>11</td>
+<td>找不到代理</td>
+</tr>
+<tr>
+<td>12</td>
+<td>数据类型错误</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>簽章失敗</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>驗證失敗</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>資料庫存取失敗</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>找不到錢包</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>找不到交易</td>
+</tr>
+<tr>
+<td>1007</td>
+<td>處理失敗</td>
+</tr>
+<tr>
+<td>1012</td>
+<td>時間超出範圍</td>
+</tr>
+</tbody>
+</table><h2 id="Game-API-可支援語系"><a class="anchor hidden-xs" href="#Game-API-可支援語系" title="Game-API-可支援語系"><span class="octicon octicon-link"></span></a>Game API-可支援語系</h2><table>
+<thead>
+<tr>
+<th>參數</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zh_cn</td>
+<td>簡中</td>
+</tr>
+<tr>
+<td>en_us</td>
+<td>英文</td>
+</tr>
+<tr>
+<td>vi_na</td>
+<td>越南文</td>
+</tr>
+<tr>
+<td>th_th</td>
+<td>泰文</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>在使用未受支援之區域語言的參數上，嘗試進行設定將會失敗。</p>
+</blockquote>
+</div><h2 id="Game-API-可支援幣別"><a class="anchor hidden-xs" href="#Game-API-可支援幣別" title="Game-API-可支援幣別"><span class="octicon octicon-link"></span></a>Game API-可支援幣別</h2><table>
+<thead>
+<tr>
+<th>參數</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNY</td>
+<td>人民幣</td>
+</tr>
+<tr>
+<td>EUR</td>
+<td>歐元</td>
+</tr>
+<tr>
+<td>GBP</td>
+<td>英鎊</td>
+</tr>
+<tr>
+<td>HKD</td>
+<td>港幣</td>
+</tr>
+<tr>
+<td>IDR</td>
+<td>印尼盾 (K)</td>
+</tr>
+<tr>
+<td>JPY</td>
+<td>日元</td>
+</tr>
+<tr>
+<td>KRW</td>
+<td>韓元 (K)</td>
+</tr>
+<tr>
+<td>MYR</td>
+<td>馬來西亞令吉</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>新加坡元</td>
+</tr>
+<tr>
+<td>THB</td>
+<td>泰銖</td>
+</tr>
+<tr>
+<td>USD</td>
+<td>美元</td>
+</tr>
+<tr>
+<td>VND</td>
+<td>越南盾 (K)</td>
+</tr>
+<tr>
+<td>MMK</td>
+<td>緬甸元 (K)</td>
+</tr>
+</tbody>
+</table><ul>
+<li><code>K</code> 符號為千元計算。</li>
+</ul><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>注意:</strong></em></p>
+<blockquote>
+<p>幣別是Dragoon Soft依照貴司於MIF文件中填寫的資訊協助設定完成，<br>
+不需於進行API傳輸時帶入此參數。</p>
+</blockquote>
+</div><h2 id="Game-API-時間格式"><a class="anchor hidden-xs" href="#Game-API-時間格式" title="Game-API-時間格式"><span class="octicon octicon-link"></span></a>Game API-時間格式</h2><ul>
+<li>格式： <code>RFC3339</code></li>
+<li>Example: <code>2018-10-18T05:47:51+05:00</code></li>
+</ul><h2 id="Wallet-API-錢包操作"><a class="anchor hidden-xs" href="#Wallet-API-錢包操作" title="Wallet-API-錢包操作"><span class="octicon octicon-link"></span></a>Wallet API-錢包操作</h2><p>營運商需實作錢包操作接口</p><h3 id="Wallet-API-訊息代碼說明"><a class="anchor hidden-xs" href="#Wallet-API-訊息代碼說明" title="Wallet-API-訊息代碼說明"><span class="octicon octicon-link"></span></a>Wallet API 訊息代碼說明</h3><p>回傳代碼說明</p><table>
+<thead>
+<tr>
+<th>status</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>未知錯誤. 下注收到會接著執行取消流程. 派彩收到會進入排程, 等待下次派彩. 取消收到會進入排程, 等待下次取消.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>2</td>
+<td>會員不存在.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>驗證失敗</td>
+</tr>
+<tr>
+<td>4</td>
+<td>重複交易</td>
+</tr>
+<tr>
+<td>5</td>
+<td>餘額不足</td>
+</tr>
+<tr>
+<td>6</td>
+<td>交易編號不存在. 平台收到派彩及取消請求時, 若之前沒有收到同編號的下注單, 需回應此代碼</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>尚未在預期狀態都等同未知錯誤</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-取餘額"><a class="anchor hidden-xs" href="#Wallet-API-取餘額" title="Wallet-API-取餘額"><span class="octicon octicon-link"></span></a>Wallet API-取餘額</h3><p>取得使用者餘額</p><h4 id="請求網址-URL"><a class="anchor hidden-xs" href="#請求網址-URL" title="請求網址-URL"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/balance <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters" title="請求參數-Request-Parameters"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>是</td>
+<td>錢包訪問令牌</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>:<span class="hljs-string">"e278a9ea38da42dd9b84148c2f99a031"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters" title="回傳參數-Response-Parameters"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>使用者餘額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-訊息代碼說明" title="Wallet-API-訊息代碼說明">錢包狀態碼</a></td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">99999.1</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><hr><h3 id="Wallet-API-下注請求"><a class="anchor hidden-xs" href="#Wallet-API-下注請求" title="Wallet-API-下注請求"><span class="octicon octicon-link"></span></a>Wallet API-下注請求</h3><p>使用者下注时调用<br>
+运营商需将玩家余额按照下注金额减少，并返回新的使用者余额。</p><h4 id="請求網址-URL1"><a class="anchor hidden-xs" href="#請求網址-URL1" title="請求網址-URL1"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/bet <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters1"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters1" title="請求參數-Request-Parameters1"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>是</td>
+<td>交易識別號 PS: 全局唯一</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Number</td>
+<td>是</td>
+<td>交易金額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>是</td>
+<td>錢包訪問令牌</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>操作交易<code>amount</code> 金額皆為正數</p>
+</blockquote>
+</div><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">"88406af3628342f19cea6042d0cb2267"</span>,
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters1"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters1" title="回傳參數-Response-Parameters1"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>交易識別號 PS:同請求之交易識別號</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>使用者餘額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-訊息代碼說明" title="Wallet-API-訊息代碼說明">錢包狀態碼</a></td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>下注時若未收到狀態碼為<code>1</code>，將立即發送取消請求。</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-派彩請求"><a class="anchor hidden-xs" href="#Wallet-API-派彩請求" title="Wallet-API-派彩請求"><span class="octicon octicon-link"></span></a>Wallet API-派彩請求</h3><p>当使用者派彩时调用。<br>
+预计运营商将按金额增加使用者余额并返回新余额。</p><p>在更改用户余额之前，运营商必须检查是否有重複派彩或者已經取消下注。</p><h4 id="請求網址-URL2"><a class="anchor hidden-xs" href="#請求網址-URL2" title="請求網址-URL2"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/payout <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters2"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters2" title="請求參數-Request-Parameters2"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>是</td>
+<td>交易識別號 同下注交易識別</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Number</td>
+<td>是</td>
+<td>交易金額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>操作交易<code>amount</code> 金額皆為正數</p>
+</blockquote>
+</div><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>注意:</strong></em></p>
+<blockquote>
+<p>重试策略：<br>
+如果請求時网络出现故障，我们會将請求重试。<br>
+並將請求继续重試，并且將金額返回给使用者。<br>
+每次嘗試重試將會遞延間隔時間。</p>
+</blockquote>
+</div><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters2"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters2" title="回傳參數-Response-Parameters2"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>交易識別號 PS:同請求之交易識別號</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>使用者餘額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-訊息代碼說明" title="Wallet-API-訊息代碼說明">錢包狀態碼</a></td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>下注時若未收到狀態碼為<code>1</code>，將立即發送取消請求。</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-取消請求"><a class="anchor hidden-xs" href="#Wallet-API-取消請求" title="Wallet-API-取消請求"><span class="octicon octicon-link"></span></a>Wallet API-取消請求</h3><p>下注時若未收到狀態碼為<code>1</code>，將立即發送取消請求。</p><h4 id="請求網址-URL3"><a class="anchor hidden-xs" href="#請求網址-URL3" title="請求網址-URL3"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/cancel <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters3"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters3" title="請求參數-Request-Parameters3"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>是</td>
+<td>交易識別號 同下注交易識別</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>取消操作交易將返還下注金額</p>
+</blockquote>
+</div><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>注意:</strong></em></p>
+<blockquote>
+<p>重试策略：<br>
+如果請求時网络出现故障，我们會将請求重试。<br>
+並將請求继续重試，并且將金額返回给使用者。<br>
+每次嘗試重試將會遞延間隔時間。</p>
+</blockquote>
+</div><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters3"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters3" title="回傳參數-Response-Parameters3"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>交易識別號 PS:同請求之交易識別號</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>使用者餘額 PS:支持至小數二位</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-訊息代碼說明" title="Wallet-API-訊息代碼說明">錢包狀態碼</a></td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><h2 id="進入遊戲"><a class="anchor hidden-xs" href="#進入遊戲" title="進入遊戲"><span class="octicon octicon-link"></span></a><s>進入遊戲</s></h2><p>玩家跳轉啟動遊戲</p><div class="alert alert-danger">
+<p><i class="fa fa-exclamation-triangle fa-fw"></i><em><strong>警告:</strong></em></p>
+<blockquote>
+<p>即將棄用 請使用<a href="#使用者登入遊戲"><strong>使用者登入遊戲</strong></a></p>
+</blockquote>
+</div><h4 id="請求網址-URL4"><a class="anchor hidden-xs" href="#請求網址-URL4" title="請求網址-URL4"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://link.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/game/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>game_id</span><span class="token punctuation">&gt;</span></span>/?token=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>token</span><span class="token punctuation">&gt;</span></span>&amp;lang=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>lang</span><span class="token punctuation">&gt;</span></span>&amp;oper=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>oper</span><span class="token punctuation">&gt;</span></span>&amp;backurl=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>backurl</span><span class="token punctuation">&gt;</span></span> <span class="token url">[GET]</span>
+</code></pre><h4 id="請求參數-Request-Parameters4"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters4" title="請求參數-Request-Parameters4"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>是</td>
+<td>由使用者登入方法提供</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>是</td>
+<td>由可支援語系提供</td>
+</tr>
+<tr>
+<td>oper</td>
+<td>String</td>
+<td>否</td>
+<td>額外選填參數</td>
+</tr>
+<tr>
+<td>backurl</td>
+<td>String</td>
+<td>否</td>
+<td>離開或結束遊戲 轉跳至該網址</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs"><span class="hljs-keyword">GET</span> <span class="hljs-string">/game/&lt;game_id&gt;/?token=&lt;token&gt;&amp;lang=&lt;lang&gt;&amp;oper=&lt;oper&gt;</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: text/plain; charset=utf-8
+<span class="hljs-attribute">Host</span>: &lt;url&gt;
+<span class="hljs-attribute">Connection</span>: close
+</code></pre><h4 id="請求回傳-Response"><a class="anchor hidden-xs" href="#請求回傳-Response" title="請求回傳-Response"><span class="octicon octicon-link"></span></a>請求回傳 Response</h4><p><strong>範例</strong></p><pre><code class="x hljs">HTTP/1.1 <span class="hljs-number">301</span> Moved Permanently
+<span class="hljs-attribute">Server</span>: nginx/1.15.5
+<span class="hljs-attribute">Date</span>: Wed, 12 Dec 2018 09:51:02 GMT
+<span class="hljs-attribute">Content-Type</span>: text/html
+<span class="hljs-attribute">Content-Length</span>: 169
+<span class="hljs-attribute">Connection</span>: close
+<span class="hljs-attribute">Location</span>: https://&lt;game_server_url&gt;/h5/&lt;game_id&gt;/?token=&lt;token&gt;&amp;lang=&lt;lang&gt;&amp;oper=&lt;oper&gt;&amp;backurl=&lt;backurl&gt;
+</code></pre><h2 id="Game-API-使用者"><a class="anchor hidden-xs" href="#Game-API-使用者" title="Game-API-使用者"><span class="octicon octicon-link"></span></a>Game API-使用者</h2><h3 id="建立使用者"><a class="anchor hidden-xs" href="#建立使用者" title="建立使用者"><span class="octicon octicon-link"></span></a>建立使用者</h3><p>由API建立使用者</p><h4 id="請求網址-URL5"><a class="anchor hidden-xs" href="#請求網址-URL5" title="請求網址-URL5"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/member/create <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters5"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters5" title="請求參數-Request-Parameters5"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>是</td>
+<td>渠道碼(MIF表單內提供)</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"53346874"</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters4"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters4" title="回傳參數-Response-Parameters4"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td><a href="#Game-API-訊息代碼說明" title="Wallet-API-訊息代碼說明">狀態代碼</a></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>狀態訊息</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  }
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重點:</strong></em></p>
+<blockquote>
+<p>會員帳號長度限制為4~32字元，不需前綴。<br>
+字元限制 0~9 , a~z ,A~Z ,- ,_</p>
+</blockquote>
+</div><h3 id="使用者登出"><a class="anchor hidden-xs" href="#使用者登出" title="使用者登出"><span class="octicon octicon-link"></span></a>使用者登出</h3><p>由API執行使用者登出方法</p><h4 id="請求網址-URL6"><a class="anchor hidden-xs" href="#請求網址-URL6" title="請求網址-URL6"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/member/logout <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters6"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters6" title="請求參數-Request-Parameters6"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>random</td>
+<td>String</td>
+<td>是</td>
+<td>隨機數</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"AG000001"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"Username002"</span>,
+  <span class="hljs-attr">"random"</span>: <span class="hljs-number">1538231444</span>
+}
+
+</code></pre><h4 id="回傳參數-Response-Parameters5"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters5" title="回傳參數-Response-Parameters5"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td>狀態代碼</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>狀態訊息</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  }
+}
+</code></pre><h3 id="GAME-API-使用者登入遊戲"><a class="anchor hidden-xs" href="#GAME-API-使用者登入遊戲" title="GAME-API-使用者登入遊戲"><span class="octicon octicon-link"></span></a>GAME API-使用者登入遊戲</h3><p>取得玩家啟動遊戲連結</p><h4 id="請求網址-URL7"><a class="anchor hidden-xs" href="#請求網址-URL7" title="請求網址-URL7"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/member/login_game <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters7"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters7" title="請求參數-Request-Parameters7"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>是</td>
+<td>渠道碼(MIF表單內提供)</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>是</td>
+<td>代理商編號</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>是</td>
+<td>使用者帳號</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>是</td>
+<td>錢包操作令牌</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>String</td>
+<td>否</td>
+<td>分組編號</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>是</td>
+<td>由可支援語系提供</td>
+</tr>
+<tr>
+<td>oper</td>
+<td>String</td>
+<td>否</td>
+<td>額外選填參數</td>
+</tr>
+<tr>
+<td>backurl</td>
+<td>String</td>
+<td>否</td>
+<td>離開或結束遊戲 轉跳至該網址</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"53346874"</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">"1ceda4754e7e413592a6450fb224165f"</span>,
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>,
+  <span class="hljs-attr">"lang"</span>: <span class="hljs-string">"zh_cn"</span>,
+  <span class="hljs-attr">"backurl"</span>:<span class="hljs-string">"https://backurl.com"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters6"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters6" title="回傳參數-Response-Parameters6"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td><a href="#Game-API-訊息代碼說明" title="Game-API-訊息代碼說明">狀態代碼</a></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>狀態訊息</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>玩家使用的遊戲連結</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  },
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://game_server_url/h5/1001/?token=d01e14944dcd4a0e9e207f4438bb37da&amp;lang=zh_cn&amp;oper=ds&amp;backurl=https://backurl.com"</span>
+}
+</code></pre><h2 id="Game-API-下注紀錄"><a class="anchor hidden-xs" href="#Game-API-下注紀錄" title="Game-API-下注紀錄"><span class="octicon octicon-link"></span></a>Game API-下注紀錄</h2><h3 id="定義結構參考-Structure"><a class="anchor hidden-xs" href="#定義結構參考-Structure" title="定義結構參考-Structure"><span class="octicon octicon-link"></span></a>定義結構參考 Structure</h3><h4 id="Record-定義結構"><a class="anchor hidden-xs" href="#Record-定義結構" title="Record-定義結構"><span class="octicon octicon-link"></span></a>Record 定義結構</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>下注編號</td>
+</tr>
+<tr>
+<td>finish_at</td>
+<td>Number</td>
+<td>結算時間</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>代理帳號</td>
+</tr>
+<tr>
+<td>member</td>
+<td>String</td>
+<td>玩家帳號</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>遊戲編號</td>
+</tr>
+<tr>
+<td>game_serial</td>
+<td>String</td>
+<td>遊戲流水號</td>
+</tr>
+<tr>
+<td>game_type</td>
+<td>Number</td>
+<td>遊戲類型</td>
+</tr>
+<tr>
+<td>round_id</td>
+<td>Number</td>
+<td>回合ID</td>
+</tr>
+<tr>
+<td>bet_amount</td>
+<td>Number</td>
+<td>下注金額</td>
+</tr>
+<tr>
+<td>payout_amount</td>
+<td>Number</td>
+<td>游戏赢分(未扣除手续费)</td>
+</tr>
+<tr>
+<td>valid_amount</td>
+<td>Number</td>
+<td>有效金額</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>下注狀態</td>
+</tr>
+<tr>
+<td>fee_amount</td>
+<td>Number</td>
+<td>手續費</td>
+</tr>
+<tr>
+<td>jp_amount</td>
+<td>Number</td>
+<td>彩金金額</td>
+</tr>
+</tbody>
+</table><h4 id="Record-Status-下注狀態"><a class="anchor hidden-xs" href="#Record-Status-下注狀態" title="Record-Status-下注狀態"><span class="octicon octicon-link"></span></a>Record Status 下注狀態</h4><table>
+<thead>
+<tr>
+<th>代碼</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>2</td>
+<td>退款</td>
+</tr>
+<tr>
+<td>3</td>
+<td>拒絕投注</td>
+</tr>
+<tr>
+<td>4</td>
+<td>注單作廢</td>
+</tr>
+<tr>
+<td>5</td>
+<td>取消</td>
+</tr>
+</tbody>
+</table><h4 id="Time-定義結構"><a class="anchor hidden-xs" href="#Time-定義結構" title="Time-定義結構"><span class="octicon octicon-link"></span></a>Time 定義結構</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_time</td>
+<td>Number</td>
+<td>開始日期 ex: 2018-10-19T08:54:14+01:00</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Number</td>
+<td>結束日期 ex: 2018-10-20T11:47:08+01:00</td>
+</tr>
+</tbody>
+</table><h3 id="取得玩家下注紀錄"><a class="anchor hidden-xs" href="#取得玩家下注紀錄" title="取得玩家下注紀錄"><span class="octicon octicon-link"></span></a>取得玩家下注紀錄</h3><p>查詢代理商所屬玩家，時間區間內的下注紀錄。</p><h4 id="請求網址-URL8"><a class="anchor hidden-xs" href="#請求網址-URL8" title="請求網址-URL8"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/record/get_bet_records <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters8"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters8" title="請求參數-Request-Parameters8"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>是</td>
+<td>渠道碼(MIF表單內提供)</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>Time</td>
+<td>否</td>
+<td>依照結算時間查訊注單</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Number</td>
+<td>否</td>
+<td>開始頁碼 默認: 0</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Number</td>
+<td>否</td>
+<td>查詢上限 默認: 1000 最大: 5000</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"53346874"</span>,
+  <span class="hljs-attr">"finish_time"</span>: {
+    <span class="hljs-attr">"start_time"</span>: <span class="hljs-string">"2018-10-19T08:54:14+01:00"</span>,
+    <span class="hljs-attr">"end_time"</span>: <span class="hljs-string">"2018-10-20T11:47:08+01:00"</span>
+  },
+  <span class="hljs-attr">"index"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">10</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters7"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters7" title="回傳參數-Response-Parameters7"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>Number</td>
+<td>總筆數</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>Record[ ]</td>
+<td>下注紀錄陣列</td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2018-11-12T04:03:53.174604283Z"</span>
+  },
+  <span class="hljs-attr">"total"</span>: <span class="hljs-string">"8870"</span>,
+  <span class="hljs-attr">"rows"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"finish_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"AG0000001"</span>,
+      <span class="hljs-attr">"member"</span>: <span class="hljs-string">"MB03"</span>,
+      <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>,
+      <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"4604283"</span>,
+      <span class="hljs-attr">"game_type"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"bet_amount"</span>: <span class="hljs-string">"1200"</span>,
+      <span class="hljs-attr">"payout_amount"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"valid_amount"</span>: <span class="hljs-string">"1200"</span>,
+      <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span> ,
+      <span class="hljs-attr">"fee_amount"</span>: <span class="hljs-string">"10"</span> ,
+      <span class="hljs-attr">"jp_amount"</span>: <span class="hljs-string">"10"</span> 
+    },
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"2"</span>,
+      <span class="hljs-attr">"finish_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"AG0000001"</span>,
+      <span class="hljs-attr">"member"</span>: <span class="hljs-string">"MB03"</span>,
+      <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>,
+      <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"38427123"</span>,
+      <span class="hljs-attr">"game_type"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"bet_amount"</span>: <span class="hljs-string">"3600"</span>,
+      <span class="hljs-attr">"payout_amount"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"valid_amount"</span>: <span class="hljs-string">"3600"</span>,
+      <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span> ,
+      <span class="hljs-attr">"fee_amount"</span>: <span class="hljs-string">"10"</span> ,
+      <span class="hljs-attr">"jp_amount"</span>: <span class="hljs-string">"10"</span> 
+    }
+  ]
+}
+</code></pre><h3 id="取得玩家詳細下注紀錄頁面連結"><a class="anchor hidden-xs" href="#取得玩家詳細下注紀錄頁面連結" title="取得玩家詳細下注紀錄頁面連結"><span class="octicon octicon-link"></span></a>取得玩家詳細下注紀錄頁面連結</h3><p>查詢代理商所屬玩家的詳細下注紀錄之連結。</p><h4 id="請求網址-URL9"><a class="anchor hidden-xs" href="#請求網址-URL9" title="請求網址-URL9"><span class="octicon octicon-link"></span></a>請求網址 URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/record/get_bet_detail_page <span class="token url">[POST]</span>
+</code></pre><h4 id="請求參數-Request-Parameters9"><a class="anchor hidden-xs" href="#請求參數-Request-Parameters9" title="請求參數-Request-Parameters9"><span class="octicon octicon-link"></span></a>請求參數 Request Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>強制</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲編號</td>
+</tr>
+<tr>
+<td>game_serial</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲流水號</td>
+</tr>
+<tr>
+<td>round_id</td>
+<td>String</td>
+<td>是</td>
+<td>遊戲回合id</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>是</td>
+<td>現支援<code>zh_cn</code>及<code>en_us</code></td>
+</tr>
+</tbody>
+</table><p><strong>範例</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"2001"</span>,
+  <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"23134242"</span>,
+  <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"87122421352"</span>,
+  <span class="hljs-attr">"lang"</span>: <span class="hljs-string">"zh_cn"</span>
+}
+</code></pre><h4 id="回傳參數-Response-Parameters8"><a class="anchor hidden-xs" href="#回傳參數-Response-Parameters8" title="回傳參數-Response-Parameters8"><span class="octicon octicon-link"></span></a>回傳參數 Response Parameters</h4><table>
+<thead>
+<tr>
+<th>參數名稱</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td>狀態代碼</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>狀態訊息</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>詳細注單位置</td>
+</tr>
+</tbody>
+</table><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  },
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://&lt;record.page&gt;/bet_detail/?token=3fd0e97e-198b-4d34-9ab0-cd3f82f79ba3&amp;lang=zh_cn"</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>重要:</strong></em></p>
+<blockquote>
+<p>詳細下注記錄連結時效為10分鐘，逾時將會失效。</p>
+</blockquote>
+</div><h1 id="修訂版本"><a class="anchor hidden-xs" href="#修訂版本" title="修訂版本"><span class="octicon octicon-link"></span></a>修訂版本</h1><blockquote>
+<h6 id="N-新增、-U-更新、D-刪除"><a class="anchor hidden-xs" href="#N-新增、-U-更新、D-刪除" title="N-新增、-U-更新、D-刪除"><span class="octicon octicon-link"></span></a><code>N</code> 新增、 <code>U</code> 更新、<code>D</code> 刪除</h6>
+</blockquote><h4 id="v172"><a class="anchor hidden-xs" href="#v172" title="v172"><span class="octicon octicon-link"></span></a>v1.7.2</h4><h5 id="20191025"><a class="anchor hidden-xs" href="#20191025" title="20191025"><span class="octicon octicon-link"></span></a>2019/10/25</h5><p><code>U</code> 更新<strong>使用者出</strong>於文件內</p><h4 id="v170"><a class="anchor hidden-xs" href="#v170" title="v170"><span class="octicon octicon-link"></span></a>v1.7.0</h4><h5 id="20190825"><a class="anchor hidden-xs" href="#20190825" title="20190825"><span class="octicon octicon-link"></span></a>2019/08/25</h5><p><code>N</code> 新增<strong>使用者登入遊戲</strong>取得玩家啟動遊戲連結<br>
+<code>D</code> 刪除<strong>進入遊戲</strong>玩家跳轉啟動遊戲<br>
+<code>D</code> 刪除<strong>使用者登入</strong>由API執行使用者登入方法</p><h4 id="v160"><a class="anchor hidden-xs" href="#v160" title="v160"><span class="octicon octicon-link"></span></a>v1.6.0</h4><h5 id="20190501"><a class="anchor hidden-xs" href="#20190501" title="20190501"><span class="octicon octicon-link"></span></a>2019/05/01</h5><p><code>U</code> 進入遊戲-更新離開遊戲之跳轉欄位<br>
+<code>D</code>刪除<strong>遊戲列表</strong></p><h4 id="v151"><a class="anchor hidden-xs" href="#v151" title="v151"><span class="octicon octicon-link"></span></a>v1.5.1</h4><h5 id="20190423"><a class="anchor hidden-xs" href="#20190423" title="20190423"><span class="octicon octicon-link"></span></a>2019/04/23</h5><p><code>D</code> 刪除<strong>取得玩家詳細下注紀錄頁面連結</strong> 參數名稱 <s>bet_id</s><br>
+<code>U</code> 新增<strong>取得玩家詳細下注紀錄頁面連結</strong> 參數名稱 game_serial</p><h4 id="v150"><a class="anchor hidden-xs" href="#v150" title="v150"><span class="octicon octicon-link"></span></a>v1.5.0</h4><h5 id="20190418"><a class="anchor hidden-xs" href="#20190418" title="20190418"><span class="octicon octicon-link"></span></a>2019/04/18</h5><p><code>N</code> 新增<strong>取得玩家詳細下注紀錄頁面</strong>連結方法</p><h4 id="v141"><a class="anchor hidden-xs" href="#v141" title="v141"><span class="octicon octicon-link"></span></a>v1.4.1</h4><h5 id="20190327"><a class="anchor hidden-xs" href="#20190327" title="20190327"><span class="octicon octicon-link"></span></a>2019/03/27</h5><p><code>U</code> 建立使用者-更新會員帳號長度由8-16變更為<strong>6-16</strong>字元，並支持底線_、負號-<br>
+<code>U</code> 進入遊戲-新增廠商判別(選填)</p><h4 id="v14"><a class="anchor hidden-xs" href="#v14" title="v14"><span class="octicon octicon-link"></span></a>v1.4</h4><h5 id="20190320"><a class="anchor hidden-xs" href="#20190320" title="20190320"><span class="octicon octicon-link"></span></a>2019/03/20</h5><p><code>U</code> 遊戲列表-更新<strong>2019/03/20上線之9款遊戲及1遊戲大廳</strong></p><h4 id="v131"><a class="anchor hidden-xs" href="#v131" title="v131"><span class="octicon octicon-link"></span></a>v1.3.1</h4><h5 id="20190312"><a class="anchor hidden-xs" href="#20190312" title="20190312"><span class="octicon octicon-link"></span></a>2019/03/12</h5><p><code>U</code> 下注紀錄定義-更新<strong>payout_amount</strong>說明</p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172" title="DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2">DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2</a><ul class="nav"><li><a href="#前言" title="前言">前言</a><ul class="nav"><li><a href="#文件常規" title="文件常規">文件常規</a></li></ul></li><li><a href="#注意事項" title="注意事項">注意事項</a></li><li><a href="#請求簽章" title="請求簽章">請求簽章</a></li><li><a href="#Game-API-訊息代碼說明" title="Game API-訊息代碼說明">Game API-訊息代碼說明</a><ul class="nav"><li><a href="#回傳代碼說明" title="回傳代碼說明">回傳代碼說明</a></li></ul></li><li><a href="#Game-API-可支援語系" title="Game API-可支援語系">Game API-可支援語系</a></li><li><a href="#Game-API-可支援幣別" title="Game API-可支援幣別">Game API-可支援幣別</a></li><li><a href="#Game-API-時間格式" title="Game API-時間格式">Game API-時間格式</a></li><li><a href="#Wallet-API-錢包操作" title="Wallet API-錢包操作">Wallet API-錢包操作</a><ul class="nav"><li><a href="#Wallet-API-訊息代碼說明" title="Wallet API 訊息代碼說明">Wallet API 訊息代碼說明</a></li><li><a href="#Wallet-API-取餘額" title="Wallet API-取餘額">Wallet API-取餘額</a></li><li><a href="#Wallet-API-下注請求" title="Wallet API-下注請求">Wallet API-下注請求</a></li><li><a href="#Wallet-API-派彩請求" title="Wallet API-派彩請求">Wallet API-派彩請求</a></li><li><a href="#Wallet-API-取消請求" title="Wallet API-取消請求">Wallet API-取消請求</a></li></ul></li><li><a href="#進入遊戲" title="進入遊戲">進入遊戲</a></li><li><a href="#Game-API-使用者" title="Game API-使用者">Game API-使用者</a><ul class="nav"><li><a href="#建立使用者" title="建立使用者">建立使用者</a></li><li><a href="#使用者登出" title="使用者登出">使用者登出</a></li><li><a href="#GAME-API-使用者登入遊戲" title="GAME API-使用者登入遊戲">GAME API-使用者登入遊戲</a></li></ul></li><li><a href="#Game-API-下注紀錄" title="Game API-下注紀錄">Game API-下注紀錄</a><ul class="nav"><li><a href="#定義結構參考-Structure" title="定義結構參考 Structure">定義結構參考 Structure</a></li><li><a href="#取得玩家下注紀錄" title="取得玩家下注紀錄">取得玩家下注紀錄</a></li><li><a href="#取得玩家詳細下注紀錄頁面連結" title="取得玩家詳細下注紀錄頁面連結">取得玩家詳細下注紀錄頁面連結</a></li></ul></li></ul></li><li><a href="#修訂版本" title="修訂版本">修訂版本</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#DRAGOON-SOFT-API說明文件（繁體中文-單一錢包v172" title="DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2">DRAGOON SOFT API說明文件（繁體中文)-單一錢包v1.7.2</a><ul class="nav"><li><a href="#前言" title="前言">前言</a><ul class="nav"><li><a href="#文件常規" title="文件常規">文件常規</a></li></ul></li><li><a href="#注意事項" title="注意事項">注意事項</a></li><li><a href="#請求簽章" title="請求簽章">請求簽章</a></li><li><a href="#Game-API-訊息代碼說明" title="Game API-訊息代碼說明">Game API-訊息代碼說明</a><ul class="nav"><li><a href="#回傳代碼說明" title="回傳代碼說明">回傳代碼說明</a></li></ul></li><li><a href="#Game-API-可支援語系" title="Game API-可支援語系">Game API-可支援語系</a></li><li><a href="#Game-API-可支援幣別" title="Game API-可支援幣別">Game API-可支援幣別</a></li><li><a href="#Game-API-時間格式" title="Game API-時間格式">Game API-時間格式</a></li><li><a href="#Wallet-API-錢包操作" title="Wallet API-錢包操作">Wallet API-錢包操作</a><ul class="nav"><li><a href="#Wallet-API-訊息代碼說明" title="Wallet API 訊息代碼說明">Wallet API 訊息代碼說明</a></li><li><a href="#Wallet-API-取餘額" title="Wallet API-取餘額">Wallet API-取餘額</a></li><li><a href="#Wallet-API-下注請求" title="Wallet API-下注請求">Wallet API-下注請求</a></li><li><a href="#Wallet-API-派彩請求" title="Wallet API-派彩請求">Wallet API-派彩請求</a></li><li><a href="#Wallet-API-取消請求" title="Wallet API-取消請求">Wallet API-取消請求</a></li></ul></li><li><a href="#進入遊戲" title="進入遊戲">進入遊戲</a></li><li><a href="#Game-API-使用者" title="Game API-使用者">Game API-使用者</a><ul class="nav"><li><a href="#建立使用者" title="建立使用者">建立使用者</a></li><li><a href="#使用者登出" title="使用者登出">使用者登出</a></li><li><a href="#GAME-API-使用者登入遊戲" title="GAME API-使用者登入遊戲">GAME API-使用者登入遊戲</a></li></ul></li><li><a href="#Game-API-下注紀錄" title="Game API-下注紀錄">Game API-下注紀錄</a><ul class="nav"><li><a href="#定義結構參考-Structure" title="定義結構參考 Structure">定義結構參考 Structure</a></li><li><a href="#取得玩家下注紀錄" title="取得玩家下注紀錄">取得玩家下注紀錄</a></li><li><a href="#取得玩家詳細下注紀錄頁面連結" title="取得玩家詳細下注紀錄頁面連結">取得玩家詳細下注紀錄頁面連結</a></li></ul></li></ul></li><li><a href="#修訂版本" title="修訂版本">修訂版本</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+---
+- hosts: dev-uat-all
+  tasks:
+    - name: rpm
+      become: yes
+      poll: 0
+      shell: rpm -Uvh https://repo.zabbix.com/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm
+
+
+    - name: install zabbix-agent2
+      become: yes
+      poll: 0
+      shell: yum install zabbix-agent2 -y
+
+    - name: 刪除註解
+      become: yes
+      poll: 0
+      shell: sed -i '/^#/d' /etc/zabbix/zabbix_agent2.conf
+
+    - name: 刪除空格
+      become: yes
+      poll: 0
+      shell: sed -i '/^$/d' /etc/zabbix/zabbix_agent2.conf
+
+    - name: 監控主機IP
+      become: yes
+      poll: 0
+      shell: sed -i 's/127.0.0.1/10.10.100.152/g' /etc/zabbix/zabbix_agent2.conf
+
+    - name: 添加規則
+      become: yes
+      poll: 0
+      shell: sed -i '$aUnsafeUserParameters=1' /etc/zabbix/zabbix_agent2.conf
+
+    - name: 重啟agent
+      become: yes
+      poll: 0
+      shell: systemctl restart zabbix-agent2
+
+    - name: 開機啟動agent
+      become: yes
+      poll: 0
+      shell: systemctl enable zabbix-agent2
+

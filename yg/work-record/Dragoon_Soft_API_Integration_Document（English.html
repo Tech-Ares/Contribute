@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0 - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="http://md.aceqilin.com/favicon.png">
+    <link rel="apple-touch-icon" href="http://md.aceqilin.com/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/octicons.min.css" integrity="sha256-4eCms8tUm+iL29tUvmRhNRnz/7lNI4oTtQzqa/uM2dI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.night .markdown-body h1 .octicon-link,.night .markdown-body h2 .octicon-link,.night .markdown-body h3 .octicon-link,.night .markdown-body h4 .octicon-link,.night .markdown-body h5 .octicon-link,.night .markdown-body h6 .octicon-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170"><a class="anchor hidden-xs" href="#Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170" title="Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170"><span class="octicon octicon-link"></span></a>Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0</h1><p></p><div class="toc"><ul><li><a href="#Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170" title="Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0">Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0</a><ul><li><a href="#Introduction" title="Introduction">Introduction</a><ul><li><a href="#Document-Rules" title="Document Rules">Document Rules</a></li></ul></li><li><a href="#Notice" title="Notice">Notice</a></li><li><a href="#Request-Signing" title="Request Signing">Request Signing</a></li><li><a href="#Game-API-Message-Code-Info" title="Game API-Message Code Info">Game API-Message Code Info</a><ul><li><a href="#Return-Code-Info" title="Return Code Info">Return Code Info</a></li></ul></li><li><a href="#Game-API-Supported-Languages" title="Game API-Supported Languages">Game API-Supported Languages</a></li><li><a href="#Game-API-Supported-Currencies" title="Game API-Supported Currencies">Game API-Supported Currencies</a></li><li><a href="#Game-API-Time-Format" title="Game API-Time Format">Game API-Time Format</a></li><li><a href="#Wallet-API-Wallet-Operation" title="Wallet API-Wallet Operation">Wallet API-Wallet Operation</a></li><li><a href="#Wallet-API-Message-Code-Info" title="Wallet API-Message Code Info">Wallet API-Message Code Info</a><ul><li><a href="#Return-Code-Info1" title="Return Code Info">Return Code Info</a></li><li><a href="#Wallet-API-Get-Balance" title="Wallet API-Get Balance">Wallet API-Get Balance</a></li><li><a href="#Wallet-API-Bet-Request" title="Wallet API-Bet Request">Wallet API-Bet Request</a></li><li><a href="#Wallet-API-Payout-Request" title="Wallet API-Payout Request">Wallet API-Payout Request</a></li><li><a href="#Wallet-API-Cancel-Request" title="Wallet API-Cancel Request">Wallet API-Cancel Request</a></li></ul></li><li><a href="#Game-API-Member" title="Game API-Member">Game API-Member</a><ul><li><a href="#To-Register-Members-in-DS" title="To Register Members in DS">To Register Members in DS</a></li></ul></li><li><a href="#Game-API-Member-Login-in-Game" title="Game API-Member Login in Game">Game API-Member Login in Game</a></li><li><a href="#Game-API-Bet-Record" title="Game API-Bet Record">Game API-Bet Record</a><ul><li><a href="#Structure-Definition" title="Structure Definition">Structure Definition</a></li><li><a href="#Get-Member-Bet-Record" title="Get Member Bet Record">Get Member Bet Record</a></li><li><a href="#Get-Bet-Record-URL-for-Details" title="Get Bet Record URL for Details">Get Bet Record URL for Details</a></li></ul></li></ul></li><li><a href="#Update-Records" title="Update Records">Update Records</a></li></ul></div><p></p><h2 id="Introduction"><a class="anchor hidden-xs" href="#Introduction" title="Introduction"><span class="octicon octicon-link"></span></a>Introduction</h2><h3 id="Document-Rules"><a class="anchor hidden-xs" href="#Document-Rules" title="Document-Rules"><span class="octicon octicon-link"></span></a>Document Rules</h3><p>In this document, we used some rules to emphasize specific words and vocabularies.<br>
+And pointed to some particular information.</p><h4 id="Annotations-and-Warnings"><a class="anchor hidden-xs" href="#Annotations-and-Warnings" title="Annotations-and-Warnings"><span class="octicon octicon-link"></span></a>Annotations and Warnings</h4><p>We emphasized the information might be ignored by 3 visual ways.</p><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>Attention:</strong></em></p>
+<blockquote>
+<p>Annotations means some tips, shortcuts, and ways to achieve. To ignore annotations wouldn’t cause negative affection too much. But you might ignore those ways to complete works easier.</p>
+</blockquote>
+</div><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Key point will list items that might be ignored. Data wouldn’t be lost if you ignored it. But might cause some inconveniences.</p>
+</blockquote>
+</div><div class="alert alert-danger">
+<p><i class="fa fa-exclamation-triangle fa-fw"></i><em><strong>Warning:</strong></em></p>
+<blockquote>
+<p>Please do not ignore any warning! Ignoring warning may cause the integration failed.</p>
+</blockquote>
+</div><h2 id="Notice"><a class="anchor hidden-xs" href="#Notice" title="Notice"><span class="octicon octicon-link"></span></a>Notice</h2><ol>
+<li>Please contact Dragoon Soft to ask GAME API address, GAME API public key, and Agent Account.</li>
+<li>Please provide IP that connect to us before you get started.(Please filled up in MIF.)</li>
+<li>The integration transmit formation is Json. And is encoded by UTF-8.</li>
+</ol><h2 id="Request-Signing"><a class="anchor hidden-xs" href="#Request-Signing" title="Request-Signing"><span class="octicon octicon-link"></span></a>Request Signing</h2><h4 id="API-Data-Signing-Mathod"><a class="anchor hidden-xs" href="#API-Data-Signing-Mathod" title="API-Data-Signing-Mathod"><span class="octicon octicon-link"></span></a>API Data Signing Mathod</h4><ul>
+<li>All Games API requests have to be signed by Operator.</li>
+<li>All Wallet API requests have to be signed by Dragoon Soft</li>
+<li>All Wallet API request must be practiced and verified by the Operator.</li>
+</ul><h4 id="Encryption-Method-and-Process"><a class="anchor hidden-xs" href="#Encryption-Method-and-Process" title="Encryption-Method-and-Process"><span class="octicon octicon-link"></span></a>Encryption Method and Process</h4><ul>
+<li>Both parties should verify all requests will be signed with RSA-SHA256.</li>
+<li>Before the integration, the Operator generates a private/public key pair, and provides the public key to Dragoon Soft.</li>
+<li>Dragoon Soft generates a RSA private/public key pair, and provides the public key to operator. (RSA KEY lenth should be 1024 or 2048)</li>
+<li>The body of all requests will be signed with RSA-SHA256 using the respective private key and encoded to BASE64</li>
+<li>Body JSON sort shouldn’t be changed.</li>
+<li>The signature should be placed in the X-Ds-Signature request header.</li>
+<li>The Operator needs to verify all Wallet API requests using the public key provided by Dragoon Soft.</li>
+<li>Dragoon Soft verifies all Games API requests using the public key provided by the Operator.</li>
+<li>The body of all requests will be signed with <code>RSA-SHA256</code> using the respective <code>private</code> key and encoded to BASE64, the signature should be placed in the <code>X-Ds-Signature</code> request header.</li>
+</ul><p><strong>Example</strong></p><pre><code class="x hljs"><span class="hljs-keyword">POST</span> <span class="hljs-string">/v1/member/create</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+<span class="hljs-attribute">X-Ds-Signature</span>: byMYoU1abC/86EVvEbwNtumfgZnlbGaAwbeJ3qu668RCZRnkFv8B3fCRAzM9rDnDdjommrhK0B3BVmbpdCv6UzyY1avfxE2lbihvrF/LMkY4oKOyL8IJuGBbSLgzpI+hKYzcb+qD/En9ZAH0V4gNXh6RqI/XIgfWhB55zF9pBs4=
+
+<span class="json">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">"1ceda4754e7e413592a6450fb224165f"</span>
+}
+</span></code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Parameter should be in JSON format.</p>
+</blockquote>
+</div><div class="alert alert-danger">
+<p><i class="fa fa-exclamation-triangle fa-fw"></i><em><strong>Warning:</strong></em></p>
+<blockquote>
+<p><code>X-Ds-Signature</code> Signature failure will cause the inquiry failed.</p>
+</blockquote>
+</div><h2 id="Game-API-Message-Code-Info"><a class="anchor hidden-xs" href="#Game-API-Message-Code-Info" title="Game-API-Message-Code-Info"><span class="octicon octicon-link"></span></a>Game API-Message Code Info</h2><h3 id="Return-Code-Info"><a class="anchor hidden-xs" href="#Return-Code-Info" title="Return-Code-Info"><span class="octicon octicon-link"></span></a>Return Code Info</h3><table>
+<thead>
+<tr>
+<th>code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>unknown error</td>
+</tr>
+<tr>
+<td>1</td>
+<td>succeeded</td>
+</tr>
+<tr>
+<td>2</td>
+<td>duplicated</td>
+</tr>
+<tr>
+<td>3</td>
+<td>required field</td>
+</tr>
+<tr>
+<td>4</td>
+<td>login failed</td>
+</tr>
+<tr>
+<td>5</td>
+<td>API access failed</td>
+</tr>
+<tr>
+<td>6</td>
+<td>information not found</td>
+</tr>
+<tr>
+<td>7</td>
+<td>request time out</td>
+</tr>
+<tr>
+<td>8</td>
+<td>verification code invalid</td>
+</tr>
+<tr>
+<td>9</td>
+<td>user blocked</td>
+</tr>
+<tr>
+<td>10</td>
+<td>memb cannot be found</td>
+</tr>
+<tr>
+<td>11</td>
+<td>agent cannot be found</td>
+</tr>
+<tr>
+<td>12</td>
+<td>content type error</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>signature failed</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>verification failed</td>
+</tr>
+<tr>
+<td>1004</td>
+<td>data base access failed</td>
+</tr>
+<tr>
+<td>1005</td>
+<td>wallet not found</td>
+</tr>
+<tr>
+<td>1006</td>
+<td>transaction not found</td>
+</tr>
+<tr>
+<td>1007</td>
+<td>processing failed</td>
+</tr>
+<tr>
+<td>1012</td>
+<td>time is out of range</td>
+</tr>
+</tbody>
+</table><h2 id="Game-API-Supported-Languages"><a class="anchor hidden-xs" href="#Game-API-Supported-Languages" title="Game-API-Supported-Languages"><span class="octicon octicon-link"></span></a>Game API-Supported Languages</h2><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zh_cn</td>
+<td>Simplified Chinese</td>
+</tr>
+<tr>
+<td>en_us</td>
+<td>English</td>
+</tr>
+<tr>
+<td>vi_na</td>
+<td>Vietnamese</td>
+</tr>
+<tr>
+<td>th_th</td>
+<td>Thailand</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>It must be failed by choosing a language not supported.</p>
+</blockquote>
+</div><h2 id="Game-API-Supported-Currencies"><a class="anchor hidden-xs" href="#Game-API-Supported-Currencies" title="Game-API-Supported-Currencies"><span class="octicon octicon-link"></span></a>Game API-Supported Currencies</h2><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CNY</td>
+<td>Chinese yuan(Renminbi)</td>
+</tr>
+<tr>
+<td>EUR</td>
+<td>European euro</td>
+</tr>
+<tr>
+<td>GBP</td>
+<td>British pound</td>
+</tr>
+<tr>
+<td>HKD</td>
+<td>Hong Kong dollar</td>
+</tr>
+<tr>
+<td>IDR</td>
+<td>Indonesian rupiah (K)</td>
+</tr>
+<tr>
+<td>JPY</td>
+<td>Japanese yen</td>
+</tr>
+<tr>
+<td>KRW</td>
+<td>South Korean won (K)</td>
+</tr>
+<tr>
+<td>MYR</td>
+<td>Malaysian ringgit</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>Singapore dollar</td>
+</tr>
+<tr>
+<td>THB</td>
+<td>Thai baht</td>
+</tr>
+<tr>
+<td>USD</td>
+<td>United States dollar</td>
+</tr>
+<tr>
+<td>VND</td>
+<td>Vietnamese dong (K)</td>
+</tr>
+<tr>
+<td>MMK</td>
+<td>Myanmar kyat (K)</td>
+</tr>
+</tbody>
+</table><ul>
+<li><code>K</code> symbol is for calculate in thousands.</li>
+</ul><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>Attention:</strong></em></p>
+<blockquote>
+<p>Currency is set by the information in MIF document that you provided to us.<br>
+It doesn’t have to send this parameter when API transmitted.</p>
+</blockquote>
+</div><h2 id="Game-API-Time-Format"><a class="anchor hidden-xs" href="#Game-API-Time-Format" title="Game-API-Time-Format"><span class="octicon octicon-link"></span></a>Game API-Time Format</h2><ul>
+<li>Format： <code>RFC3339</code></li>
+<li>Example: <code>2018-10-18T05:47:51+05:00</code></li>
+</ul><h2 id="Wallet-API-Wallet-Operation"><a class="anchor hidden-xs" href="#Wallet-API-Wallet-Operation" title="Wallet-API-Wallet-Operation"><span class="octicon octicon-link"></span></a>Wallet API-Wallet Operation</h2><p>Operator should execute wallet API</p><h2 id="Wallet-API-Message-Code-Info"><a class="anchor hidden-xs" href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info"><span class="octicon octicon-link"></span></a>Wallet API-Message Code Info</h2><h3 id="Return-Code-Info1"><a class="anchor hidden-xs" href="#Return-Code-Info1" title="Return-Code-Info1"><span class="octicon octicon-link"></span></a>Return Code Info</h3><table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>unknown error. bet received will execute cancel process. payout received will enter process to wait payout next time. cancel received will enter process to wait cancel next time.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>succeeded</td>
+</tr>
+<tr>
+<td>2</td>
+<td>member doesn’t exist</td>
+</tr>
+<tr>
+<td>3</td>
+<td>verification failed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>transaction duplicated</td>
+</tr>
+<tr>
+<td>5</td>
+<td>balance insufficient</td>
+</tr>
+<tr>
+<td>6</td>
+<td>transaction number doesn’t exist. while oprator received payout and cancel request, if there is no bet record with the same id, this code should be returned.</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Unexpected status is equal to unknown error</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-Get-Balance"><a class="anchor hidden-xs" href="#Wallet-API-Get-Balance" title="Wallet-API-Get-Balance"><span class="octicon octicon-link"></span></a>Wallet API-Get Balance</h3><p>To get the balance of member</p><h4 id="Request-URL"><a class="anchor hidden-xs" href="#Request-URL" title="Request-URL"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/balance <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters"><a class="anchor hidden-xs" href="#Request-Parameters" title="Request-Parameters"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Yes</td>
+<td>wallet access token</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>:<span class="hljs-string">"e278a9ea38da42dd9b84148c2f99a031"</span>
+}
+</code></pre><h4 id="Response-Parameters"><a class="anchor hidden-xs" href="#Response-Parameters" title="Response-Parameters"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>member balance PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info">wallet message code</a></td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">99999.1</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><hr><h3 id="Wallet-API-Bet-Request"><a class="anchor hidden-xs" href="#Wallet-API-Bet-Request" title="Wallet-API-Bet-Request"><span class="octicon octicon-link"></span></a>Wallet API-Bet Request</h3><p>Called when the member bets.</p><p>Operator is expected to decrease member’s balance by amount and return new balance.</p><h4 id="Request-URL1"><a class="anchor hidden-xs" href="#Request-URL1" title="Request-URL1"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/bet <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters1"><a class="anchor hidden-xs" href="#Request-Parameters1" title="Request-Parameters1"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>transaction id PS: UUID</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Number</td>
+<td>Yes</td>
+<td>transaction amount PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Yes</td>
+<td>wallet access token</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>operating transaction<code>amount</code> should be a <strong>positive number</strong></p>
+</blockquote>
+</div><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+  <span class="hljs-attr">"token"</span>: <span class="hljs-string">"88406af3628342f19cea6042d0cb2267"</span>
+}
+</code></pre><h4 id="Response-Parameters1"><a class="anchor hidden-xs" href="#Response-Parameters1" title="Response-Parameters1"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>transaction id PS:equal to transaction id requested</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>member balance PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info">wallet message code</a></td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Cancel request would be sent instantly if had not received status code <code>1</code>.</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-Payout-Request"><a class="anchor hidden-xs" href="#Wallet-API-Payout-Request" title="Wallet-API-Payout-Request"><span class="octicon octicon-link"></span></a>Wallet API-Payout Request</h3><p>Called when the User wins.<br>
+Operator is expected to increase member’s balance by amount and return new balance.</p><p>Before any altering of User’s balance, operator has to check that win wasn’t processed or canceled before.</p><h4 id="Request-URL2"><a class="anchor hidden-xs" href="#Request-URL2" title="Request-URL2"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/payout <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters2"><a class="anchor hidden-xs" href="#Request-Parameters2" title="Request-Parameters2"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>transaction id PS:equal to transaction id requested</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Number</td>
+<td>Yes</td>
+<td>transaction amount PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>operating transaction<code>amount</code> should be a <strong>positive number</strong></p>
+</blockquote>
+</div><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>Attention:</strong></em></p>
+<blockquote>
+<p>Retry Policy：<br>
+In case of network fail (HTTP 502, timeout, nxdomain, etc.) we will retry.<br>
+Until the bet may be rolled back, and the money returned back to user.<br>
+Every retry will extend its intermission.</p>
+</blockquote>
+</div><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent0001"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+}
+</code></pre><h4 id="Response-Parameters2"><a class="anchor hidden-xs" href="#Response-Parameters2" title="Response-Parameters2"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>transaction id PS:equal to transaction id requested</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>transaction amount PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info">Wallet Message Code</a></td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Cancel request would be sent instantly if had not received status code <code>1</code>.</p>
+</blockquote>
+</div><hr><h3 id="Wallet-API-Cancel-Request"><a class="anchor hidden-xs" href="#Wallet-API-Cancel-Request" title="Wallet-API-Cancel-Request"><span class="octicon octicon-link"></span></a>Wallet API-Cancel Request</h3><p>Cancel request would be sent instantly if had not received status code <code>1</code></p><h4 id="Request-URL3"><a class="anchor hidden-xs" href="#Request-URL3" title="Request-URL3"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/api/wallet/cancel <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters3"><a class="anchor hidden-xs" href="#Request-Parameters3" title="Request-Parameters3"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>transaction id PS:equal to transaction id requested</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+</tbody>
+</table><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Operate cancel request will return bet amount.</p>
+</blockquote>
+</div><div class="alert alert-success">
+<p><i class="fa fa-comment fa-fw"></i><em><strong>Attention:</strong></em></p>
+<blockquote>
+<p>Retry Policy：<br>
+In case of network fail (HTTP 502, timeout, nxdomain, etc.) we will retry.<br>
+Until the bet may be rolled back, and the money returned back to user.<br>
+Every retry will extend its intermission.</p>
+</blockquote>
+</div><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"amount"</span>: <span class="hljs-number">8000</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent0001"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+}
+</code></pre><h4 id="Response-Parameters3"><a class="anchor hidden-xs" href="#Response-Parameters3" title="Response-Parameters3"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trans_id</td>
+<td>String</td>
+<td>transaction id PS:equal to transaction id requested</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>Number</td>
+<td>transaction amount PS:support to second decimal place</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td><a href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info">wallet Message Code</a></td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"trans_id"</span>: <span class="hljs-string">"9b2bb872-332a-4d8d-87aa-2e18dc4edff8"</span>,
+  <span class="hljs-attr">"balance"</span>: <span class="hljs-number">4000</span>,
+  <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>
+}
+</code></pre><h2 id="Game-API-Member"><a class="anchor hidden-xs" href="#Game-API-Member" title="Game-API-Member"><span class="octicon octicon-link"></span></a>Game API-Member</h2><h3 id="To-Register-Members-in-DS"><a class="anchor hidden-xs" href="#To-Register-Members-in-DS" title="To-Register-Members-in-DS"><span class="octicon octicon-link"></span></a>To Register Members in DS</h3><p>To register a new member by API</p><h4 id="Request-URL4"><a class="anchor hidden-xs" href="#Request-URL4" title="Request-URL4"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/member/create <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters4"><a class="anchor hidden-xs" href="#Request-Parameters4" title="Request-Parameters4"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>Yes</td>
+<td>channel(provided in MIF)</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"53346874"</span>,
+  <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"agent01"</span>,
+  <span class="hljs-attr">"account"</span>: <span class="hljs-string">"player001"</span>,
+}
+</code></pre><h4 id="Response-Parameters4"><a class="anchor hidden-xs" href="#Response-Parameters4" title="Response-Parameters4"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td><a href="#Wallet-API-Message-Code-Info" title="Wallet-API-Message-Code-Info">wallet message code</a></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>status message</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  }
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>The maximum text length of member account is 4~32 characters. The prefix is not required.<br>
+Characters should be:0~9, a~z, A~Z, -(hyphen), and _ (bottom line)</p>
+</blockquote>
+</div><h2 id="Game-API-Member-Login-in-Game"><a class="anchor hidden-xs" href="#Game-API-Member-Login-in-Game" title="Game-API-Member-Login-in-Game"><span class="octicon octicon-link"></span></a>Game API-Member Login in Game</h2><p>To get the launch URL for members</p><h4 id="Request-URL5"><a class="anchor hidden-xs" href="#Request-URL5" title="Request-URL5"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/member/login_game <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters5"><a class="anchor hidden-xs" href="#Request-Parameters5" title="Request-Parameters5"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>Yes</td>
+<td>channel(provided in MIF)</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>Yes</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>account</td>
+<td>String</td>
+<td>Yes</td>
+<td>member account</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Yes</td>
+<td>wallet operating token</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>game id</td>
+</tr>
+<tr>
+<td>group_id</td>
+<td>String</td>
+<td>No</td>
+<td>group id</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>Yes</td>
+<td>please check language supported</td>
+</tr>
+<tr>
+<td>oper</td>
+<td>String</td>
+<td>No</td>
+<td>optional parameters</td>
+</tr>
+<tr>
+<td>backurl</td>
+<td>String</td>
+<td>No</td>
+<td>URL for back button to direct</td>
+</tr>
+</tbody>
+</table><h4 id="Response-Parameters5"><a class="anchor hidden-xs" href="#Response-Parameters5" title="Response-Parameters5"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td><a href="#Game-API-Message-Code-Info" title="Game-API-MessageCode-Info">status code</a></td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>status message</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>url for member to use</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  },
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://game_server_url/h5/1001/?token=d01e14944dcd4a0e9e207f4438bb37da&amp;lang=zh_cn&amp;oper=ds&amp;backurl=https://backurl.com"</span>
+}
+</code></pre><h2 id="Game-API-Bet-Record"><a class="anchor hidden-xs" href="#Game-API-Bet-Record" title="Game-API-Bet-Record"><span class="octicon octicon-link"></span></a>Game API-Bet Record</h2><h3 id="Structure-Definition"><a class="anchor hidden-xs" href="#Structure-Definition" title="Structure-Definition"><span class="octicon octicon-link"></span></a>Structure Definition</h3><h4 id="Record-Structure-Definition"><a class="anchor hidden-xs" href="#Record-Structure-Definition" title="Record-Structure-Definition"><span class="octicon octicon-link"></span></a>Record Structure Definition</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>bet id</td>
+</tr>
+<tr>
+<td>bet_at</td>
+<td>Number</td>
+<td>bet time</td>
+</tr>
+<tr>
+<td>finish_at</td>
+<td>Number</td>
+<td>result time</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>String</td>
+<td>agent account</td>
+</tr>
+<tr>
+<td>member</td>
+<td>String</td>
+<td>memeber account</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>game id</td>
+</tr>
+<tr>
+<td>game_serial</td>
+<td>String</td>
+<td>game serial number</td>
+</tr>
+<tr>
+<td>game_type</td>
+<td>Number</td>
+<td>game type</td>
+</tr>
+<tr>
+<td>round_id</td>
+<td>Number</td>
+<td>round id</td>
+</tr>
+<tr>
+<td>bet_amount</td>
+<td>Number</td>
+<td>bet amount</td>
+</tr>
+<tr>
+<td>payout_amount</td>
+<td>Number</td>
+<td>win score(excluded fee)</td>
+</tr>
+<tr>
+<td>valid_amount</td>
+<td>Number</td>
+<td>valid amount</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Number</td>
+<td>bet status</td>
+</tr>
+<tr>
+<td>fee_amount</td>
+<td>Number</td>
+<td>fee amount</td>
+</tr>
+<tr>
+<td>jp_amount</td>
+<td>Number</td>
+<td>jackpot amount</td>
+</tr>
+</tbody>
+</table><h4 id="Record-Status"><a class="anchor hidden-xs" href="#Record-Status" title="Record-Status"><span class="octicon octicon-link"></span></a>Record Status</h4><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Descryption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Refund</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bet Refused</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bet Record Voided</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cancelled</td>
+</tr>
+</tbody>
+</table><h4 id="Time-Structure-Definition"><a class="anchor hidden-xs" href="#Time-Structure-Definition" title="Time-Structure-Definition"><span class="octicon octicon-link"></span></a>Time Structure Definition</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_time</td>
+<td>Number</td>
+<td>start date ex: 2018-10-19T08:54:14+01:00</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>Number</td>
+<td>end date ex: 2018-10-20T11:47:08+01:00</td>
+</tr>
+</tbody>
+</table><h3 id="Get-Member-Bet-Record"><a class="anchor hidden-xs" href="#Get-Member-Bet-Record" title="Get-Member-Bet-Record"><span class="octicon octicon-link"></span></a>Get Member Bet Record</h3><p>To inquire bet records of members below agent in a time range.</p><h4 id="Request-URL6"><a class="anchor hidden-xs" href="#Request-URL6" title="Request-URL6"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/record/get_bet_records <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters6"><a class="anchor hidden-xs" href="#Request-Parameters6" title="Request-Parameters6"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel</td>
+<td>String</td>
+<td>Yes</td>
+<td>channel(provided in MIF)</td>
+</tr>
+<tr>
+<td>finish_time</td>
+<td>Time</td>
+<td>No</td>
+<td>inquire transaction by result time</td>
+</tr>
+<tr>
+<td>index</td>
+<td>Number</td>
+<td>No</td>
+<td>start page default: 0</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Number</td>
+<td>No</td>
+<td>inquire limit default: 1000 maximum: 5000</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"channel"</span>: <span class="hljs-string">"53346874"</span>,
+  <span class="hljs-attr">"finish_time"</span>: {
+    <span class="hljs-attr">"start_time"</span>: <span class="hljs-string">"2018-10-19T08:54:14+01:00"</span>,
+    <span class="hljs-attr">"end_time"</span>: <span class="hljs-string">"2018-10-20T11:47:08+01:00"</span>
+  },
+  <span class="hljs-attr">"index"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"limit"</span>: <span class="hljs-number">10</span>,
+}
+</code></pre><h4 id="Response-Parameters6"><a class="anchor hidden-xs" href="#Response-Parameters6" title="Response-Parameters6"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>Number</td>
+<td>total number</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>Record[ ]</td>
+<td>bet record rows</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>,
+    <span class="hljs-attr">"timestamp"</span>: <span class="hljs-string">"2018-11-12T04:03:53.174604283Z"</span>
+  },
+  <span class="hljs-attr">"total"</span>: <span class="hljs-string">"8870"</span>,
+  <span class="hljs-attr">"rows"</span>: [
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"bet_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"finish_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"AG0000001"</span>,
+      <span class="hljs-attr">"member"</span>: <span class="hljs-string">"MB03"</span>,
+      <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>,
+      <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"4604283"</span>,
+      <span class="hljs-attr">"game_type"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"bet_amount"</span>: <span class="hljs-string">"1200"</span>,
+      <span class="hljs-attr">"payout_amount"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"valid_amount"</span>: <span class="hljs-string">"1200"</span>,
+      <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span> ,
+      <span class="hljs-attr">"fee_amount"</span>: <span class="hljs-string">"10"</span> ,
+      <span class="hljs-attr">"jp_amount"</span>: <span class="hljs-string">"10"</span> 
+    },
+    {
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"2"</span>,
+      <span class="hljs-attr">"bet_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"finish_at"</span>: <span class="hljs-string">"2018-10-18T05:47:51Z"</span>,
+      <span class="hljs-attr">"agent"</span>: <span class="hljs-string">"AG0000001"</span>,
+      <span class="hljs-attr">"member"</span>: <span class="hljs-string">"MB03"</span>,
+      <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"1001"</span>,
+      <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"38427123"</span>,
+      <span class="hljs-attr">"game_type"</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"bet_amount"</span>: <span class="hljs-string">"3600"</span>,
+      <span class="hljs-attr">"payout_amount"</span>: <span class="hljs-string">"0"</span>,
+      <span class="hljs-attr">"valid_amount"</span>: <span class="hljs-string">"3600"</span>,
+      <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span> ,
+      <span class="hljs-attr">"fee_amount"</span>: <span class="hljs-string">"10"</span> ,
+      <span class="hljs-attr">"jp_amount"</span>: <span class="hljs-string">"10"</span> 
+    }
+  ]
+}
+</code></pre><h3 id="Get-Bet-Record-URL-for-Details"><a class="anchor hidden-xs" href="#Get-Bet-Record-URL-for-Details" title="Get-Bet-Record-URL-for-Details"><span class="octicon octicon-link"></span></a>Get Bet Record URL for Details</h3><p>To inquire the URL for bet details</p><h4 id="Request-URL7"><a class="anchor hidden-xs" href="#Request-URL7" title="Request-URL7"><span class="octicon octicon-link"></span></a>Request URL</h4><pre><code class="tiddlywiki hljs">https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>url</span><span class="token punctuation">&gt;</span></span>/v1/record/get_bet_detail_page <span class="token url">[POST]</span>
+</code></pre><h4 id="Request-Parameters7"><a class="anchor hidden-xs" href="#Request-Parameters7" title="Request-Parameters7"><span class="octicon octicon-link"></span></a>Request Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Enforce</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>game_serial</td>
+<td>String</td>
+<td>Yes</td>
+<td>serial for games</td>
+</tr>
+<tr>
+<td>game_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>game id</td>
+</tr>
+<tr>
+<td>round_id</td>
+<td>String</td>
+<td>Yes</td>
+<td>round id</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>String</td>
+<td>Yes</td>
+<td><code>zh_cn</code> and <code>en_us</code> supported</td>
+</tr>
+</tbody>
+</table><p><strong>Example</strong></p><pre><code class="x hljs">{
+  <span class="hljs-attr">"game_id"</span>: <span class="hljs-string">"2001"</span>,
+  <span class="hljs-attr">"game_serial"</span>: <span class="hljs-string">"23134242"</span>,
+  <span class="hljs-attr">"round_id"</span>: <span class="hljs-string">"87122421352"</span>,
+  <span class="hljs-attr">"lang"</span>: <span class="hljs-string">"zh_cn"</span>
+}
+</code></pre><h4 id="Response-Parameters7"><a class="anchor hidden-xs" href="#Response-Parameters7" title="Response-Parameters7"><span class="octicon octicon-link"></span></a>Response Parameters</h4><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>Number</td>
+<td>status code</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>status message</td>
+</tr>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>bet record detail url</td>
+</tr>
+</tbody>
+</table><pre><code class="x hljs">{
+  <span class="hljs-attr">"result"</span>: {
+    <span class="hljs-attr">"code"</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">"msg"</span>: <span class="hljs-string">"success"</span>
+  },
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://&lt;record.page&gt;/bet_detail/?token=3fd0e97e-198b-4d34-9ab0-cd3f82f79ba3&amp;lang=zh_cn"</span>
+}
+</code></pre><div class="alert alert-warning">
+<p><i class="fa fa-star fa-fw"></i><em><strong>Important:</strong></em></p>
+<blockquote>
+<p>Bet record URL will expire after 10 minutes.</p>
+</blockquote>
+</div><h1 id="Update-Records"><a class="anchor hidden-xs" href="#Update-Records" title="Update-Records"><span class="octicon octicon-link"></span></a>Update Records</h1><blockquote>
+<h6 id="N-Added、-U-Updated、D-Deleted"><a class="anchor hidden-xs" href="#N-Added、-U-Updated、D-Deleted" title="N-Added、-U-Updated、D-Deleted"><span class="octicon octicon-link"></span></a><code>N</code> Added、 <code>U</code> Updated、<code>D</code> Deleted</h6>
+</blockquote><h4 id="v170"><a class="anchor hidden-xs" href="#v170" title="v170"><span class="octicon octicon-link"></span></a>v1.7.0</h4><h5 id="20190825"><a class="anchor hidden-xs" href="#20190825" title="20190825"><span class="octicon octicon-link"></span></a>2019/08/25</h5><p><code>N</code> Added<strong>Member Login in Game</strong>To get the launch URL for members<br>
+<code>D</code> Deleted<strong>Enter Game</strong><br>
+<code>D</code> Deleted<strong>Member Login</strong></p><h4 id="v160"><a class="anchor hidden-xs" href="#v160" title="v160"><span class="octicon octicon-link"></span></a>v1.6.0</h4><h5 id="20190501"><a class="anchor hidden-xs" href="#20190501" title="20190501"><span class="octicon octicon-link"></span></a>2019/05/01</h5><p><code>U</code> Updated URL for directing<br>
+<code>D</code> Deleted <strong>Game List</strong></p><h4 id="v150"><a class="anchor hidden-xs" href="#v150" title="v150"><span class="octicon octicon-link"></span></a>v1.5.0</h4><h5 id="20190418"><a class="anchor hidden-xs" href="#20190418" title="20190418"><span class="octicon octicon-link"></span></a>2019/04/18</h5><p><code>N</code> Added <strong>Get Bet Record URL for Details</strong></p><h4 id="v141"><a class="anchor hidden-xs" href="#v141" title="v141"><span class="octicon octicon-link"></span></a>v1.4.1</h4><h5 id="20190327"><a class="anchor hidden-xs" href="#20190327" title="20190327"><span class="octicon octicon-link"></span></a>2019/03/27</h5><p><code>U</code> Member Login-updated member account from 8~16 to 6~16. - and _ supported.<br>
+<code>U</code> Enter Game-Updated operator differentiation.(Optional)</p><h4 id="v14"><a class="anchor hidden-xs" href="#v14" title="v14"><span class="octicon octicon-link"></span></a>v1.4</h4><h5 id="20190320"><a class="anchor hidden-xs" href="#20190320" title="20190320"><span class="octicon octicon-link"></span></a>2019/03/20</h5><p><code>U</code> Game List-Updated <strong>9 games and 1 lobby</strong> released on 2019/03/20</p><h4 id="v131"><a class="anchor hidden-xs" href="#v131" title="v131"><span class="octicon octicon-link"></span></a>v1.3.1</h4><h5 id="20190312"><a class="anchor hidden-xs" href="#20190312" title="20190312"><span class="octicon octicon-link"></span></a>2019/03/12</h5><p><code>U</code> Bet record define-Updated description of <strong>payout_amount</strong></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170" title="Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0">Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0</a><ul class="nav"><li><a href="#Introduction" title="Introduction">Introduction</a><ul class="nav"><li><a href="#Document-Rules" title="Document Rules">Document Rules</a></li></ul></li><li><a href="#Notice" title="Notice">Notice</a></li><li><a href="#Request-Signing" title="Request Signing">Request Signing</a></li><li><a href="#Game-API-Message-Code-Info" title="Game API-Message Code Info">Game API-Message Code Info</a><ul class="nav"><li><a href="#Return-Code-Info" title="Return Code Info">Return Code Info</a></li></ul></li><li><a href="#Game-API-Supported-Languages" title="Game API-Supported Languages">Game API-Supported Languages</a></li><li><a href="#Game-API-Supported-Currencies" title="Game API-Supported Currencies">Game API-Supported Currencies</a></li><li><a href="#Game-API-Time-Format" title="Game API-Time Format">Game API-Time Format</a></li><li><a href="#Wallet-API-Wallet-Operation" title="Wallet API-Wallet Operation">Wallet API-Wallet Operation</a></li><li><a href="#Wallet-API-Message-Code-Info" title="Wallet API-Message Code Info">Wallet API-Message Code Info</a><ul class="nav"><li><a href="#Return-Code-Info1" title="Return Code Info">Return Code Info</a></li><li><a href="#Wallet-API-Get-Balance" title="Wallet API-Get Balance">Wallet API-Get Balance</a></li><li><a href="#Wallet-API-Bet-Request" title="Wallet API-Bet Request">Wallet API-Bet Request</a></li><li><a href="#Wallet-API-Payout-Request" title="Wallet API-Payout Request">Wallet API-Payout Request</a></li><li><a href="#Wallet-API-Cancel-Request" title="Wallet API-Cancel Request">Wallet API-Cancel Request</a></li></ul></li><li><a href="#Game-API-Member" title="Game API-Member">Game API-Member</a><ul class="nav"><li><a href="#To-Register-Members-in-DS" title="To Register Members in DS">To Register Members in DS</a></li></ul></li><li><a href="#Game-API-Member-Login-in-Game" title="Game API-Member Login in Game">Game API-Member Login in Game</a></li><li><a href="#Game-API-Bet-Record" title="Game API-Bet Record">Game API-Bet Record</a><ul class="nav"><li><a href="#Structure-Definition" title="Structure Definition">Structure Definition</a></li><li><a href="#Get-Member-Bet-Record" title="Get Member Bet Record">Get Member Bet Record</a></li><li><a href="#Get-Bet-Record-URL-for-Details" title="Get Bet Record URL for Details">Get Bet Record URL for Details</a></li></ul></li></ul></li><li><a href="#Update-Records" title="Update Records">Update Records</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#Dragoon-Soft-API-Integration-Document（English-Seamless-Wallet-v170" title="Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0">Dragoon Soft API Integration Document（English)-Seamless Wallet v1.7.0</a><ul class="nav"><li><a href="#Introduction" title="Introduction">Introduction</a><ul class="nav"><li><a href="#Document-Rules" title="Document Rules">Document Rules</a></li></ul></li><li><a href="#Notice" title="Notice">Notice</a></li><li><a href="#Request-Signing" title="Request Signing">Request Signing</a></li><li><a href="#Game-API-Message-Code-Info" title="Game API-Message Code Info">Game API-Message Code Info</a><ul class="nav"><li><a href="#Return-Code-Info" title="Return Code Info">Return Code Info</a></li></ul></li><li><a href="#Game-API-Supported-Languages" title="Game API-Supported Languages">Game API-Supported Languages</a></li><li><a href="#Game-API-Supported-Currencies" title="Game API-Supported Currencies">Game API-Supported Currencies</a></li><li><a href="#Game-API-Time-Format" title="Game API-Time Format">Game API-Time Format</a></li><li><a href="#Wallet-API-Wallet-Operation" title="Wallet API-Wallet Operation">Wallet API-Wallet Operation</a></li><li><a href="#Wallet-API-Message-Code-Info" title="Wallet API-Message Code Info">Wallet API-Message Code Info</a><ul class="nav"><li><a href="#Return-Code-Info1" title="Return Code Info">Return Code Info</a></li><li><a href="#Wallet-API-Get-Balance" title="Wallet API-Get Balance">Wallet API-Get Balance</a></li><li><a href="#Wallet-API-Bet-Request" title="Wallet API-Bet Request">Wallet API-Bet Request</a></li><li><a href="#Wallet-API-Payout-Request" title="Wallet API-Payout Request">Wallet API-Payout Request</a></li><li><a href="#Wallet-API-Cancel-Request" title="Wallet API-Cancel Request">Wallet API-Cancel Request</a></li></ul></li><li><a href="#Game-API-Member" title="Game API-Member">Game API-Member</a><ul class="nav"><li><a href="#To-Register-Members-in-DS" title="To Register Members in DS">To Register Members in DS</a></li></ul></li><li><a href="#Game-API-Member-Login-in-Game" title="Game API-Member Login in Game">Game API-Member Login in Game</a></li><li><a href="#Game-API-Bet-Record" title="Game API-Bet Record">Game API-Bet Record</a><ul class="nav"><li><a href="#Structure-Definition" title="Structure Definition">Structure Definition</a></li><li><a href="#Get-Member-Bet-Record" title="Get Member Bet Record">Get Member Bet Record</a></li><li><a href="#Get-Bet-Record-URL-for-Details" title="Get Bet Record URL for Details">Get Bet Record URL for Details</a></li></ul></li></ul></li><li><a href="#Update-Records" title="Update Records">Update Records</a></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

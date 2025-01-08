@@ -1,0 +1,99 @@
+[be-tomcat]
+192.168.6.120 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-nginx]
+192.168.7.100 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-php]
+192.168.7.96 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-kafka1]
+192.168.6.113 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-kafka2]
+192.168.6.114 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-kafka3]
+192.168.6.115 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-java]
+192.168.6.116 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-c]
+#192.168.6.117 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.119 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-master]
+192.168.6.118 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[git]
+192.168.4.77 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[be-env]
+192.168.6.113 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.114 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.115 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.116 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.117 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.118 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.119 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.120 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.121 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.96 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.100 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.101 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+[lab-env]
+192.168.6.113 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.114 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.115 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.116 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.117 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.118 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.119 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.120 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.6.121 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.96 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.100 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+192.168.7.101 ansible_ssh_user='otpitadmin' ansible_sudo_pass='mw#Z@GzU7A*wz2^'
+
+
+
+# 密碼產生機 https://www.ez2o.com/App/Coder/RandomPassword
+# 產生密碼長度 32
+# 產生密碼類型：
+
+
+# 註解 #################################################################################
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com

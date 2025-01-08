@@ -1,0 +1,61 @@
+---
+- hosts: dev-uat-all
+  tasks:
+    - name: 部屬硬碟IO配置
+      become: yes
+      poll: 0
+      copy:
+        src: "/etc/zabbix/zabbix_agent2.d/disk_status.conf"
+        dest: "/etc/zabbix/zabbix_agent2.d/"
+        mode: 0755
+
+    - name: 部屬ICMP配置
+      become: yes
+      poll: 0
+      copy:
+        src: "/etc/zabbix/zabbix_agent2.d/tcp_status.conf"
+        dest: "/etc/zabbix/zabbix_agent2.d/"
+        mode: 0755
+
+    - name: 新增資料夾
+      become: yes
+      poll: 0
+      shell: mkdir -p /etc/zabbix/scripts/
+
+    - name: 部屬IO腳本
+      become: yes
+      poll: 0
+      copy:
+        src: "/etc/zabbix/scripts/disk_discovery.sh"
+        dest: "/etc/zabbix/scripts/"
+        mode: 0755
+
+
+    - name: 部屬IO腳本2
+      become: yes
+      poll: 0
+      copy:
+        src: "/etc/zabbix/scripts/disk_status.sh"
+        dest: "/etc/zabbix/scripts/"
+        mode: 0755
+
+
+    - name: 部屬ICMP腳本
+      become: yes
+      poll: 0
+      copy:
+        src: "/etc/zabbix/scripts/tcp_status.sh"
+        dest: "/etc/zabbix/scripts/"
+        mode: 0755
+
+
+    - name: 修改agent配置
+      become: yes
+      poll: 0
+      shell: sed -i '$aUnsafeUserParameters=1' /etc/zabbix/zabbix_agent2.conf
+
+
+    - name: 重啟agent
+      become: yes
+      poll: 0
+      shell: systemctl restart zabbix-agent2

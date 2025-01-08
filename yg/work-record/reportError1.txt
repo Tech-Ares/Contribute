@@ -1,0 +1,160 @@
+2019-08-30 07:11:09,288 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-6] GET 89.25.253.14 -> /yggGame/getUsersBetData, execute method [MerchantController.getUsersBetData[AdapterTestGroup, adaptertest2, null, EUR, 2016-05-15 00:00:00, 2020-05-16 20:00:00, FA44814CB39E55BF82442E82FFDB8453]] cost time 119 ms!
+2019-08-30 07:11:20,654 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-8] GET 89.25.253.14 -> /yggGame/getUsersBetData, execute method [MerchantController.getUsersBetData[AdapterTestGroup, adaptertest2, null, EUR, 2016-05-15 00:00:00, 2020-05-16 20:00:00, FA44814CB39E55BF82442E82FFDB8453]] cost time 77 ms!
+2019-08-30 07:11:21,966 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-3] org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+        at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:333)
+        at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:758)
+        at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:663)
+        at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:368)
+        at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:346)
+        at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:96)
+        at com.fasterxml.jackson.core.json.UTF8JsonGenerator._flushBuffer(UTF8JsonGenerator.java:2085)
+        at com.fasterxml.jackson.core.json.UTF8JsonGenerator._writeBytes(UTF8JsonGenerator.java:1173)
+        at com.fasterxml.jackson.core.json.UTF8JsonGenerator.writeFieldName(UTF8JsonGenerator.java:256)
+        at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:725)
+        at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719)
+        at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+        at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
+        at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
+        at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
+        at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:727)
+        at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:719)
+        at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:155)
+        at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+        at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+        at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1396)
+        at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:913)
+        at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:287)
+        at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:103)
+        at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:289)
+        at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:180)
+        at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+        at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119)
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+        at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+        at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+        at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+        at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Broken pipe
+        at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+        at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+        at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+        at sun.nio.ch.IOUtil.write(IOUtil.java:65)
+        at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+        at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:134)
+        at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101)
+        at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:157)
+        at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1225)
+        at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:743)
+        at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:513)
+        at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:451)
+        at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:530)
+        at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:112)
+        at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:189)
+        at org.apache.coyote.Response.doWrite(Response.java:599)
+        at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:328)
+        ... 62 more        
+
+2019-08-30 07:11:21,967 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-39091-exec-3] Failure in @ExceptionHandler public org.springframework.http.ResponseEntity<com.ygg.common.ReturnModel> com.ygg.GlobeExceptionHandler.globeHandler(java.lang.Exception)
+ org.apache.catalina.connector.ClientAbortException: java.io.IOException: Broken pipe
+        at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:333) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.OutputBuffer.flushByteBuffer(OutputBuffer.java:758) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:663) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:368) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:346) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:96) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at com.fasterxml.jackson.core.json.UTF8JsonGenerator._flushBuffer(UTF8JsonGenerator.java:2085) ~[jackson-core-2.9.7.jar:2.9.7]
+        at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1097) ~[jackson-core-2.9.7.jar:2.9.7]
+        at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:915) ~[jackson-databind-2.9.7.jar:2.9.7]
+        at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:287) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:103) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:289) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:223) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:119) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:408) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:136) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1297) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1109) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.13.jar:9.0.13]
+        at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+Caused by: java.io.IOException: Broken pipe
+        at sun.nio.ch.FileDispatcherImpl.write0(Native Method) ~[?:1.8.0_211]
+        at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47) ~[?:1.8.0_211]
+        at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93) ~[?:1.8.0_211]
+        at sun.nio.ch.IOUtil.write(IOUtil.java:65) ~[?:1.8.0_211]
+        at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471) ~[?:1.8.0_211]
+        at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:134) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.NioBlockingSelector.write(NioBlockingSelector.java:101) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.NioSelectorPool.write(NioSelectorPool.java:157) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1225) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:743) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:513) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:451) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:530) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.http11.filters.ChunkedOutputFilter.doWrite(ChunkedOutputFilter.java:112) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+  at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:189) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.coyote.Response.doWrite(Response.java:599) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:328) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+        ... 52 more

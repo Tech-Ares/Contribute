@@ -1,0 +1,49 @@
+---
+- hosts: prod-java
+  remote_user: root
+
+  tasks:
+    - name: copy script to /src
+      copy:
+        src: /home/ansible/java/script
+        dest: /src/
+
+    - name: copy version3.0.tar.gz to /home/
+      copy:
+        src: /home/ansible/java/version3.0.tar.gz
+        dest: /home/
+
+
+    - name: Touch a directory /home/publishJenkins
+      file:
+        path: /home/publishJenkins
+        state: directory
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/version3.0.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: copy file to /home/version3.0
+      copy:
+        src: /home/ansible/java/systemd
+        dest: /etc/systemd/system/
+
+    - name: Add group iceuser
+      ansible.builtin.group:
+        name: iceuser
+
+    - name: Chown /home/version3.0 iceuser
+      ansible.builtin.file:
+        path: /home/version3.0
+        owner: iceuser
+        group: iceuser
+
+    - name: sh /src/script/change-ip.sh
+      shell:
+        cmd: "sh /src/script/change-ip.sh"
+
+    - name: sh /src/script/restart-all-service.sh
+      shell:
+        cmd: "sh /src/script/restart-all-service.sh"

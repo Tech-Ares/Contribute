@@ -1,0 +1,58 @@
+---
+- hosts: prod-c
+  remote_user: root
+
+  tasks:
+    - name: Add group iceuser
+      ansible.builtin.group:
+        name: iceuser
+
+    - name: Add the user ICE
+      user: 
+        name: iceuser
+        groups: iceuser
+        password: "{{ 'icepass' | password_hash('sha512') }}"
+
+    - name: sed restart-all.sh to /etc/rc.local
+      shell:
+        cmd: sed -i '$a\sh /src/restart-all.sh' /etc/rc.local
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansible/cpp/script
+        dest: /src/
+
+    - name: copy version3.0.tar.gz to /home/
+      copy:
+        src: /home/ansible/cpp/version3.0.tar.gz
+        dest: /home/
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/version3.0.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: chown iceuser for /home/version3.0
+      shell:
+        cmd: "chown -R iceuser:iceuser /home/version3.0"
+
+    - name: chown iceuser for /src
+      shell:
+        cmd: "chown -R iceuser:iceuser /src/"
+
+    - name: chmod +x /src/script/*
+      shell:
+        cmd: "chmod +x /src/script/*.sh"
+
+    - name: sh /src/script/change-ip.sh
+      shell:
+        cmd: "sh /src/script/change-ip.sh"
+
+    - name: sed /home/version3.0/libs/libs to /etc/ld.so.conf
+      shell:
+        cmd: sed -i '$a\/home\/version3.0\/libs\/libs' /etc/ld.so.conf
+
+#    - name: sh /src/script/restart-all.sh
+#      shell:
+#        cmd: "sh /src/script/restart-all.sh"

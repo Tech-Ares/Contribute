@@ -1,0 +1,151 @@
+---
+- hosts: ice
+  remote_user: root
+
+  tasks:
+    - name: mkdir /src
+      file:
+        path: /src
+        state: directory
+
+    - name: mkdir /home/version3.0
+      file:
+        path: /home/version3.0
+        state: directory
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansbile/tomcat/script/
+        dest: /src/
+
+    - name: wget ice repo
+      shell:
+        cmd: "wget -P /etc/yum.repos.d/ https://zeroc.com/download/Ice/3.6/el6/zeroc-ice3.6.repo"
+
+    - name: copy CentOS Repo
+      copy:
+        src: /home/ansbile/centos6/CentOS-Base.repo
+        dest: /etc/yum.repos.d/CentOS-Base.repo
+
+    - name: install epel-release
+      yum:
+        name:
+          - epel-release
+        state: latest
+        update_cache: yes
+
+    - name: copy libstdc++ to /usr/lib64
+      copy:
+        src: /home/ansbile/ice/libstdc++.so.6
+        dest: /usr/lib64/
+
+    - name: chown iceuser for /home/version3.0
+      shell:
+        cmd: "chown -R iceuser:iceuser /home/version3.0"
+
+    - name: Flush iptables
+      shell:
+        cmd: iptables -F
+
+    - name: install rpm
+      yum:
+        name:
+          - vim
+          - wget
+          - net-tools
+          - openssl
+          - openssh-clients
+          - psmisc
+          - ntp
+          - gcc
+          - lrzsz
+          - kernel-devel
+          - kernel-headers
+          - kernel
+          - zip
+          - unzip
+          - man
+          - time
+          - glibc-devel
+          - glibc-headers
+          - gtk2
+          - xorg-x11-font-utils
+          - xorg-x11-fonts-Type1
+          - alsa-lib
+          - gettext
+          - giflib
+          - jpackage-utils
+          - libICE
+          - libSM
+          - libXfont
+          - libXtst
+          - libart_lgpl
+          - libfontenc
+          - libgcj
+          - lksctp-tools
+          - patch
+          - pcsc-lite-libs
+          - ttmkfdir
+          - libmpc-devel
+          - mpfr-devel
+          - gmp-devel
+          - xorg-x11-server-Xorg
+          - xorg-x11-xauth
+          - xorg-x11-apps
+          - libmcpp-devel
+          - bzip2-devel
+          - db4-devel
+          - expat-devel
+          - openssl-devel
+          - libzeroc-ice-dev
+          - libdb-utils
+          - libfreeze3.6-c++
+          - libice-c++-devel
+          - libice-java
+          - libice3.6-c++
+          - php-common
+          - php-ice
+          - php-ice-devel
+          - ice-slice
+          - glacier2
+          - ice-utils
+          - ice-utils-java
+          - icebox
+          - icegrid
+          - icepatch2
+          - libicestorm3.6
+          - db53
+          - db53-devel
+          - db53-java
+          - db53-utils
+        state: present
+
+    - name: Install the 'Development tools' package group
+      yum:
+        name: "@Development tools"
+        state: present
+
+    - name: Yum update the system
+      yum:
+        name: "*"
+        state: latest
+
+    - name: Rebooting......
+      reboot:
+
+    - name: Use NTP
+      shell:
+        cmd: ntpdate time.stdtime.gov.tw
+
+    - name: copy jdk-8u281-linux-x64.tar.gz to /src
+      copy:
+        src: /home/ansbile/tomcat/jdk-8u281-linux-x64.tar.gz
+        dest: /src/jdk-8u281-linux-x64.tar.gz
+
+    - name: install jdk 281
+      shell:
+        cmd: "sh /src/jdk_install.sh"
+
+    - name: install ice
+      shell:
+        cmd: "sh /src/install_ice.sh"

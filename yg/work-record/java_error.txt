@@ -1,0 +1,165 @@
+2019-07-17 04:54:26,392 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 04:54:26,399 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+2019-07-17 06:34:26,401 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 06:34:26,408 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+2019-07-17 07:30:12,418 WARN org.springframework.web.servlet.DispatcherServlet [http-nio-39091-exec-5] No mapping for GET /%20yggGame/%20getUsersBetData
+2019-07-17 07:30:12,419 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-5] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /%20yggGame/%20getUsersBetData
+	at org.springframework.web.servlet.DispatcherServlet.noHandlerFound(DispatcherServlet.java:1252)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-07-17 08:14:26,409 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 08:14:26,416 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+2019-07-17 09:54:26,417 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 09:54:26,424 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+jvm 1    | 2019/07/17 11:15:58 | #
+jvm 1    | 2019/07/17 11:15:58 | # A fatal error has been detected by the Java Runtime Environment:
+jvm 1    | 2019/07/17 11:15:58 | #
+jvm 1    | 2019/07/17 11:15:58 | #  SIGSEGV (0xb) at pc=0x00007f6cb01df9de, pid=27069, tid=0x00007f6cb01dd700
+jvm 1    | 2019/07/17 11:15:58 | #
+jvm 1    | 2019/07/17 11:15:58 | # JRE version: Java(TM) SE Runtime Environment (8.0_211-b12) (build 1.8.0_211-b12)
+jvm 1    | 2019/07/17 11:15:58 | # Java VM: Java HotSpot(TM) 64-Bit Server VM (25.211-b12 mixed mode linux-amd64 compressed oops)
+jvm 1    | 2019/07/17 11:15:58 | # Problematic frame:
+jvm 1    | 2019/07/17 11:15:58 | # 
+jvm 1    | 2019/07/17 11:15:58 | [error occurred during error reporting (printing problematic frame), id 0xb]
+jvm 1    | 2019/07/17 11:15:58 | 
+jvm 1    | 2019/07/17 11:15:58 | # Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+jvm 1    | 2019/07/17 11:15:58 | #
+jvm 1    | 2019/07/17 11:15:58 | # An error report file with more information is saved as:
+jvm 1    | 2019/07/17 11:15:58 | # /home/yggConsole-staging/hs_err_pid27069.log
+jvm 1    | 2019/07/17 11:15:58 | Compiled method (nm) -1266061020 4123     n 0       org.tanukisoftware.wrapper.WrapperManager::nativeGetControlEvent (native)
+jvm 1    | 2019/07/17 11:15:58 |  total in heap  [0x00007f6cb9781ad0,0x00007f6cb9781e28] = 856
+jvm 1    | 2019/07/17 11:15:58 |  relocation     [0x00007f6cb9781bf8,0x00007f6cb9781c40] = 72
+jvm 1    | 2019/07/17 11:15:58 |  main code      [0x00007f6cb9781c40,0x00007f6cb9781e20] = 480
+jvm 1    | 2019/07/17 11:15:58 |  oops           [0x00007f6cb9781e20,0x00007f6cb9781e28] = 8
+jvm 1    | 2019/07/17 11:15:58 | Compiled method (c2) -1266061020 4914 % !   4       org.tanukisoftware.wrapper.WrapperManager$3::run @ 30 (341 bytes)
+jvm 1    | 2019/07/17 11:15:58 |  total in heap  [0x00007f6cb9cc61d0,0x00007f6cb9cc6c18] = 2632
+jvm 1    | 2019/07/17 11:15:58 |  relocation     [0x00007f6cb9cc62f8,0x00007f6cb9cc6380] = 136
+jvm 1    | 2019/07/17 11:15:58 |  main code      [0x00007f6cb9cc6380,0x00007f6cb9cc67a0] = 1056
+jvm 1    | 2019/07/17 11:15:58 |  stub code      [0x00007f6cb9cc67a0,0x00007f6cb9cc67e8] = 72
+jvm 1    | 2019/07/17 11:15:58 |  oops           [0x00007f6cb9cc67e8,0x00007f6cb9cc67f8] = 16
+jvm 1    | 2019/07/17 11:15:58 |  metadata       [0x00007f6cb9cc67f8,0x00007f6cb9cc6830] = 56
+jvm 1    | 2019/07/17 11:15:58 |  scopes data    [0x00007f6cb9cc6830,0x00007f6cb9cc6a98] = 616
+jvm 1    | 2019/07/17 11:15:58 |  scopes pcs     [0x00007f6cb9cc6a98,0x00007f6cb9cc6bc8] = 304
+jvm 1    | 2019/07/17 11:15:58 |  dependencies   [0x00007f6cb9cc6bc8,0x00007f6cb9cc6bd0] = 8
+jvm 1    | 2019/07/17 11:15:58 |  handler table  [0x00007f6cb9cc6bd0,0x00007f6cb9cc6c18] = 72
+wrapper  | 2019/07/17 11:15:58 | JVM exited unexpectedly.
+wrapper  | 2019/07/17 11:15:58 | JVM exited in response to signal UNKNOWN (6).
+jvm 1    | 2019/07/17 11:15:58 | #
+jvm 1    | 2019/07/17 11:15:58 | # If you would like to submit a bug report, please visit:
+jvm 1    | 2019/07/17 11:15:58 | #   http://bugreport.java.com/bugreport/crash.jsp
+jvm 1    | 2019/07/17 11:15:58 | #
+wrapper  | 2019/07/17 11:16:03 | Launching a JVM...
+jvm 2    | 2019/07/17 11:16:03 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 2    | 2019/07/17 11:16:03 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+jvm 2    | 2019/07/17 11:16:03 | 
+jvm 2    | 2019/07/17 11:16:04 | 
+jvm 2    | 2019/07/17 11:16:04 |   .   ____          _            __ _ _
+jvm 2    | 2019/07/17 11:16:04 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+jvm 2    | 2019/07/17 11:16:04 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+jvm 2    | 2019/07/17 11:16:04 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+jvm 2    | 2019/07/17 11:16:04 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+jvm 2    | 2019/07/17 11:16:04 |  =========|_|==============|___/=/_/_/_/
+jvm 2    | 2019/07/17 11:16:04 |  :: Spring Boot ::        (v2.1.1.RELEASE)
+jvm 2    | 2019/07/17 11:16:04 | 
+2019-07-17 11:16:05,173 INFO org.springframework.boot.StartupInfoLogger [WrapperSimpleAppMain] Starting RunningApplication v0.0.1-SNAPSHOT on adapter01-stage-tw.asia-east1-b.c.stage-global-239408.internal with PID 19256 (/home/yggConsole-staging/lib/yggConsole-controller-0.0.1-SNAPSHOT.jar started by root in /home/yggConsole-staging)
+2019-07-17 11:16:05,179 INFO org.springframework.boot.SpringApplication [WrapperSimpleAppMain] No active profile set, falling back to default profiles: default
+2019-07-17 11:16:06,278 WARN org.mybatis.spring.mapper.ClassPathMapperScanner [WrapperSimpleAppMain] No MyBatis mapper was found in '[com.itgo.ygg.dao.mapper]' package. Please check your configuration.
+2019-07-17 11:16:06,523 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-17 11:16:06,532 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-17 11:16:06,592 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Finished Spring Data repository scanning in 38ms. Found 0 repository interfaces.
+2019-07-17 11:16:07,677 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [WrapperSimpleAppMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dc85bb21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 11:16:09,129 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [WrapperSimpleAppMain] Tomcat initialized with port(s): 39091 (http)
+2019-07-17 11:16:09,161 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Initializing ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:16:09,205 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting service [Tomcat]
+2019-07-17 11:16:09,206 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-17 11:16:09,235 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [lib]
+2019-07-17 11:16:09,429 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Initializing Spring embedded WebApplicationContext
+2019-07-17 11:16:09,429 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [WrapperSimpleAppMain] Root WebApplicationContext: initialization completed in 4171 ms
+2019-07-17 11:16:10,123 INFO com.ygg.datasource.DataSourceConfig [WrapperSimpleAppMain] -------------------- writeDataSource init ---------------------
+2019-07-17 11:16:12,204 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [WrapperSimpleAppMain] Initializing ExecutorService 'taskScheduler'
+2019-07-17 11:16:12,319 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:16:12,328 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 11:16:12,335 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Using a shared selector for servlet write/read
+2019-07-17 11:16:12,373 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [WrapperSimpleAppMain] Tomcat started on port(s): 39091 (http) with context path ''
+2019-07-17 11:16:12,388 INFO org.springframework.boot.StartupInfoLogger [WrapperSimpleAppMain] Started RunningApplication in 8.092 seconds (JVM running for 9.339)
+2019-07-17 11:16:12,744 INFO com.alibaba.druid.pool.DruidDataSource [scheduling-1] {dataSource-1} inited
+2019-07-17 11:16:12,796 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+wrapper  | 2019/07/17 11:17:17 | TERM trapped.  Shutting down.
+2019-07-17 11:17:17,942 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-3] Shutting down ExecutorService 'taskScheduler'
+2019-07-17 11:17:17,951 INFO com.alibaba.druid.pool.DruidDataSource [Thread-3] {dataSource-1} closed
+2019-07-17 11:17:17,978 INFO org.apache.juli.logging.DirectJDKLog [Thread-3] Pausing ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:17:17,987 INFO org.apache.juli.logging.DirectJDKLog [Thread-3] Stopping service [Tomcat]
+2019-07-17 11:17:18,001 INFO org.apache.juli.logging.DirectJDKLog [Thread-3] Stopping ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:17:18,005 INFO org.apache.juli.logging.DirectJDKLog [Thread-3] Destroying ProtocolHandler ["http-nio-39091"]
+wrapper  | 2019/07/17 11:17:18 | <-- Wrapper Stopped
+wrapper  | 2019/07/17 11:17:18 | --> Wrapper Started as Daemon
+wrapper  | 2019/07/17 11:17:18 | Launching a JVM...
+jvm 1    | 2019/07/17 11:17:18 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1    | 2019/07/17 11:17:18 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+jvm 1    | 2019/07/17 11:17:18 | 
+jvm 1    | 2019/07/17 11:17:20 | 
+jvm 1    | 2019/07/17 11:17:20 |   .   ____          _            __ _ _
+jvm 1    | 2019/07/17 11:17:20 |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+jvm 1    | 2019/07/17 11:17:20 | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+jvm 1    | 2019/07/17 11:17:20 |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+jvm 1    | 2019/07/17 11:17:20 |   '  |____| .__|_| |_|_| |_\__, | / / / /
+jvm 1    | 2019/07/17 11:17:20 |  =========|_|==============|___/=/_/_/_/
+jvm 1    | 2019/07/17 11:17:20 |  :: Spring Boot ::        (v2.1.1.RELEASE)
+jvm 1    | 2019/07/17 11:17:20 | 
+2019-07-17 11:17:20,386 INFO org.springframework.boot.StartupInfoLogger [WrapperSimpleAppMain] Starting RunningApplication v0.0.1-SNAPSHOT on adapter01-stage-tw.asia-east1-b.c.stage-global-239408.internal with PID 19403 (/home/yggConsole-staging/lib/yggConsole-controller-0.0.1-SNAPSHOT.jar started by root in /home/yggConsole-staging)
+2019-07-17 11:17:20,398 INFO org.springframework.boot.SpringApplication [WrapperSimpleAppMain] No active profile set, falling back to default profiles: default
+2019-07-17 11:17:21,487 WARN org.mybatis.spring.mapper.ClassPathMapperScanner [WrapperSimpleAppMain] No MyBatis mapper was found in '[com.itgo.ygg.dao.mapper]' package. Please check your configuration.
+2019-07-17 11:17:21,812 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-07-17 11:17:21,818 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-07-17 11:17:21,878 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [WrapperSimpleAppMain] Finished Spring Data repository scanning in 37ms. Found 0 repository interfaces.
+2019-07-17 11:17:22,851 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [WrapperSimpleAppMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9a9d15e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-07-17 11:17:24,187 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [WrapperSimpleAppMain] Tomcat initialized with port(s): 39091 (http)
+2019-07-17 11:17:24,209 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Initializing ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:17:24,242 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting service [Tomcat]
+2019-07-17 11:17:24,243 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-07-17 11:17:24,262 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [lib]
+2019-07-17 11:17:24,455 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Initializing Spring embedded WebApplicationContext
+2019-07-17 11:17:24,457 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [WrapperSimpleAppMain] Root WebApplicationContext: initialization completed in 3984 ms
+2019-07-17 11:17:25,090 INFO com.ygg.datasource.DataSourceConfig [WrapperSimpleAppMain] -------------------- writeDataSource init ---------------------
+2019-07-17 11:17:27,312 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [WrapperSimpleAppMain] Initializing ExecutorService 'taskScheduler'
+2019-07-17 11:17:27,433 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Starting ProtocolHandler ["http-nio-39091"]
+2019-07-17 11:17:27,440 INFO org.apache.juli.logging.DirectJDKLog [WrapperSimpleAppMain] Using a shared selector for servlet write/read
+2019-07-17 11:17:27,442 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 开始加载merchants缓存
+2019-07-17 11:17:27,484 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [WrapperSimpleAppMain] Tomcat started on port(s): 39091 (http) with context path ''
+2019-07-17 11:17:27,498 INFO org.springframework.boot.StartupInfoLogger [WrapperSimpleAppMain] Started RunningApplication in 7.997 seconds (JVM running for 9.067)
+2019-07-17 11:17:27,811 INFO com.alibaba.druid.pool.DruidDataSource [scheduling-1] {dataSource-1} inited
+2019-07-17 11:17:27,859 INFO com.ygg.scheduled.MerchantsKeyScheduled [scheduling-1] 加载merchants缓存结果:26条
+2019-07-17 11:18:01,061 INFO org.apache.juli.logging.DirectJDKLog [http-nio-39091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-17 11:18:01,061 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-39091-exec-1] Initializing Servlet 'dispatcherServlet'
+2019-07-17 11:18:01,077 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-39091-exec-1] Completed initialization in 16 ms

@@ -1,0 +1,13 @@
+---
+- hosts: huidu-ip
+  remote_user: root
+
+  tasks:
+    - name: copy user.sh to /src
+      copy:
+        src: /src/user.sh
+        dest: /src
+
+    - name: install user.sh
+      shell:
+        cmd: "sh /src/user.sh"

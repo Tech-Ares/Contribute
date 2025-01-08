@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<ss:Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <ss:Worksheet ss:Name="Sheet1">
+    <ss:Table>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="String">Ticket Id</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Subject</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Description</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Status</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Priority</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Type</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Requester Name</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Requester Email</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Agent</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Created Time</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Last Updated Time</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Issue</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+      </ss:Row>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="Number">29712</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">[AT-YGG] Can&#x27;t processing the request_coingaming</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Hi
+Could you help us with debugging please?
+We&#x27;re trying to set our b2b contract, but getting errors.
+Top org:CoinGamingGroup
+Org: hub88_as
+all games
+
+Here is the link: https://launcher-as1.fh8labs.com/games/encrypted/launcher?payload=QTEyOEdDTQ.6pFbrzIryq2sybMmB444i1QOgsm-1BKpdJfKsty6uLffKSxsk1Giq6ZxQm4.accYnEo4OymMNOgt.lzhNLzxQWdY3Qlpnxk1fg8eWIj6xvD-P1ntpu4Zn5DJMThKK9qWRXYPEPAoU7toq2qjQdQ_MqPC5nz6dkrd5AJVwz8EIsGwG-roebCDhzXKzJqddLCJekLQHqCtBbBEGrd2w--7eGeYTu6gbT4YITD4BomFOA50i0T16IADeTy2612vmVyLRY3U23pq9kHP_RPwrqarjcx3tkcCm4m4pqZZwmICi5lcmRw6tPAWyUoWiEmNLd3UlV8sH971_EtMjB6ktT_A0uWEWcJS13FBlq73w6SfMmCqXx5PJQZkwg21YpcSSDfhSfAtC513DT1ITwJbCFIAqIjlcUfqXMPscpSCU4zrX2kpTsrmBkWFncsws3T0LzT9qVtrS35-eENbhr8TAkl_cQe_ZLzHytE4-Spwae-bRu_OtZ9s.F_3GprXnVZW7VnY52WASlQ
+
+Regards,
+Cora
+
+Skype ID: corachichi1027
+Telegram: @coratw
+
+[cid:image001.jpg@01D5F0E8.4949A620]
+
+
+</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Being Processed</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Cora Chen</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">cora@azuretech.tw</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mateusz Swatek</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-02 16:14:17</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-03 04:12:20</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Game not loading</ss:Data></ss:Cell>
+      </ss:Row>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="Number">29704</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">[Azuretech] - Cannot find the game &quot;Draglings&quot;</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Hello YG team,      We have operator reported that they are unable to access the game &quot;Draglings&quot; on CNY and THB. For CNY and THB, they will hit the error: game not added to config.xml. 
+  We just checked this game at source
+ and BO  but i don&#x27;t seem to see any relevant information   would you guys clarify this issue?  If this is our game
+  Whether this game can be disabled?     Thank you  Kind Regards,   Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Being Processed</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">mars@azuretech.tw</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mateusz Swatek</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-02 11:51:36</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-03 02:55:53</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Game not loading</ss:Data></ss:Cell>
+      </ss:Row>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="Number">29571</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">[Azuretech] - [Prod] Replay integration issues</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Hi YGG team,      We have an operator report  They completed the integration of the replay  But when responding to code0 and URL it&#x27;s ERROR will appear     request URL : https://server-prod-tw.248ka.com/game.admin.web/services/authority/replay     {
+  &quot;gameId&quot;: &quot;7357&quot;,
+  &quot;uid&quot;: &quot;admin1&quot;,
+  &quot;org&quot;: &quot;Dafabet&quot;,
+  &quot;pwd&quot;: &quot;eastw00d&quot;,
+  &quot;roundId&quot;: &quot;2002190010110300010&quot;
+  }     {   &quot;code&quot;: 0,   &quot;data&quot;: &quot;https://player.yggdrasilgaming.com/watch?eyJnYW1laWQiOiI3MzU3IiwiYXBwc3J2IjoiaHR0cHM6Ly9zZXJ2ZXItcHJvZC10dy50aGViZXN0c2xvdC5udSIsIndhZ2VyaWQiOiIyMDAyMTkwMDEwMTEwMzAwMDEwIiwib3JnIjoiRGFmYWJldCIsImNsaWVudCI6Imh0dHBzOi8vc3RhdGljLXByb2QtdHcudGhlYmVzdHNsb3QubnUiLCJsYW5nIjoiZW4iLCJzaGFyZU9yZyI6IkRhZmFiZXQiLCJzaGFyZU9yZ05hbWUiOiJEYWZhYmV0In0=&quot;  }              Please help to check this issue Thanks     Thanks  Kind Regards,   Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Being Processed</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">mars@azuretech.tw</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Eryk Jałowiec</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-02-27 03:39:19</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-02 03:36:49</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incorrect behavior</ss:Data></ss:Cell>
+      </ss:Row>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="Number">29484</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">[Azuretech] - [Stage] Replay integration issues</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Hi YGG team,      We have an operator report  They completed the integration of the replay  But when responding to code0 and URL it&#x27;s ERROR will appear     request URL : https://server-stage-tw.248ka.com/game.admin.web/services/authority/replay   {
+  &quot;gameId&quot;: &quot;7357&quot;,
+  &quot;uid&quot;: &quot;admin1&quot;,
+  &quot;org&quot;: &quot;qts&quot;,
+  &quot;pwd&quot;: &quot;eastw00d&quot;,
+  &quot;roundId&quot;: &quot;2002250852130100001&quot;
+  }        {   &quot;code&quot;: 0,   &quot;data&quot;: &quot;https://player.yggdrasilgaming.com/watch?eyJnYW1laWQiOiI3MzU3IiwiYXBwc3J2IjoiaHR0cHM6Ly9zZXJ2ZXItc3RhZ2UtdHcudGhlYmVzdHNsb3QubnUiLCJ3YWdlcmlkIjoiMjAwMjI1MDg1MjEzMDEwMDAwMSIsIm9yZyI6InF0cyIsImNsaWVudCI6Imh0dHBzOi8vc3RhdGljLXN0YWdlLXR3LnRoZWJlc3RzbG90Lm51IiwibGFuZyI6ImVuIiwic2hhcmVPcmciOiJxdHMiLCJzaGFyZU9yZ05hbWUiOiJxdHMifQ==&quot;  }          Please help to check this issue Thanks     Thanks  Kind Regards,   Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Being Processed</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">mars@azuretech.tw</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Daniel Janus</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-02-25 10:14:32</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-02 10:11:07</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incorrect behavior</ss:Data></ss:Cell>
+      </ss:Row>
+      <ss:Row>
+        	<ss:Cell><ss:Data ss:Type="Number">29480</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">[Azuretech] - [Prod] Replay integration issues</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Hi YGG team,      We have an operator report  They completed the integration of the replay  But when responding to code0 and URL it&#x27;s ERROR will appear     request URL : https://server-prod-tw.248ka.com/game.admin.web/services/authority/replay     {
+  &quot;gameId&quot;: &quot;7357&quot;,
+  &quot;uid&quot;: &quot;admin1&quot;,
+  &quot;org&quot;: &quot;qtp&quot;,
+  &quot;pwd&quot;: &quot;eastw00d&quot;,
+  &quot;roundId&quot;: &quot;2002250755520300003&quot;
+  }      {   &quot;code&quot;: 0,   &quot;data&quot;: &quot;https://player.yggdrasilgaming.com/watch?eyJnYW1laWQiOiI3MzU3IiwiYXBwc3J2IjoiaHR0cHM6Ly9zZXJ2ZXItcHJvZC10dy50aGViZXN0c2xvdC5udSIsIndhZ2VyaWQiOiIyMDAyMjUwNzU1NTIwMzAwMDAzIiwib3JnIjoicXRwIiwiY2xpZW50IjoiaHR0cHM6Ly9zdGF0aWMtcHJvZC10dy50aGViZXN0c2xvdC5udSIsImxhbmciOiJlbiIsInNoYXJlT3JnIjoicXRwIiwic2hhcmVPcmdOYW1lIjoicXRwIn0=&quot;  }              Please help to check this issue Thanks     Thanks  Kind Regards,   Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Being Processed</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Low</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incident</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Mars</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">mars@azuretech.tw</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Daniel Janus</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-02-25 09:27:36</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">2020-03-02 10:10:48</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Games</ss:Data></ss:Cell>
+        	<ss:Cell><ss:Data ss:Type="String">Incorrect behavior</ss:Data></ss:Cell>
+      </ss:Row>
+    </ss:Table>
+  </ss:Worksheet>
+</ss:Workbook>

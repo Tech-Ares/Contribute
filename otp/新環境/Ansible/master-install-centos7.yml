@@ -1,0 +1,38 @@
+---
+- hosts: testmaster
+  remote_user: root
+
+  tasks:
+    - name: copy version3.0.tar.gz to /home/
+      copy:
+        src: /home/ansbile/master/version3.0.tar.gz
+        dest: /home/
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/version3.0.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: copy master init to /etc/init.d/
+      copy:
+        src: /home/ansbile/master/init.d/
+        dest: /etc/init.d/
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansbile/master/script
+        dest: /src/
+
+    - name: Chown /home/version3.0 iceuser
+      file:
+        path: /home/version3.0
+        owner: iceuser
+        group: iceuser
+
+    - name: sh /src/script/change-ip.sh
+      shell:
+        cmd: "sh /src/script/change-ip.sh"
+
+    - name: Rebooting......
+      reboot:

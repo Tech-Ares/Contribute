@@ -1,0 +1,58 @@
+---
+- hosts: prod-master
+  remote_user: root
+
+  tasks:
+    - name: copy version3.0.tar.gz to /home/
+      copy:
+        src: /home/ansible/master/version3.0.tar.gz
+        dest: /home/
+
+    - name: Unarchive a file that is already on the remote machine
+      unarchive:
+        src: /home/version3.0.tar.gz
+        dest: /home/
+        remote_src: yes
+
+    - name: copy master init to /etc/init.d/
+      copy:
+        src: /home/ansible/master/init.d/
+        dest: /etc/init.d/
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansible/master/script
+        dest: /src/
+
+    - name: Chown /home/version3.0 iceuser
+      file:
+        path: /home/version3.0
+        owner: iceuser
+        group: iceuser
+
+    - name: sh /src/script/change-ip.sh
+      shell:
+        cmd: "sh /src/script/change-ip.sh"
+
+    - name: rm -rf /home/version3.0/icedb/registry/gateway-master/
+      shell:
+        cmd: "rm -rf /home/version3.0/icedb/registry/gateway-master/*"
+
+    - name: rm -rf /home/version3.0/icedb/registry/routine-master/
+      shell:
+        cmd: "rm -rf /home/version3.0/icedb/registry/routine-master/*"
+
+    - name: rm -rf /home/version3.0/icedb/node/GatewayMgr/
+      shell:
+        cmd: "rm -rf /home/version3.0/icedb/node/GatewayMgr/*"
+
+    - name: rm -rf /home/version3.0/icedb/node/TradeSimulatorMgr/
+      shell:
+        cmd: "rm -rf /home/version3.0/icedb/node/TradeSimulatorMgr/*"
+
+    - name: sed /home/version3.0/libs/libs to /etc/ld.so.conf
+      shell:
+        cmd: sed -i '$a\/home\/version3.0\/libs\/libs' /etc/ld.so.conf
+
+#    - name: Rebooting......
+#      reboot:

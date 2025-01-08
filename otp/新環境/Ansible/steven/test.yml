@@ -1,0 +1,12 @@
+---
+- hosts: dev-uat-all
+  tasks:
+    - name: 添加規則
+      become: yes
+      poll: 0
+      shell: sed -i '$aListenPort=20050' /etc/zabbix/zabbix_agent2.conf
+
+    - name: 重啟agent
+      become: yes
+      poll: 0
+      shell: systemctl restart zabbix-agent2

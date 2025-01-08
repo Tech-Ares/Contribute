@@ -1,0 +1,25 @@
+---
+- hosts: newhost
+  remote_user: root
+
+  tasks:
+    - name: install zabbix-agent repo
+      shell:
+        cmd: "rpm -ivh https://mirrors.aliyun.com/zabbix/zabbix/5.0/rhel/7/x86_64/zabbix-release-5.0-1.el7.noarch.rpm"
+
+    - name: install zabbix-agent
+      yum:
+        name:
+          - zabbix-agent
+        state: present
+
+    - name: cp zabbix-agent.conf
+      copy:
+        src: /home/ansbile/zabbix/zabbix_agentd.conf
+        dest: /etc/zabbix/zabbix_agentd.conf
+
+    - name: start zabbix-agent
+      ansible.builtin.systemd:
+        name: zabbix-agent
+        state: started
+        enabled: yes

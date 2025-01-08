@@ -1,0 +1,10 @@
+---
+- hosts: prod-ip
+
+  tasks:
+    - name: setting yum update crontab
+      cron:
+        name: "yum update crontab"
+        minute: "10"
+        hour: "5"
+        job: "yum update -y"

@@ -1,0 +1,9 @@
+---
+- hosts: prod-ip
+  remote_user: root
+
+  tasks:
+    - name: Yum update the system
+      yum:
+        name: "*"
+        state: latest

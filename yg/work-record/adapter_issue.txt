@@ -1,0 +1,29 @@
+YGGDRASIL:
+
+/mnt/central_logs/prod-tw/app-3b53fd13cb55-server.log-2019081504.gz:2019-08-15 04:23:33,347 INFO  [com.yggdrasil.integration.restless.RestlessTalker] (default task-54) [rid:190815042333::0b1d8f3b-2f4b-4464-9379-a0ea5c915fdb,fn:play,csid:05ae3347-9e63-4952-aae4-c8d4acaf1c4f,crid:e3cd875c-7c94-44a4-ac4a-bb966fc1057a] -restlessCall: url=https://adapter-prod-tw.248ka.com/wager.json?org=Egg&sessiontoken=gpmekmsbbybhjnbca8gpuxcsqpqcrudd&playerid=EKCHLRUGDK2&amount=325.00&currency=KRW&service=Mir&reference=1908150423330200003&subreference=w1908150423330200002&description=Start+Game&cat1=Casino&cat2=Slot&cat3=Berserk&cat4=Vikings+go+Berzerk&cat5=7331&tag1=GameName.Vikings+go+Berzerk&tag2=Model.M1&tag3=Channel.pc&lang=kr&version=4
+
+ADAPTER: (this request wasn't recorded in the database)
+
+:2019-08-15 04:23:33,359 INFO com.ygg.service.impl.YggServiceImpl [http-nio-39091-exec-10] wager api use, params = {"org":"Egg","sessiontoken":"gpmekmsbbybhjnbca8gpuxcsqpqcrudd","playerid":"EKCHLRUGDK2","amount":"325.00","currency":"KRW","service":"Mir","reference":"1908150423330200003","subreference":"w1908150423330200002","description":"Start Game","cat1":"Casino","cat2":"Slot","cat3":"Berserk","cat4":"Vikings go Berzerk","cat5":"7331","tag1":"GameName.Vikings go Berzerk","tag2":"Model.M1","tag3":"Channel.pc","lang":"kr","version":"4"}
+
+YGGDRASIL: (timeout after 10 seconds)
+
+/mnt/central_logs/prod-tw/app-3b53fd13cb55-server.log-2019081504.gz:2019-08-15 04:23:43,378 SEVERE [com.yggdrasil.integration.restless.model.entities.RestlessWallet] (default task-54) [rid:190815042333::0b1d8f3b-2f4b-4464-9379-a0ea5c915fdb,fn:play,csid:05ae3347-9e63-4952-aae4-c8d4acaf1c4f,crid:e3cd875c-7c94-44a4-ac4a-bb966fc1057a] >> java.net.SocketTimeoutException: Read timed out
+/mnt/central_logs/prod-tw/app-3b53fd13cb55-server.log-2019081504.gz:2019-08-15 04:23:43,388 WARNING [com.yggdrasil.commons.exception.NgsException] (default task-54) [rid:190815042333::0b1d8f3b-2f4b-4464-9379-a0ea5c915fdb,fn:play,csid:05ae3347-9e63-4952-aae4-c8d4acaf1c4f,crid:e3cd875c-7c94-44a4-ac4a-bb966fc1057a] 요청을 처리하는 중 기술적 오류가 발생했습니다. 지원 센터로 연락하십시오.
+/mnt/central_logs/prod-tw/app-3b53fd13cb55-server.log-2019081504.gz:2019-08-15 04:23:43,388 SEVERE [com.yggdrasil.game.services.GameServiceImpl] (default task-54) [rid:190815042333::0b1d8f3b-2f4b-4464-9379-a0ea5c915fdb,fn:play,csid:05ae3347-9e63-4952-aae4-c8d4acaf1c4f,crid:e3cd875c-7c94-44a4-ac4a-bb966fc1057a] : com.yggdrasil.commons.exception.NgsErrorException: 요청을 처리하는 중 기술적 오류가 발생했습니다. 지원 센터로 연락하십시오.
+
+YGGDRASIL: (tried to use cancel wager)
+
+/mnt/central_logs/prod-tw/scheduler-2206206d2017-server.log-2019081504.gz:2019-08-15 04:25:40,018 INFO  [com.yggdrasil.integration.restless.RestlessTalker] (EJB default - 2) [rid:,fn:,csid:,crid:] -restlessCall: url=https://adapter-prod-tw.248ka.com/cancelwager.json?org=Egg&playerid=EKCHLRUGDK2&reference=1908150423330200003&subreference=w1908150423330200002&version=4
+/mnt/central_logs/prod-tw/scheduler-2206206d2017-server.log-2019081504.gz:2019-08-15 04:25:40,100 INFO  [com.yggdrasil.integration.restless.RestlessTalker] (EJB default - 2) [rid:,fn:,csid:,crid:] -restlessCall: rsp={"code":1,"msg":"未知错误"}
+/mnt/central_logs/prod-tw/scheduler-2206206d2017-server.log-2019081504.gz:2019-08-15 04:25:40,101 WARNING [com.yggdrasil.integration.restless.RestlessTalker] (EJB default - 2) [rid:,fn:,csid:,crid:] Unexpected response code fn=cancelWager,org=Egg,r=1908150423330200003,sr=w1908150423330200002,msg=未知错误,code=1
+
+ADAPTER: (didn't find round in database to cancel)
+
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:2019-08-15 04:25:40,095 INFO com.ygg.service.impl.YggServiceImpl [http-nio-39091-exec-4] cancelWager api use, params = {"org":"Egg","playerid":"EKCHLRUGDK2","reference":"1908150423330200003","subreference":"w1908150423330200002","version":"4"}
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:2019-08-15 04:25:40,099 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-4] java.lang.NullPointerException
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:	at com.ygg.service.impl.YggServiceImpl.cancelWager(YggServiceImpl.java:228)
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:	at com.ygg.controller.YggController.cancelwager(YggController.java:42)
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:	at com.ygg.controller.YggController$$FastClassBySpringCGLIB$$5eff3f25.invoke(<generated>)
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+/home/yggConsole-live/logs/2019-08/task-2019-08-15-3.log.gz:--

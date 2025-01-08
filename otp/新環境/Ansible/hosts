@@ -1,0 +1,98 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+[new]
+10.10.100.235
+
+[testmaster]
+10.10.100.138
+
+[testc]
+10.10.100.137
+
+[testjava]
+10.10.100.136
+
+[testkafka]
+10.10.100.133
+#10.10.100.134
+#10.10.100.135
+
+[newhost]
+10.10.100.116
+10.10.100.126
+
+[newjava]
+10.10.100.126
+
+[newcpp]
+10.10.100.127
+
+[newice]
+10.10.100.128
+
+[newnginx]
+10.10.100.130
+
+[newtomcat]
+10.10.100.130
+
+[kafka]
+10.10.100.113
+10.10.100.114
+10.10.100.115
+
+[tomcat]
+10.10.100.120
+
+[java]
+10.10.100.116
+
+[cpp]
+10.10.100.117
+
+[master]
+10.10.100.118
+
+[db]
+10.10.100.119

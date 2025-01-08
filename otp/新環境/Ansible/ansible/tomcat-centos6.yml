@@ -1,0 +1,105 @@
+---
+- hosts: newtomcat
+  remote_user: root
+
+  tasks:
+    - name: mkdir /src
+      file:
+        path: /src
+        state: directory
+
+#    - name: copy script to /src
+#      copy:
+#        src: "{{ item }}"
+#        dest: /src/
+#        mod: 755
+#      with_items:
+#        - /home/ansbile/tomcat/script/*
+
+    - name: copy script to /src
+      copy:
+        src: /home/ansbile/tomcat/script/
+        dest: /src/
+
+    - name: copy jdk-8u281-linux-x64.tar.gz to /src
+      copy:
+        src: /home/ansbile/tomcat/jdk-8u281-linux-x64.tar.gz
+        dest: /src/jdk-8u281-linux-x64.tar.gz
+
+#    - name: chmod 755 /src/
+#      shell:
+#        cmd: chmod 755 /src/*
+
+#    - name: install gcc
+#      shell:
+#        cmd: "sh /src/install_gcc630.sh"
+
+#    - name: install nvm
+#      shell: 
+#        cmd: "sh /src/install_nvm_ionic.sh"
+
+    - name: install jdk 281
+      shell: 
+        cmd: "sh /src/jdk_install.sh"
+
+#    - name: install maven
+#      shell: 
+#        cmd: "sh /src/maven_install.sh"
+
+    - name: install x11
+      shell: 
+        cmd: "sh /src/x11_foward.sh"
+
+#    - name: Add user tomcat
+#      shell:
+#        cmd: "useradd -r tomcat --shell /bin/false"
+
+    - name: mkdir /home/tomcat-admin-8888/
+      file:
+        path: /home/tomcat-admin-8888/
+        state: directory
+        recurse: yes
+        owner: tomcat
+        group: tomcat
+
+#    - name: copy tomcat-admin-8888
+#      copy:
+#        src: /home/ansbile/tomcat/home/tomcat-admin-8888/
+#        dest: /home/tomcat-admin-8888/
+
+    - name: mkdir /home/tomcat-client-8088/
+      file:
+        path: /home/tomcat-client-8088/
+        state: directory
+        recurse: yes
+        owner: tomcat
+        group: tomcat
+
+#    - name: scp tomcat admin and client 
+#      shell: 
+#        cmd: "sh /src/scp.sh"
+
+#    - name: copy tomcat-client-8888
+#      copy:
+#        src: /home/ansbile/tomcat/home/tomcat-client-8088
+#        dest: /home/tomcat-client-8888/
+
+    - name: copy tomcat admin and client start.sh to /etc/init.d/
+      copy:
+        src: /home/ansbile/tomcat/home/init.d/
+        dest: /etc/init.d/
+
+    - name: add chkconfig to tomcat-admin
+      shell:
+        cmd: chkconfig --add tomcat-admin
+
+    - name: add chkconfig to tomcat-client
+      shell:
+        cmd: chkconfig --add tomcat-client
+
+    - name: scp tomcat admin and client
+      shell:
+        cmd: "sh /src/scp.sh"
+
+    - name: Rebooting......
+      reboot:

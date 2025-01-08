@@ -1,0 +1,488 @@
+[m[31m2020-01-02 16:50:03,290 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-38] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, SGD, 2020-01-02 16:43:00, 2020-01-02 16:44:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 69 ms!
+[m[31m2020-01-02 20:05:47,618 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-59] org.springframework.web.servlet.NoHandlerFoundException: No handler found for OPTIONS /
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-02 20:44:38,113 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /api/v1/pods
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-02 22:10:00,536 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-39] POST 123.51.185.146, 34.96.68.56 -> /yggGame/getUsersBetData, execute method [MerchantController.getUsersBetData[KingFortuneGroup, yb188, null, MYR, 2020-01-02 22:03:00, 2020-01-02 22:05:00, 0133277263e29ac0790c6170c5d85488]] cost time 75 ms!
+[m[31m2020-01-03 00:24:40,999 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:02:13,897 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] Required Integer parameter 'lastId' is not present
+[m[31m2020-01-03 02:07:04,952 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-44] POST 13.209.233.245, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, CNY, 2020-01-03 02:00:00, 2020-01-03 02:01:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 110 ms!
+[m[31m2020-01-03 02:08:47,011 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] Required Integer parameter 'lastId' is not present
+[m[31m2020-01-03 02:09:03,206 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-54] Required String parameter 'topOrg' is not present
+[m[31m2020-01-03 02:09:03,415 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /favicon.ico
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+[m[31m2020-01-03 02:09:03,417 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+[m[31m2020-01-03 02:19:25,110 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-59] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /favicon.ico
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+[m[31m2020-01-03 02:33:40,064 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:33:50,055 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:34:00,045 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:34:30,033 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:37:20,031 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:37:40,044 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:38:00,044 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:38:10,026 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:38:20,026 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:46:20,045 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:46:30,023 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:47:30,016 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:47:50,011 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:00,031 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:10,008 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:10,059 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:30,008 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-59] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:40,007 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:48:50,011 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-54] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:49:10,003 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:49:10,039 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:49:19,999 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:49:30,002 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-55] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:49:50,012 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 02:50:10,028 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] java.lang.NullPointerException
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 03:34:14,479 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-56] POST 13.209.18.84, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, CNY, 2020-01-03 03:27:00, 2020-01-03 03:28:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 56 ms!
+[m[31m2020-01-03 03:42:03,497 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-55] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, JPY, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 83 ms!
+[m[31m2020-01-03 03:42:03,498 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-18] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, VND, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 83 ms!
+[m[31m2020-01-03 03:42:03,499 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-43] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, USD, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 73 ms!
+[m[31m2020-01-03 03:42:03,500 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-50] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, CNY, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 72 ms!
+[m[31m2020-01-03 03:42:03,500 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-53] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, HKD, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 73 ms!
+[m[31m2020-01-03 03:42:03,501 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-56] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, SGD, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 71 ms!
+[m[31m2020-01-03 03:42:03,502 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-41] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, AUD, 2020-01-03 03:35:00, 2020-01-03 03:36:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 61 ms!
+[m[31m2020-01-03 04:07:26,089 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-59] POST 123.51.185.146, 34.96.68.56 -> /yggGame/getUsersBetData, execute method [MerchantController.getUsersBetData[KingFortuneGroup, yb188, null, KRW, 2018-10-01 04:00:00, 2020-01-03 03:59:00, 0133277263e29ac0790c6170c5d85488]] cost time 77 ms!
+[m[31m2020-01-03 04:07:39,353 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-44] POST 123.51.185.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[KingFortuneGroup, yb188, 0, null, KRW, 2018-10-01 04:00:00, 2020-01-03 03:59:00, 0133277263e29ac0790c6170c5d85488]] cost time 78 ms!
+[m[31m2020-01-03 04:07:55,966 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 04:17:05,885 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-41] POST 123.51.185.146, 34.96.68.56 -> /yggGame/getUsersBetData, execute method [MerchantController.getUsersBetData[KingFortuneGroup, yb188, null, KRW, 2018-10-01 04:00:00, 2020-01-03 03:59:00, 0133277263e29ac0790c6170c5d85488]] cost time 75 ms!
+[m[31m2020-01-03 04:17:12,223 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-54] POST 123.51.185.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[KingFortuneGroup, yb188, 0, null, KRW, 2018-10-01 04:00:00, 2020-01-03 03:59:00, 0133277263e29ac0790c6170c5d85488]] cost time 78 ms!
+[m[31m2020-01-03 05:40:03,093 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-44] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, THB, 2020-01-03 05:33:00, 2020-01-03 05:34:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 53 ms!
+[m[31m2020-01-03 06:58:51,612 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /api/v1/pods
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 06:59:06,789 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 07:59:15,269 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:04:15,073 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:04:47,893 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-39] GET 35.194.169.231, 34.96.68.56 -> /endwager.json, execute method [YggController.endWager[{org=vk99, playerid=avnd000057139, amount=12150000.00, bonusprize=0.00, currency=VND, tickets=1, service=Mir, reference=2001030802320100001, subreference=2001030804470100000.2001030804470100001, description=Cash out, cat1=Casino, cat2=Slot, cat3=ShardsJ, cat4=Ozwins Jackpots, cat5=7345, tag1=GameName.Ozwins Jackpots, tag2=Model.M1, tag3=Channel.pc, lang=en, version=4}]] cost time 53 ms!
+[m[31m2020-01-03 08:06:54,505 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:07:15,895 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:09:52,874 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:11:00,136 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:12:07,583 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:12:30,126 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:13:00,119 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-61] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:13:09,453 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:13:21,707 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:14:00,085 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:14:30,123 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:16:17,303 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:17:30,111 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-58] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:17:30,113 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-61] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:19:00,048 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:19:15,063 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:19:15,069 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:28:00,127 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:28:30,071 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:31:00,070 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:32:30,156 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:34:30,127 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:37:30,097 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:42:00,601 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:48:00,150 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:56:57,829 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:57:46,621 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:58:00,133 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:58:11,514 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-59] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:58:25,123 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:58:30,074 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:58:37,936 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:59:15,103 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 08:59:45,086 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-54] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:02:00,165 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:02:04,487 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:02:15,078 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:03:09,590 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:03:25,291 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-57] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:04:00,074 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:04:00,078 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:04:30,079 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:04:45,084 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:05:15,241 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-56] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:06:00,161 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:06:30,071 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:06:30,099 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:08:30,065 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:09:30,071 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:10:15,078 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:11:30,100 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:19:00,039 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:19:15,047 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:19:15,069 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-41] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:19:30,105 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:19:45,040 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:21:00,112 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-54] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:22:00,076 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:22:15,067 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:23:15,067 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-61] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:23:30,151 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-19] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:24:00,076 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-59] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:24:30,069 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-61] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:26:30,053 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-60] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:26:30,098 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:28:00,087 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:33:15,091 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-61] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:34:00,076 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-18] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:34:02,454 ERROR com.ygg.aspect.GlobeAspect [http-nio-39091-exec-18] POST 18.162.229.146, 34.96.68.56 -> /yggGame/getUsersBetDataV2, execute method [MerchantController.getUsersBetDataV2[VKGroup, vk99, 0, null, THB, 2020-01-03 09:03:00, 2020-01-03 09:12:59, 409544e9ec50d3a86e483f97bcb4fb20]] cost time 55 ms!
+[m[31m2020-01-03 09:34:15,059 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:34:30,120 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-50] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 09:36:39,273 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /favicon.ico
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+[m[31m2020-01-03 09:36:39,275 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-62] org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+[m[31m2020-01-03 10:03:00,147 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-44] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 10:09:16,635 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 10:10:30,102 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-53] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 10:18:00,081 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-43] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 10:19:30,085 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-39] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+[m[31m2020-01-03 10:21:00,097 ERROR com.ygg.GlobeExceptionHandler [http-nio-39091-exec-54] org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Out of range value for column 'balance' at row 1
+### The error may involve com.ygg.dao.mapper.YggPlayerMapper.credit-Inline
+### The error occurred while setting parameters
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)

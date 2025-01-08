@@ -1,0 +1,135 @@
+---
+- hosts: new
+  remote_user: root
+
+  tasks:
+#    - name: mkdir /home/version3.0
+#      file:
+#        path: /home/version3.0
+#        state: directory
+
+#    - name: copy script to /src
+#      copy:
+#        src: /home/ansible/ice/script/
+#        dest: /src/
+#        mode: '0755'
+
+#    - name: Add the user 'iceuser'
+#      ansible.builtin.user:
+#        name: iceuser
+#        shell: /bin/bash
+#        password: icepass
+
+#    - name: Add group iceuser
+#      ansible.builtin.group:
+#        name: iceuser
+
+#    - name: copy ice to /src
+#      copy:
+#        src: /home/ansible/ice/ice-3.6.3.tar.gz
+#        dest: /src/
+
+#    - name: Download ice3.6.3 Repo
+#      get_url:
+#        url: https://zeroc.com/download/Ice/3.6/el6/zeroc-ice3.6.repo
+#        dest: /etc/yum.repos.d/zeroc-ice3.6.repo
+
+#    - name: copy libstdc++ to /usr/lib64
+#      copy:
+#        src: /home/ansible/ice/libstdc++.so.6
+#        dest: /usr/lib64/
+
+#    - name: install DB-5.3.28
+#      shell:
+#        cmd: "sh /src/install-db5.3.28.sh"
+
+#    - name: rpm rebuild
+#      shell:
+#        cmd: "rpmdb --rebuilddb"
+
+#    - name: install rpm
+#      yum:
+#        name:
+#          - mcpp-devel
+#          - libice3.6-c++
+#          - libdb-utils
+#          - bzip2-devel
+#          - expat-devel
+#        state: present
+
+#    - name: install gcc
+#      shell:
+#        cmd: "sh /src/install_gcc630.sh"
+
+    - name: Rebooting......
+      reboot:
+
+    - name: Install nvm
+      shell: 
+        cmd: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.38.0/install.sh | bash
+      args:
+        executable: /bin/bash
+        chdir: "$HOME"
+        creates: "$HOME/.nvm/nvm.sh"
+
+    - name: Setup .profile
+      lineinfile:
+        path: ~/.profile
+        line: source ~/.nvm/nvm.sh # This will make sure Node is on the user's PATH
+        create: yes
+
+    - name: Install node and set version
+      shell: 
+        cmd: /bin/bash -c "source ~/.nvm/nvm.sh && nvm install 14.15 && nvm alias default 14.15"
+        creates: /home/{{ ansible_user_id }}/.nvm/alias
+
+    - name: copy jdk-8u281-linux-x64.tar.gz to /src
+      copy:
+        src: /home/ansible/tomcat/source/jdk-8u281-linux-x64.tar.gz
+        dest: /src/jdk-8u281-linux-x64.tar.gz
+
+    - name: tar java
+      shell:
+        cmd: "tar -zxvf /src/jdk-8u281-linux-x64.tar.gz -C /src/"
+
+    - name: install jdk 281
+      shell:
+        cmd: "sh /src/jdk_install.sh"
+
+    - name: install maven
+      shell:
+        cmd: "sh /src/maven_install.sh"
+
+#    - name: install DB-5.3.28
+#      shell:
+#        cmd: "sh /src/install-db5.3.28.sh"
+
+#    - name: rpm rebuild
+#      shell:
+#        cmd: "rpmdb --rebuilddb"
+
+    - name: tar ice
+      shell:
+        cmd: "tar -zxvf /src/ice-3.6.3.tar.gz -C /src/"
+
+    - name: make file
+      shell:
+        cmd: "make -j4 -C /src/ice-3.6.3/cpp/"
+
+    - name: Run 'install' target as root
+      make:
+        chdir: /src/ice-3.6.3/cpp
+        target: install
+      become: yes
+
+    - name: copy lib64
+      shell:
+        cmd: "cp -rf /opt/Ice-3.6.3/lib64/* /usr/lib64"
+
+    - name: copy include
+      shell:
+        cmd: "cp -rf /opt/Ice-3.6.3/include/* /usr/include"
+
+    - name: copy include
+      shell:
+        cmd: "cp -rf /opt/Ice-3.6.3/bin/* /usr/bin"

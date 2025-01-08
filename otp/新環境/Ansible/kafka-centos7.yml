@@ -1,0 +1,146 @@
+---
+- hosts: testkafka
+  remote_user: root
+
+  tasks:
+
+#    - name: Set a hostname
+#      hostname:
+#        name: kafka-126
+
+    - name: copy kafka script tp /src
+      copy:
+        src: /home/ansbile/kafka/
+        dest: /src/
+        mode: '0755'
+
+#    - name: copy ice init to /etc/init.d/
+#      copy:
+#        src: /home/ansbile/ice/init.d/
+#        dest: /etc/init.d/
+
+    - name: group add kafka
+      group:
+        name: kafka
+        state: present
+
+    - name: group add zk
+      group:
+        name: zk
+        state: present
+
+    - name: Add the user Kafka
+      user:
+        name: kafka
+        groups: kafka
+
+    - name: Add the user ZK
+      user:
+        name: zk
+        groups: zk
+
+    - name: tar kafka
+      shell:
+        cmd: "tar -zxvf /src/kafka_2.13-2.8.0.tgz -C /src/"
+
+    - name: Move kafka to /usr/local/kafka
+      command: 
+        cmd: mv /src/kafka_2.13-2.8.0 /usr/local/kafka
+
+    - name: mkdir /var/log/kafka
+      file:
+        path: /var/log/kafka
+        state: directory
+        owner: kafka
+        group: kafka
+
+    - name: mkdir /var/lib/zookeeper
+      file:
+        path: /var/lib/zookeeper
+        state: directory
+        owner: zk
+        group: zk
+
+    - name: tar zookeeper
+      shell:
+        cmd: "tar -zxvf /src/apache-zookeeper-3.6.3-bin.tar.gz -C /src/"
+
+    - name: Move kafka to /usr/local/zookeeper
+      command: 
+        cmd: mv /src/apache-zookeeper-3.6.3-bin /usr/local/zookeeper
+
+    - name: mkdir /var/lib/zookeeper
+      file:
+        path: /var/lib/zookeeper
+        state: directory
+        owner: zk
+        group: zk
+
+    - name: copy jdk-8u281-linux-x64.tar.gz to /src
+      copy:
+        src: /home/ansbile/tomcat/source/jdk-8u281-linux-x64.tar.gz
+        dest: /src/jdk-8u281-linux-x64.tar.gz
+
+    - name: tar java
+      shell:
+        cmd: "tar -zxvf /src/jdk-8u281-linux-x64.tar.gz -C /src/"
+
+    - name: install jdk 281
+      shell:
+        cmd: "sh /src/jdk_install.sh"
+
+    - name: copy service to /var/lib/zookeeper
+      copy:
+        src: /home/ansbile/kafka/zookeeper/
+        dest: /var/lib/zookeeper/
+
+    - name: copy service to /etc/systemd/system/
+      copy:
+        src: /home/ansbile/kafka/systemd/
+        dest: /etc/systemd/system/
+
+    - name: Move kafka to /usr/local/zookeeper
+      command:
+        cmd: mv -f /src/server.properties /usr/local/kafka/config/
+
+    - name: Add /usr/local/zookeeper/conf/zoo.cfg
+      shell:
+        cmd: |
+          cat << EOF | tee /usr/local/zookeeper/conf/zoo.cfg
+          tickTime=2000
+          dataDir=/var/lib/zookeeper
+          clientPort=2181
+          initLimit=20
+          syncLimit=5
+          server.1=10.10.100.123:2888:3888
+          server.2=10.10.100.124:2888:3888
+          server.3=10.10.100.125:2888:3888
+          EOF
+
+    - name: Chown kafka /usr/local/kafka
+      shell:
+        cmd: "chown -R kafka:kafka /usr/local/kafka"
+
+    - name: Chown zk /usr/local/zookeeper
+      shell:
+        cmd: "chown -R zk:zk /usr/local/zookeeper"
+
+    - name: Chown zk /var/lib/zookeeper
+      shell:
+        cmd: "chown -R zk:zk /var/lib/zookeeper"
+
+    - name: start sed.sh
+      shell:
+        cmd: "sh /src/sed.sh"
+
+    - name: Enable Zookeeper
+      systemd:
+        name: zk
+        state: started
+        enabled: yes
+
+    - name: Enable Kafka
+      systemd:
+        name: kafka
+        state: started
+        enabled: yes
