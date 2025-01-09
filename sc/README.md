@@ -1,7 +1,5 @@
 **Name**: DEV, QAT, UAT, PROD new environment construction
 
-**link**:https://github.com/Tech-Ares/Contribute/tree/main/sc
-
 **Responsibilities**: Collaborate with other teams
 
 **Challenge**: From zero to something
