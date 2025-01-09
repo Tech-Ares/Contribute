@@ -26,3 +26,11 @@
 **Challenge**: Developing a real-time monitoring solution that can promptly detect CDN failures and trigger alarms. Dealing with frequent DDOS attacks on the overseas product environments and ensuring that the monitoring system can handle and report on large influxes of requests without performance degradation.
 
 **Achievements**: CDN failures can be detected in real time and alarms can be automatically triggered, shortening the failure recovery time. During this period, overseas product environments were often attacked by DDOS. Monitoring and alarms could prevent service impacts caused by a large number of requests during a certain period of time.
+
+---
+
+**Name**:docker-compose to ELK(POC DEV) cdn nginx acc log 
+
+**Responsibilities**: owner
+
+**Achievements**:Reduced manual search for nginx acc log and increased the efficiency of manual search for log, but has not yet been officially put into operation
