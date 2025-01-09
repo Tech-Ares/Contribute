@@ -1,7 +1,5 @@
 **Name**: Zabbix hardware monitoring alarm
 
-**link**:
-
 **Responsibilities**: owner
 
 **Challenge**: 
