@@ -38,3 +38,5 @@ communication and data exchange model between systems in the line transfer mode.
 
 
 **Achievements**: Product environment operations
+
+https://github.com/Tech-Ares/Contribute/blob/main/sc/gcp/%E5%9C%96%E7%89%871.png
