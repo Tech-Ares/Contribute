@@ -1,0 +1,32 @@
+Config
+    epolestar.Default.pub
+        [epolestar]
+        package=220605
+    epolestar.Package.pri
+        220605  极星9.0       http://
+
+
+    BaseConifg
+        CspAccessApi.CompanyInfo.pub
+            # "company_no","chs,","cht","enu"
+            "2206","中阳","中陽","ZhongYang"
+
+        CspAccessApi.DirectTradeAddrInfo.pub
+            # "company_no","trade_addr_no,","trade_api_type","user_type","trade_addr_type","ip","port","running_state","support_pc","support_ios","support_android","enu","chs","cht","protocol_ver","server_type","broker_id","cert_str","trade_group_no","show_order","trade_port_ex","link_type","penetrate_auth_code"
+            "2206","R_DIPPER_011_C","DipperTradeApi","c","R","101.132.111.232","8886","Y","Y","Y","Y","BAK1","备用上海1","備用上海1","1","f","","","","0","0","",""
+            "2206","R_DIPPER_012_C","DipperTradeApi","c","R","8.212.21.215","8886","Y","Y","Y","Y","BAK2","备用香港1","備用香港1","1","f","","","","0","0","",""
+
+        CspAccessApi.PkgDirectTradeAddrInfo.pub
+            # "package_no","company_no,","trade_addr_no"
+            "220605","2206","R_DIPPER_012_C"
+            "220605","2206","R_DIPPER_011_C"
+
+        CspAccessApi.PackageInfo.pub
+            # "package_no","enu","chs","cht","url","company_no"
+            "220605","Epolestar9.0","极星9.0","極星9.0","http://","2206"
+
+        CspAccessApi.DirectTradeAddrMap.pub--非必要
+            # "company_no","trade_addr_no,","broker_no","broker_addr_no"
+            "2043","R_DIPPER_011_C","2043","R_DIPPER_001"
+            "2043","R_DIPPER_012_C","2043","R_DIPPER_001"
+

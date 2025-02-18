@@ -1,0 +1,69 @@
+{
+  "server": {
+    "serverList": [
+      {
+        "serverName": "otp4",
+        "url": "https://otp-4.otp888.com"
+      },
+      {
+        "serverName": "otp4",
+        "url": "https://otp-4.otp888.com"
+      },
+      {
+        "serverName": "otp4",
+        "url": "https://otp-4.otp888.com"
+      }
+    ],
+    "timeout": "6000"
+  },
+  "brandList": [
+    {
+      "brandName": "topsunx",
+      "rankLimit": "1000",
+      "timeout": "30000",
+      "connectList": [
+        {
+          "regionName": "global",
+          "matchMethod": "Partial",
+          "priority": [
+            {
+              "priorityName": "rank1",
+              "urlList": [
+                "https://trade.topsunx.com",
+                "https://cn.topsunx.com",
+                "https://gtm.topsunx.com",
+                "https://global.topsunx.com",
+                "https://47.100.82.234",
+                "https://8.137.55.106"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "jiaguanxin",
+      "rankLimit": "1000",
+      "timeout": "30000",
+      "connectList": [
+        {
+          "regionName": "global",
+          "matchMethod": "Partial",
+          "priority": [
+            {
+              "priorityName": "rank1",
+              "urlList": [
+                "https://jiaguanxin.com",
+                "https://gtm.jiaguanxin.com",
+                "https://cn.jiaguanxin.com",
+                "https://global.jiaguanxin.com",
+                "https://47.116.115.51",
+                "https://47.108.161.34"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

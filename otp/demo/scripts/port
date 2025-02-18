@@ -1,0 +1,52 @@
+
+iceuser   2757  2716 --Ice.Config=/home/version3.0/icedb/node/rbacGatewayNode1/servers/RbacService1/config/config
+tcp6       0      0 127.0.0.1:44669         :::*                    LISTEN      2757/java
+tcp6       0      0 :::33497                :::*                    LISTEN      2757/java
+
+iceuser   3693  3681 --Ice.Config=/home/version3.0/icedb/node/supportNode1/servers/SupportIceBox-1/config/config
+tcp6       0      0 :::36485                :::*                    LISTEN      3693/java
+tcp6       0      0 127.0.0.1:35719         :::*                    LISTEN      3693/java
+
+iceuser   4756  4744 --Ice.Config=/home/version3.0/icedb/node/brokerCommissionNode1/servers/BrokerCommissionIceBox-1/config/config
+tcp6       0      0 127.0.0.1:43849         :::*                    LISTEN      4756/java
+tcp6       0      0 :::42383                :::*                    LISTEN      4756/java
+
+iceuser   6470  6454 --Ice.Config=/home/version3.0/icedb/node/fsrNode1/servers/FsrIceBox-1/config/config
+tcp6       0      0 :::36092                :::*                    LISTEN      6470/java
+tcp6       0      0 127.0.0.1:38525         :::*                    LISTEN      6470/java
+
+iceuser   9095  9047 --Ice.Config=/home/version3.0/icedb/node/configGatewayNode1/servers/ConfigService1/config/config
+tcp6       0      0 :::41863                :::*                    LISTEN      9095/java
+tcp6       0      0 127.0.0.1:43285         :::*                    LISTEN      9095/java
+
+iceuser   9250  9230 --Ice.Config=/home/version3.0/icedb/node/camNode1/servers/CamIceBox-1/config/config
+tcp6       0      0 :::36189                :::*                    LISTEN      9250/java
+tcp6       0      0 127.0.0.1:33551         :::*                    LISTEN      9250/java
+
+iceuser   9902  9890 --Ice.Config=/home/version3.0/icedb/node/baseNode1/servers/BaseIceBox-1/config/config
+tcp6       0      0 :::36680                :::*                    LISTEN      9902/java
+tcp6       0      0 127.0.0.1:42296         :::*                    LISTEN      9902/java
+
+iceuser  13381 13368 --Ice.Config=/home/version3.0/icedb/node/tradeJavaNode1/servers/TradeIceBox-1/config/config
+tcp6       0      0 127.0.0.1:42784         :::*                    LISTEN      13381/java
+tcp6       0      0 :::44923                :::*                    LISTEN      13381/java
+
+iceuser  17754 17735 --Ice.Config=/home/version3.0/icedb/node/configNode1/servers/ConfigIceBox-1/config/config
+tcp6       0      0 127.0.0.1:34722         :::*                    LISTEN      17754/java
+tcp6       0      0 :::43756                :::*                    LISTEN      17754/java
+
+iceuser  18673 18661 --Ice.Config=/home/version3.0/icedb/node/camExtNode1/servers/CamExtIceBox-1/config/config
+tcp6       0      0 127.0.0.1:45663         :::*                    LISTEN      18673/java
+tcp6       0      0 :::46313                :::*                    LISTEN      18673/java
+
+iceuser  25617 25582 --Ice.Config=/home/version3.0/icedb/node/supportGatewayNode1/servers/SupportService1/config/config
+tcp6       0      0 :::44234                :::*                    LISTEN      25617/java
+tcp6       0      0 127.0.0.1:46859         :::*                    LISTEN      25617/java
+
+iceuser  31104 31092 --Ice.Config=/home/version3.0/icedb/node/crmNode1/servers/CrmIceBox-1/config/config
+tcp6       0      0 127.0.0.1:45273         :::*                    LISTEN      31104/java
+tcp6       0      0 :::33787                :::*                    LISTEN      31104/java
+
+iceuser  32543 32522 --Ice.Config=/home/version3.0/icedb/node/rbacNode1/servers/RbacIceBox-1/config/config
+tcp6       0      0 127.0.0.1:39390         :::*                    LISTEN      32543/java
+tcp6       0      0 :::33600                :::*                    LISTEN      32543/java

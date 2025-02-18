@@ -1,0 +1,317 @@
+{
+	"id": "tta",
+	"version": "6.2.0.12",
+	"forceUpdateVersion": "6.2.0.12",
+	"releaseTime": "2021-06-17",
+	"env": "jiaguanxin",
+	"config": {
+		"autoChooseLine": true,
+		"supportPhone": false,
+		"supportEmail": false,
+		"need3rdIDPhoto": true,
+		"appointedOrgCode": false,
+		"addMNCharBeforeProductName": false,
+		"appointMNusername": false,
+		"appointMNusernameList": ["sunx"],
+		"orgCodeList": ["*"],
+		"rechargeTimer": 3,
+		"showMarketNews": false,
+		"loadsAppShowTopics": 1,
+		"openAccountUrl": "openAccount/index1.html",
+		"rechargeUrl": "",
+		"withdrawUrl": "",
+		"startMnLine": false,
+		"registerUrl": "register/index.html",
+		"viewRealNameInfo": "register/#/viewRealName",
+		"skin": [1, 1],
+		"rechargeMax": 0,
+		"rechargeMin": 0,
+		"CFDtraderDetail": false,
+		"certificateA": true,
+		"certificateB": true,
+		"certificateC": true,
+		"isUseSimpleRegister": true,
+		"certificateD": true,
+		"needUserName": true,
+		"rechargeInner": "target",
+		"withdrawInner": "origin",
+		"autoOrder": false,
+		"onlineServiceUrl": "http://47.75.106.21:8090/im/text/044JYV.html"
+	},
+	"lines": [{
+			"id": "hdp-01",
+			"name": "tt（一）",
+			"http": "https://jiaguanxin.com/trade/",
+			"socket": "https://jiaguanxin.com",
+			"socketPath": "/socket"
+		}
+	],
+	"lines_mn": [{
+		"id": "hdp",
+		"name": "tt（二）",
+		"http": "https://jiaguanxin.com/tradeSl/",
+		"socket": "https://jiaguanxin.com",
+		"socketPath": "/socketSl"
+		}],
+	"mainNavs": [{
+			"name": "用户资料",
+			"show": ["sp", "mnp"],
+			"subNav": [{
+					"name": "基本资料",
+					"show": ["sp", "mnp"],
+					"click": "baseInfo"
+				},
+				{
+					"name": "个人密码",
+					"show": ["sp", "mnp"],
+					"click": "personalPwd"
+				},
+				{
+					"name": "资金密码",
+					"show": ["sp", "mnp"],
+					"click": "goldPwd"
+				}
+			]
+		},
+		{
+			"name": "服务",
+			"show": ["sp"],
+			"subNav": [{
+					"name": "开户信息",
+					"show": [],
+					"click": "extendInfo"
+				},
+				{
+					"name": "实名信息",
+					"show": ["sp", "mnp"],
+					"click": "realInfo"
+				},
+				{
+					"name": "银行卡设置",
+					"show": ["sp", "mnp"],
+					"click": "reSign"
+				},
+				{
+					"name": "充值",
+					"show": ["sp", "mnp"],
+					"click": "recharge"
+				},
+				{
+					"name": "充值凭证查询",
+					"show": ["sp", "mnp"],
+					"click": "cashInCertificateList"
+				},
+				{
+					"name": "提现",
+					"show": ["sp", "mnp"],
+					"click": "withdrawals"
+				},
+				{
+					"name": "换绑银行卡",
+					"show": [],
+					"click": "editBankInfo"
+				},
+				{
+					"name": "结算单",
+					"show": ["sp", "mnp"],
+					"click": "statement"
+				}
+			]
+		},
+		{
+			"name": "功能",
+			"show": [],
+			"subNav": [{
+				"name": "指标管理",
+				"show": ["sp", "mnp"],
+				"click": "indexsManage"
+			}]
+		},
+		{
+			"name": "交易(F12)",
+			"show": ["sp", "mnp"],
+			"click": "trademark"
+		},
+		{
+			"name": "资讯",
+			"show": ["sp", "mnp"],
+			"subNav": [{
+					"name": "时事新闻",
+					"show": ["sp", "mnp"],
+					"url": "https://jin10.jiaguanxin.com/info/index"
+				},
+				{
+					"name": "财经日历",
+					"show": ["sp", "mnp"],
+					"url": "https://jin10.jiaguanxin.com/"
+				}
+			]
+		},
+		{
+			"name": "其他",
+			"show": ["sp", "mnp"],
+			"subNav": [{
+					"name": "交易规则",
+					"show": [],
+					"url": ""
+				},
+				{
+					"name": "官网",
+					"show": [],
+					"url": ""
+				},
+				{
+					"name": "通知",
+					"show": ["sp", "mnp"],
+					"click": "topic"
+				}
+			]
+		},
+		{
+			"name": "客服系统",
+			"show": ["sp", "mnp"],
+			"click": "onlineServiceUrl"
+		},
+		{
+			"name": "系统语言",
+			"show": ["sp", "mnp"],
+			"subNav": [{
+					"name": "简体中文",
+					"show": ["sp", "mnp"],
+					"click": "zh-CN"
+				},
+				{
+					"name": "繁体中文",
+					"show": ["sp", "mnp"],
+					"click": "zh-TW"
+				},
+				{
+					"name": "English",
+					"show": ["sp", "mnp"],
+					"click": "en"
+				},
+				{
+					"name": "မြန်မာ",
+					"show": ["sp", "mnp"],
+					"click": "my-MM"
+				}
+			]
+		}
+	],
+	"traderNavs": [{
+			"name": "交易",
+			"show": ["sp", "mnp"],
+			"icon": "F1",
+			"click": "trader"
+		},
+		{
+			"name": "委托",
+			"show": ["sp", "mnp"],
+			"icon": "F2",
+			"click": "entrust"
+		},
+		{
+			"name": "成交",
+			"show": ["sp", "mnp"],
+			"icon": "F3",
+			"click": "deal"
+		},
+		{
+			"name": "资金流水",
+			"show": ["sp", "mnp"],
+			"icon": "F4",
+			"click": "goldInOut"
+		},
+		{
+			"name": "出入金流水",
+			"show": ["sp", "mnp"],
+			"icon": "F5",
+			"click": "inoutFlow"
+		},
+		{
+			"name": "新股申购",
+			"show": [],
+			"icon": "F6",
+			"click": "apply",
+			"children": [{
+					"name": "今日申购",
+					"show": ["sp", "mnp"],
+					"click": "apply1"
+				},
+				{
+					"name": "即将发行",
+					"show": ["sp", "mnp"],
+					"click": "apply2"
+				},
+				{
+					"name": "我的申购",
+					"show": ["sp", "mnp"],
+					"click": "apply3"
+				},
+				{
+					"name": "历史申购",
+					"show": ["sp", "mnp"],
+					"click": "apply4"
+				},
+				{
+					"name": "已中签",
+					"show": ["sp", "mnp"],
+					"click": "apply5"
+				}
+			]
+		},
+		{
+			"name": "帮助及说明",
+			"show": [],
+			"icon": "F7",
+			"click": "help"
+		}
+	],
+	"favoritesNav": [{
+			"name": "期货",
+			"translate": "WAP_652",
+			"show": ["sp", "mnp"],
+			"id": 0
+		},
+		{
+			"name": "股票",
+			"translate": "WAP_683",
+			"show": [],
+			"id": 1
+		},
+		{
+			"name": "CFD",
+			"translate": "WAP_653",
+			"show": [],
+			"id": 2
+		}
+	],
+	"traderPannelOption": {
+		"allClose": true,
+		"close": true,
+		"setSLTP": true,
+		"quicklyClose": true,
+		"quicklyOrderBack": true
+	},
+	"personalOption": {
+		"displayRealtimeTraderNumer": true,
+		"displayTraderDetailNumber": true,
+		"autoOrderDefaultValue": 1,
+		"canConsiderationPrice": true,
+		"displaySearchContractColumn": true,
+		"priorityFavorite": false,
+		"klineDefaultValue": 1,
+		"actualRecript": false,
+		"onlyLimitPrice": false,
+		"onlySearchAll": false,
+		"LoginNamePlusLetter": "",
+		"displayRisk": true,
+		"stockA_HideSell": false,
+		"displayFloatRate": false,
+        "riskDirection": "forward"
+	},
+	"traderInfoDisplay": {
+		"deal": true,
+		"onHand": true
+	}
+}

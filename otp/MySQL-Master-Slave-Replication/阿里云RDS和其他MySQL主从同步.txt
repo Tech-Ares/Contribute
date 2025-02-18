@@ -1,0 +1,49 @@
+https://www.jianshu.com/p/1f5b7730bfcd
+阿里云RDS和其他MySQL主从同步主：阿里云RDS（MySQL8.0）
+从：自建MySQL（MySQL8.0）
+
+第一步：检查主从版本是否一致，检查时间（时区）是否一致
+第二部：数据导入
+把主的数据全量导入到从服务
+
+第三部：配置从服务器
+修改mysql配置：
+
+[mysqld]
+server-id               = <服务ID，不能和主的一样>
+port                    = 3306
+replicate-do-db         = <需要同步的数据库>
+replicate-do-db         = <需要同步的数据库>
+replicate-ignore-db     = <不需要同步的数据库>
+replicate-ignore-db     = <不需要同步的数据库>
+
+slave-skip-errors       = all
+
+log_bin                 = mysql-bin
+log-bin-index           = mysql-bin.index
+relay-log               = relay-log
+relay_log_index         = relay-log.index
+
+expire_logs_days        = 10
+max_binlog_size         = 100M
+
+gtid_mode                 = on
+enforce_gtid_consistency  = on
+binlog_format             = row
+log-slave-updates         = 1
+sql_mode                  = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+第四步：启动从服务
+登录从服务，设置主服务的IP、账号、密码等信息：
+
+CHANGE MASTER TO MASTER_HOST = '<主IP>', MASTER_USER = '<主用户>', MASTER_PASSWORD = '<主密码>', MASTER_PORT = 3306, MASTER_AUTO_POSITION = 1, MASTER_RETRY_COUNT = 0, MASTER_HEARTBEAT_PERIOD = 10000;
+CHANGE MASTER TO MASTER_LOG_FILE='mysql-bin.<主log_bin索引>', MASTER_LOG_POS=0;
+start slave;
+查看运行状态：Slave_IO_Running和Slave_SQL_Running均为Yes即成功
+
+
+show slave status;
+
+作者：joyshion
+链接：https://www.jianshu.com/p/1f5b7730bfcd
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
